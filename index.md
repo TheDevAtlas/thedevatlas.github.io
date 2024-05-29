@@ -1,5 +1,7 @@
-Here you can say lots of fun things about your site.
+Programming is fun.
 
-Maybe say a some things about yourself.
+I build projects that I think are interesting and fun. In many of my projects, I have learned at least one or two new things that I was interested in.
 
-Or maybe what you plan to blog about.
+I also post about other things that interest me about technology, programming, and engineering.
+
+Check it out!
