@@ -1,4 +1,4 @@
-### Programming is fun.
+## Programming is fun.
 
 !["Wii U VR"](/photos/mainpage/banner.png)
 
