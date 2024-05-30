@@ -8,6 +8,8 @@ This is a sample blog post. You can talk about all sorts of fun things here.
 
 ---
 
+![](/_photos/mainpage/banner.png)
+
 ### This is a header
 
 #### Some T-SQL Code
