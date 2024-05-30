@@ -21,8 +21,6 @@ youtube_username: "@thedevatlas"
 #########################################################################################
 theme: "minima"
 
-rss: rss
-
 kramdown:
   syntax_highlighter_opts:
     disable: true
