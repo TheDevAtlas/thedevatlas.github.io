@@ -1,4 +1,6 @@
-Programming is fun.
+### Programming is fun.
+
+![](/_photos/mainpage/banner.png)
 
 I build projects that I think are interesting and fun. In many of my projects, I have learned at least one or two new things that I was interested in.
 
