@@ -40,8 +40,24 @@ Our last two cases are very simple. If there are no points above the threshold, 
 
 What I need to do with this information is be able to turn a 4-bit number that represents these points and return the vertices needed for each case. Each corner can be represented by a bit. We can then shift each bit over to get our final case number.
 
-```csrp
+```csharp
 int caseIndex = 0;
+if(bl >= valueCutoff)
+{
+    caseIndex += 1;
+}
+if(br >= valueCutoff)
+{
+    caseIndex += 2;
+}
+if(tl >= valueCutoff)
+{
+    caseIndex += 4;
+}
+if(tr >= valueCutoff)
+{
+    caseIndex += 8;
+}
 ```
 
 ---
