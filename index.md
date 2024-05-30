@@ -1,6 +1,6 @@
 ### Programming is fun.
 
-!["Wii U VR"](/main/_photos/mainpage/banner.png)
+!["Wii U VR"](/_photos/mainpage/banner.png)
 
 I build projects that I think are interesting and fun. In many of my projects, I have learned at least one or two new things that I was interested in.
 
