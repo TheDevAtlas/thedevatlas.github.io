@@ -1,4 +1,4 @@
-## How I Used Skylanders In Unitys
+## How I Used Skylanders In Unity
 
 ### Section 0: Project Goals
 
