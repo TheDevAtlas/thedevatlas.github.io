@@ -1,4 +1,4 @@
-## Polygonization of a Scaler Field In Real-Time
+## Remaking Guitar Hero
 
 ### Section 0: Project Goals
 

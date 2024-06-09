@@ -1,4 +1,4 @@
-## Polygonization of a Scaler Field In Real-Time
+## Remaking Tetris 3D For The Wii U
 
 ### Section 0: Project Goals
 

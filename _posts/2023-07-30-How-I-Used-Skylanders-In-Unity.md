@@ -1,4 +1,4 @@
-## Polygonization of a Scaler Field In Real-Time
+## How I Used Skylanders In Unitys
 
 ### Section 0: Project Goals
 

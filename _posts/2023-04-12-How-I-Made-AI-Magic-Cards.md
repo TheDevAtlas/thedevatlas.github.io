@@ -1,4 +1,4 @@
-## Polygonization of a Scaler Field In Real-Time
+## How I Made AI Magic Cards
 
 ### Section 0: Project Goals
 

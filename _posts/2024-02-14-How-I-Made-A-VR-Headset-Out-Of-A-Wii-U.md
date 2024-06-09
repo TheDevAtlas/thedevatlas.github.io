@@ -1,4 +1,4 @@
-## Polygonization of a Scaler Field In Real-Time
+## How I Made A VR Headset Out Of A Wii U
 
 ### Section 0: Project Goals
 
