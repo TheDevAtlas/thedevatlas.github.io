@@ -155,7 +155,7 @@ With all of the major parts of the program in place it takes about 30-45 seconds
 
 ---
 
-It is time to mass produce these cards. I need about 600 different cards, all split up between different types. This part of the project was just a time sink. I spent time over multiple days to get each card to a point that I liked. After I made a ton of cards, I sent them off to be printed by [makeplayingcards.com](https://www.makeplayingcards.com/). This part has a bit of a hidden cost since cardstock prices can change based on quality. I also invested in not just the cards, but card sleeves and boxes to keep them safe. If you plan on making more than a few hundred cards, make sure you take cost into consideration. Looking at receipts, I spent about $600 to finish the project off, but you could print it at Staples for a few bucks if you are not bothered by quality.
+It is time to mass produce these cards. I need about 600 different cards, all split up between different types. This part of the project was just a time sink. I spent time over multiple days to get each card to a point that I liked. After I made a ton of cards, I sent them off to be printed by [makeplayingcards.com](https://www.makeplayingcards.com/). This part has a bit of a hidden cost since cardstock prices can change based on quality. I also invested in not just the cards, but card sleeves and boxes to keep them safe. If you plan on making more than a few hundred cards, make sure you take cost into consideration. Looking at receipts, I spent about $400 to finish the project off, but you could print it at Staples for a few bucks if you are not bothered by quality.
 
 !["Full Card Creation"](/photos/aimagiccards/7.png)
 
