@@ -44,8 +44,6 @@ I also added the Magic: The Gathering Font to each of the sections and used a fe
 
 Lastly, we can put together a script to export these cards as .png images for print. I did this by adding an extra camera into my scene and having it render to a render texture. The cool thing about render textures is that we can access all of the pixel data, so we can just shove this into any image format that we like. I used .png to fix any transparency issues, but that is not really necessary.
 
-!["Diagram of Camera and Render Texture"](/photos/aimagiccards/5.png)
-
 With all of these basic systems in place, all we need to do is create a way for our AI to generate the text and art for a card, and then export it to the computer.
 
 ---
@@ -54,7 +52,7 @@ With all of these basic systems in place, all we need to do is create a way for 
 
 ---
 
-It is time to integrate AI into Unity. Let's start by looking at what information we need from ChatGPT to make a Magic card:
+It is time to integrate AI into Unity. Let's look at what information we need from ChatGPT to make a Magic card:
 
 - The Card Name
 - Card Colors
@@ -63,15 +61,27 @@ It is time to integrate AI into Unity. Let's start by looking at what informatio
 - Power and Toughness (if needed)
 - Card Art Prompt (to send to A1111)
 
-Getting this information may seem simple, but there are problems with parsing strings when you do not know what the AI might respond with. Here is an example of responses before my fix.
-
-!["Broken Responses"](/photos/aimagiccards/6.png)
+Getting this information may seem simple, but there are problems with parsing strings when you do not know what the AI might respond with.
 
 We can fix this by asking ChatGPT to put all of these bits of information into a JSON format, and then we can just remove anything that is not part of the JSON.
 
-!["Fixed Responses"](/photos/aimagiccards/7.png)
+```csharp
+Generate a magic the gathering card in this format, do not include commentary or suggestions:
 
-Perfect, now we can connect ChatGPT and Unity for real. All we need to do is connect to my OpenAI api key and send a request.
+"card": {  
+    "card name":,   
+    "card type":,   
+    "mana cost":,
+    "rules text":,
+    "power":,
+    "toughness":,
+    "art description":,
+}  
+```
+
+!["Fixed Responses"](/photos/aimagiccards/5.png)
+
+Perfect, now we can connect ChatGPT and Unity for real. All we need to do is connect to my OpenAI API key and send a request.
 
 ```csharp
 void Start()
@@ -115,3 +125,4 @@ IEnumerator RequestChatGPT(string prompt)
 }
 ```
 
+With that working we can then type in a standard prompt with our JSON requirements and let the AI work its magic.
