@@ -38,17 +38,13 @@ I started by importing all of my card frames and making a simple card frame swit
 
 !["Card Frame Switcher"](/photos/aimagiccards/3.png)
 
-I also added the Magic: The Gathering Font to each of the sections and used a few cards as references to get this part to line up. I also added some fake copyright information and the PROXY line so that no one thinks that these are real cards.
+I also added the Magic: The Gathering Font to each of the sections and used a few cards as references to get this part to line up. I also added some fake copyright information and the PROXY line so that no one thinks that these are real cards. I also added a simple sprite to hold any art that we generate.
 
-!["Text and Copyright Line"](/photos/aimagiccards/4.png)
-
-I also added a simple sprite to hold any art that we generate.
-
-!["Sprite to Hold the Art"](/photos/aimagiccards/5.png)
+!["Sprite to Hold the Art"](/photos/aimagiccards/4.png)
 
 Lastly, we can put together a script to export these cards as .png images for print. I did this by adding an extra camera into my scene and having it render to a render texture. The cool thing about render textures is that we can access all of the pixel data, so we can just shove this into any image format that we like. I used .png to fix any transparency issues, but that is not really necessary.
 
-!["Diagram of Camera and Render Texture"](/photos/aimagiccards/6.png)
+!["Diagram of Camera and Render Texture"](/photos/aimagiccards/5.png)
 
 With all of these basic systems in place, all we need to do is create a way for our AI to generate the text and art for a card, and then export it to the computer.
 
@@ -69,11 +65,11 @@ It is time to integrate AI into Unity. Let's start by looking at what informatio
 
 Getting this information may seem simple, but there are problems with parsing strings when you do not know what the AI might respond with. Here is an example of responses before my fix.
 
-!["Broken Responses"](/photos/aimagiccards/7.png)
+!["Broken Responses"](/photos/aimagiccards/6.png)
 
 We can fix this by asking ChatGPT to put all of these bits of information into a JSON format, and then we can just remove anything that is not part of the JSON.
 
-!["Fixed Responses"](/photos/aimagiccards/8.png)
+!["Fixed Responses"](/photos/aimagiccards/7.png)
 
 Perfect, now we can connect ChatGPT and Unity for real. All we need to do is connect to my OpenAI api key and send a request.
 
