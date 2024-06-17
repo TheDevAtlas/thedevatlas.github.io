@@ -170,3 +170,5 @@ It is time to mass produce these cards. I need about 600 different cards, all sp
 In the end this project took a few months to perfect and was a fun excursion into API's, AI, and Magic cards.
 
 I played with some friends and there was good, bad, and ugly. Overall it was a fun experince to play with my own cards. If you want to use this program (please don't) or if you want to watch how I made it then check out my [video](https://youtu.be/2JJBUWjpU3U?si=dm5rgOcJkbotLkir) on it or look at my [GitHub repo](https://github.com/TheDevAtlas/Rhystic-Sentinel)!
+
+!["Video"](/photos/aimagiccards/8.png)

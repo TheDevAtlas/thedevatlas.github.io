@@ -1,1 +1,0 @@
-## Remaking Guitar Hero
