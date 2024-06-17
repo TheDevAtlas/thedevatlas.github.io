@@ -145,17 +145,19 @@ By adding this line, we can achieve a similar functionality to the ChatGPT API, 
 
 To put this all together I have added an input box for the user. They can then add any extra conditions for the card. For example if they want a creature or a blue card they can change it. Then they send it to ChatGPT along with the JSON requirement. Then when ChatGPT response the card frame is changed, the text is filled in, and Stable Diffusion is given the prompt to start generating the image.
 
-!["Full Card Creation"](/photos/aimagiccards/6.png)
+!["Full Card"](/photos/aimagiccards/6.png)
 
 With all of the major parts of the program in place it takes about 30-45 seconds to generate a card. Depending on the speed of the user we can add another 30-60 seconds for the user to make any changes and export the card. So now what?
 
 ---
 
-### Section 5: Card Creation time
+### Section 5: Card Creation Time
 
 ---
 
-It is time to mass produce these cards. I need about 600 different cards all split up between different types.
+It is time to mass produce these cards. I need about 600 different cards, all split up between different types. This part of the project was just a time sink. I spent time over multiple days to get each card to a point that I liked. After I made a ton of cards, I sent them off to be printed by (makeplayingcards.com)[https://www.makeplayingcards.com/]. This part has a bit of a hidden cost since cardstock prices can change based on quality. I also invested in not just the cards, but card sleeves and boxes to keep them safe. If you plan on making more than a few hundred cards, make sure you take cost into consideration. Looking at receipts, I spent about $600 to finish the project off, but you could print it at Staples for a few bucks if you are not bothered by quality.
+
+!["Full Card Creation"](/photos/aimagiccards/7.png)
 
 ---
 
@@ -167,4 +169,4 @@ It is time to mass produce these cards. I need about 600 different cards all spl
 
 In the end this project took a few months to perfect and was a fun excursion into API's, AI, and Magic cards.
 
-I played with some friends and there was good, bad, and ugly. Overall it was a fun experince to play with my own cards. If you want to use this program (please don't) or if you want to watch how I made it then check out my video on it or look at my GitHub repo!
+I played with some friends and there was good, bad, and ugly. Overall it was a fun experince to play with my own cards. If you want to use this program (please don't) or if you want to watch how I made it then check out my [video](https://youtu.be/2JJBUWjpU3U?si=dm5rgOcJkbotLkir) on it or look at my [GitHub repo](https://github.com/TheDevAtlas/Rhystic-Sentinel)!
