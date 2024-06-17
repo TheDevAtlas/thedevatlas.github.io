@@ -57,3 +57,65 @@ With all of these basic systems in place, all we need to do is create a way for 
 ### Section 3: Intelligence? 
 
 ---
+
+It is time to integrate AI into Unity. Let's start by looking at what information we need from ChatGPT to make a Magic card:
+
+- The Card Name
+- Card Colors
+- Card Type
+- Rules Text
+- Power and Toughness (if needed)
+- Card Art Prompt (to send to A1111)
+
+Getting this information may seem simple, but there are problems with parsing strings when you do not know what the AI might respond with. Here is an example of responses before my fix.
+
+!["Broken Responses"](/photos/aimagiccards/7.png)
+
+We can fix this by asking ChatGPT to put all of these bits of information into a JSON format, and then we can just remove anything that is not part of the JSON.
+
+!["Fixed Responses"](/photos/aimagiccards/8.png)
+
+Perfect, now we can connect ChatGPT and Unity for real. All we need to do is connect to my OpenAI api key and send a request.
+
+```csharp
+void Start()
+{
+    StartCoroutine(RequestChatGPT("Card prompt here"));
+}
+
+IEnumerator RequestChatGPT(string prompt)
+{
+    var requestBody = new
+    {
+        model = "gpt-4",
+        messages = new[]
+        {
+            new { role = "user", content = prompt }
+        }
+    };
+
+    string json = JsonUtility.ToJson(requestBody);
+
+    using (UnityWebRequest webRequest = new UnityWebRequest(apiURL, "POST"))
+    {
+        byte[] jsonToSend = new System.Text.UTF8Encoding().GetBytes(json);
+        webRequest.uploadHandler = (UploadHandler)new UploadHandlerRaw(jsonToSend);
+        webRequest.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
+        webRequest.SetRequestHeader("Content-Type", "application/json");
+        webRequest.SetRequestHeader("Authorization", $"Bearer {apiKey}");
+
+        yield return webRequest.SendWebRequest();
+
+        if (webRequest.isNetworkError || webRequest.isHttpError)
+        {
+            Debug.LogError("Error: " + webRequest.error);
+        }
+        else
+        {
+            Debug.Log("Received: " + webRequest.downloadHandler.text);
+            Process(webRequest.downloadHandler.text);
+        }
+    }
+}
+```
+
