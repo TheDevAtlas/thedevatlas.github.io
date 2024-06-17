@@ -6,6 +6,8 @@
 
 One of my favorite games is Magic: The Gathering. There are over 30,000 cards to build a deck and it creates one of the best environments to make friends and have fun. My idea for this project is to take some new AI tools and make some new AI-generated Magic cards. This includes making sure that the AI makes game design decisions as well as artistic decisions.
 
+If I get this to work, then I want to create my own CUBE, which is a set of 600 cards that work together to play with friends.
+
 !["Magic: The Gathering Logo"](/photos/aimagiccards/1.png)
 
 Let's start by discussing how Magic cards are made.
@@ -125,4 +127,44 @@ IEnumerator RequestChatGPT(string prompt)
 }
 ```
 
-With that working we can then type in a standard prompt with our JSON requirements and let the AI work its magic.
+With that working we can then type in a standard prompt with our JSON requirements and let the AI work its magic. When we get a response, the code goes and takes the information from the JSON format and then applies it to the card creator for the user. Now if we provided the art, the card would be completed, but I am lazy like most people, so let's create another section where we can generate art before exporting our card.
+
+---
+
+### Section 4: Stable Diffusion
+
+---
+
+The Stable Diffusion web UI has a ton of features that make this project much easier than if we were starting from scratch. By changing the batch start file, we can access the local program as if it was a web API.
+
+```csharp
+set COMMANDLINE_ARGS=--api
+```
+
+By adding this line, we can achieve a similar functionality to the ChatGPT API, generating an image based on a prompt. There's some background processing involving formatting and file conversion, which is usually smooth sailing. However, issues can arise with very large images or generation failures. Fortunately, these are rare occurrences. In such cases, the program simply throws an error and retries, resolving the problem in most instances.
+
+To put this all together I have added an input box for the user. They can then add any extra conditions for the card. For example if they want a creature or a blue card they can change it. Then they send it to ChatGPT along with the JSON requirement. Then when ChatGPT response the card frame is changed, the text is filled in, and Stable Diffusion is given the prompt to start generating the image.
+
+!["Full Card Creation"](/photos/aimagiccards/6.png)
+
+With all of the major parts of the program in place it takes about 30-45 seconds to generate a card. Depending on the speed of the user we can add another 30-60 seconds for the user to make any changes and export the card. So now what?
+
+---
+
+### Section 5: Card Creation time
+
+---
+
+It is time to mass produce these cards. I need about 600 different cards all split up between different types.
+
+---
+
+### Section 6: The End
+
+---
+
+!["Final Project, Playing With Cards"](/photos/aimagiccards/P.png)
+
+In the end this project took a few months to perfect and was a fun excursion into API's, AI, and Magic cards.
+
+I played with some friends and there was good, bad, and ugly. Overall it was a fun experince to play with my own cards. If you want to use this program (please don't) or if you want to watch how I made it then check out my video on it or look at my GitHub repo!
