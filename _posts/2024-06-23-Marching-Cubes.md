@@ -1,5 +1,7 @@
 ## Marching Cubes
 
+---
+
 ### Section 0: Project Goals
 
 ---
@@ -81,10 +83,6 @@ The first step that we already did was to get some data into a 3D grid. Then we 
 !["Show Mid Generation"](/photos/marchingcubes/6.png)
 
 From here you can add parallel processing with multithreading on the cpu, or if you have access to a gpu, you can write up a shader. With a fast way to generate meshes for data, you can now do anything you want.
-
-Here are some planets that I made with this project, in the future I would like to add a way to deform the data in real time. This could be interesting to experiment with colliding planets or a terrain simulation with weather and erosion.
-
-!["Extra Images"](/photos/marchingcubes/6.png)
 
 Here are the tables. They are set up for C#, but you can convert to what you need.
 
