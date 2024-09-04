@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -6,6 +7,7 @@ import HomepageFeatures from '@site/src/components/HomepageFeatures';
 
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
+import '@motion-canvas/player'; 
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
@@ -22,7 +24,12 @@ function HomepageHeader() {
             to="/docs/intro">
             Docusaurus Tutorial - 5min ⏱️
           </Link>
+          
         </div>
+        <motion-canvas-player 
+          className={styles.player} 
+          src="/assets/project.js" 
+        />
       </div>
     </header>
   );

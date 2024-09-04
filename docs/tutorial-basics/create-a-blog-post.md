@@ -10,6 +10,10 @@ Docusaurus creates a **page for each blog post**, but also a **blog index page**
 
 Create a file at `blog/2021-02-28-greetings.md`:
 
+<motion-canvas-player
+  src={`/project.js`}
+/>
+
 ```md title="blog/2021-02-28-greetings.md"
 ---
 slug: greetings
