@@ -1,5 +1,41 @@
-Programming is fun.
+# Website
 
-!["Banner"](/photos/mainpage/banner.png)
+This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
-I build projects that both interest me and have some interesting real world applications... or a game jam, whichever comes first. All of my projects build on what I want to learn at home (marching cubes, compute shaders, game dev, ect.) or what I am learning at school (calculus, physics, data structures, AI, ect.) at any given time. My videos and articles that I create come from the projects that I consider my best or the ones that I learned a lot by doing. I publish these on my [YouTube](https://www.youtube.com/@thedevatlas/featured) and [here](https://www.thedevatlas.com/)!
+### Installation
+
+```
+$ yarn
+```
+
+### Local Development
+
+```
+$ yarn start
+```
+
+This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+
+### Build
+
+```
+$ yarn build
+```
+
+This command generates static content into the `build` directory and can be served using any static contents hosting service.
+
+### Deployment
+
+Using SSH:
+
+```
+$ USE_SSH=true yarn deploy
+```
+
+Not using SSH:
+
+```
+$ GIT_USER=<Your GitHub username> yarn deploy
+```
+
+If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
