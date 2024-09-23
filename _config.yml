@@ -6,16 +6,16 @@ language: 'en-uk'
 words_per_minute: 200
 
 # edit baseurl to simply '/' if using as your personal page (instead of a project page)
-baseurl: /
+baseurl: /jasper2/
 
 # Website info
-title: The Dev Atlas
-description: Where I Put All Of The Code
+title: Ghost
+description: The professional publishing platform
 cover: assets/images/blog-cover.jpg
 logo: assets/images/blog-icon.png
 logo_dark: assets/images/favicon.png
 favicon: assets/images/favicon.png
-CNAME: thedevatlas.com
+CNAME: #add cname for website to be created
 
 # Social info
 navigation: True # show the navbar links
