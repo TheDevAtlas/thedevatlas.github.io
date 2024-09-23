@@ -1,0 +1,10 @@
+title: "Your Website Title"
+description: "A description of your website"
+theme: minima  # You can use the 'minima' theme or others available
+markdown: kramdown  # Optional, but kramdown is the default Markdown engine for Jekyll
+
+navbar:
+  - title: Home
+    url: /
+  - title: About
+    url: /about
