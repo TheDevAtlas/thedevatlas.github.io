@@ -1,6 +1,6 @@
 title: "Your Website Title"
 description: "A description of your website"
-remote_theme: "jekyll/Baleon"
+remote_theme: "pages-themes/cayman"
   # You can use the 'minima' theme or others available
 markdown: kramdown  # Optional, but kramdown is the default Markdown engine for Jekyll
 
