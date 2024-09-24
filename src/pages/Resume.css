@@ -1,0 +1,113 @@
+/* Container for the entire resume */
+.resume-container {
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: flex-start; /* Align the content at the top */
+    gap: 20px;
+    padding: 20px;
+    margin: 0 auto; /* Ensure auto margins to center on larger screens */
+    max-width: 1200px; /* Set a max width to avoid stretching on larger screens */
+    box-sizing: border-box;
+  }
+  
+  /* Sidebar styling */
+  .sidebar {
+    width: 25%;
+    background-color: #2a2a2a;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Profile picture styling */
+  .profile-picture img {
+    width: 95%;
+    border-radius: 50%;
+    margin-bottom: 0px;
+    border-radius: 50%; /* Makes the image circular */
+    border: 5px solid white; /* Creates the white outline */
+  }
+  
+  /* Section titles inside sidebar */
+  .sidebar h2 {
+    border-bottom: 2px solid #000;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* Main content styling */
+  .main-content {
+    width: 70%;
+    box-sizing: border-box;
+  }
+  
+  /* Main content headers and sections */
+  .main-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 0;
+  }
+  
+  .main-content h3 {
+    font-size: 1.5em;
+    color: #0896D4;
+    margin-bottom: 20px;
+  }
+  
+  .main-content h2 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    border-bottom: 2px solid #000;
+  }
+  
+  .main-content p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  
+  .experience h3 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+  }
+  
+  .references .reference {
+    margin-top: 20px;
+  }
+  
+  .references .reference h4 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+  }
+  
+  /* Make the layout responsive */
+  @media (max-width: 1024px) {
+    .resume-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .sidebar, .main-content {
+      width: 100%;
+    }
+  
+    .sidebar {
+      margin-bottom: 20px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .main-content h1 {
+      font-size: 2em;
+    }
+  
+    .main-content h3 {
+      font-size: 1.2em;
+    }
+  
+    .main-content h2 {
+      font-size: 1.5em;
+    }
+  }
+  
