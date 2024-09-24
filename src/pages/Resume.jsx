@@ -16,17 +16,17 @@ const Resume = () => {
           {/* Contact Information */}
           <section className="contact-info">
             <h2>Contact</h2>
-            <p>Phone: (123) 456-7890</p>
-            <p>Email: jacob@example.com</p>
-            <p>Address: 123 Anywhere St., Any City</p>
+            <p>Phone: (609) 515-7364</p>
+            <p>Email: jacobmcg24@gmail.com</p>
+            <p>Address: 179 Gourd Island Way, Saint Johns</p>
           </section>
 
           {/* Education */}
           <section className="education">
             <h2>Education</h2>
-            <p>2008</p>
-            <p>Enter Your Degree</p>
-            <p>University/College</p>
+            <p>University of North Florida</p>
+            <p>Bachelors of Computer Science</p>
+            <p>August 2022 - Expected May 2026</p>
           </section>
 
           {/* Expertise */}

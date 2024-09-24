@@ -16,6 +16,7 @@ const styles = {
     padding: '20px',          // Padding around content
     boxSizing: 'border-box',  // Include padding in width calculation
     overflowX: 'hidden',      // Prevent horizontal scrollbar
+    overflowY: 'auto',        // Add vertical scrollbar if content overflows
   },
 };
 

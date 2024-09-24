@@ -9,36 +9,40 @@ const BlogList = () => {
     {
       id: 1,
       title: 'Marching Cubes Exploration',
-      date: 'Feb 7, 2024',
+      date: 'Sep 7, 2023',
       description:
         'A short exploration on how Marching Cubes works, my implimentation, and why it is an interesting technique',
       imageUrl: 'src/assets/blogThumbnails/marchingCubesExploration.jpg', // Replace with your image path
-      path: '/blog/1', // Path to the blog post
+      path: 'https://www.youtube.com/watch?v=Cpu0KtIXcOw&t=385s', // Path to the blog post
     },
     {
       id: 2,
       title: 'How I Made Custom Games For The Wii U',
-      date: 'Nov 27, 2022',
+      date: 'July 10, 2024',
       description:
-        'Some new figure data, new and returning commands, and a Wireshark extension.',
+        'A full tutorial on how to build homebrew Wii U games. This is an extention of the Wii U VR project.',
       imageUrl: 'src/assets/blogThumbnails/makingWiiUGames.jpg', // Replace with your image path
-      path: '/blog/2', // Path to the blog post
+      path: 'https://www.youtube.com/watch?v=_pC9j1yde9c', // Path to the blog post
     },
     {
       id: 3,
       title: 'Making My Own Guitar Hero',
-      date: 'Nov 9, 2022',
+      date: 'May 9, 2024',
       description:
-        'Dissecting how the portal of power works, and how you can play with it too.',
+        'Building a custom rhythm game based on Guitar Hero. This project uses the Midi files from the origional games along with the fan made ones.',
       imageUrl: 'src/assets/blogThumbnails/makingGuitarHero.jpg', // Replace with your image path
-      path: '/blog/3', // Path to the blog post
+      path: 'https://www.youtube.com/watch?v=82LAlbSSgRY', // Path to the blog post
     },
   ];
 
   return (
     <PageWrapper>
       {/* Container for title and description */}
-      <div style={{ textAlign: 'center', marginBottom: '40px', width: '100vw' }}>
+      <div style={{ textAlign: 'center', marginBottom: '40px', width: '100vw', height: '100vh' }}>
+      <h1>This Website Is Being Rebuild</h1>
+      <p>
+      My old website was not able to keep up with the projects being made. This is the WIP of that fix. These cards currently link to the videos but will soon have their own articles like before, along with interactive explainers and code snippets.
+        </p>
         <h1>Projects n' Such</h1>
         <p>
           Welcome to my blog, where I share insights and discoveries from my projects and
