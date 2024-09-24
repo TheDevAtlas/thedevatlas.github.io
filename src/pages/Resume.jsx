@@ -28,24 +28,6 @@ const Resume = () => {
             <p>Bachelors of Computer Science</p>
             <p>August 2022 - Expected May 2026</p>
           </section>
-
-          {/* Expertise */}
-          <section className="expertise">
-            <h2>Expertise</h2>
-            <ul>
-              <li>Programming</li>
-              <li>Game Development</li>
-              <li>Content Creation</li>
-              <li>Web Development</li>
-            </ul>
-          </section>
-
-          {/* Language */}
-          <section className="language">
-            <h2>Language</h2>
-            <p>English</p>
-            <p>Spanish</p>
-          </section>
         </div>
 
         {/* Main Content */}
@@ -59,13 +41,18 @@ const Resume = () => {
               software engineering, and creating engaging educational content on
               YouTube.
             </p>
+
+            {/* Button for Resume */}
+            <a href="https://docs.google.com/document/d/1BQ8BAQwiPcGeK5I8yBVrhj4TLQlDoiPkcZgzXoJV8eY/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
+              <button className="resume-button">View My Resume</button>
+            </a>
           </section>
 
           {/* Experience */}
           <section className="experience">
             <h2>Experience</h2>
             <div>
-              <h3>Founder & Creator - TheDevAtlas (2019 - Present)</h3>
+              <h3>TheDevAtlas (2019 - Present)</h3>
               <p>
                 Created educational content focused on game development, programming,
                 and software engineering.
@@ -79,15 +66,18 @@ const Resume = () => {
             </div>
 
             <div>
-              <h3>Game Developer - Freelance Projects (2016 - Present)</h3>
+              <h3>Code Ninjas, Saint Johns — Ast. Center Director / Curriculum Manager (August 2019 - September 2024)</h3>
               <p>
-                Participated in multiple game jams, developing games like "Cook to Kill."
+              Taught students with JavaScript, Lua, and C# about the fundamentals of computer science with various projects and extra STEM activities.
               </p>
               <p>
-                Created modern tycoon and war games inspired by popular titles.
+              Responsible for managing, marketing, and presenting our educational services to potential clients.
               </p>
               <p>
-                Worked on preserving video game models, including Skylanders.
+              Manage the team through daily tasks as well as train them in new improvements or events
+              </p>
+              <p>
+              Created and improved a new supplemental curriculum for events like summer camps, clubs, or workshops.
               </p>
             </div>
           </section>
@@ -96,16 +86,16 @@ const Resume = () => {
           <section className="references">
             <h2>References</h2>
             <div className="reference">
-              <h4>Name Surname</h4>
-              <p>Job position, Company Name</p>
-              <p>Phone: 123-456-7890</p>
-              <p>Email: hello@reallygreatsite.com</p>
-            </div>
-            <div className="reference">
-              <h4>Name Surname</h4>
-              <p>Job position, Company Name</p>
-              <p>Phone: 123-456-7890</p>
-              <p>Email: hello@reallygreatsite.com</p>
+              <h4>Layla Willmore</h4>
+              <p>Center Director, Code Ninjas </p>
+              <p> Phone: 904-295-6400 </p>
+              <p> Email: layla.willmore@codeninjas.com</p>
+              <br></br>
+              <br></br>
+              <br></br>
+              <br></br>
+              <br></br>
+              <br></br>
             </div>
           </section>
         </div>
