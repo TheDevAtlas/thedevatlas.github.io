@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../assets/logo.svg'; // Import your logo
+import logo from '/assets/logo.svg'; // Import your logo
 
 const HeaderBar = () => {
   const [hoveredLogo, setHoveredLogo] = useState(false);

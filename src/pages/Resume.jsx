@@ -10,7 +10,7 @@ const Resume = () => {
         <div className="sidebar">
           {/* Profile Picture */}
           <div className="profile-picture">
-            <img src="src\assets\personalPhoto.png" alt="Profile"/>
+            <img src="\assets\personalPhoto.png" alt="Profile"/>
           </div>
 
           {/* Contact Information */}

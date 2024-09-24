@@ -12,7 +12,7 @@ const BlogList = () => {
       date: 'Sep 7, 2023',
       description:
         'A short exploration on how Marching Cubes works, my implimentation, and why it is an interesting technique',
-      imageUrl: 'src/assets/blogThumbnails/marchingCubesExploration.jpg', // Replace with your image path
+      imageUrl: '/assets/blogThumbnails/marchingCubesExploration.jpg', // Replace with your image path
       path: 'https://www.youtube.com/watch?v=Cpu0KtIXcOw&t=385s', // Path to the blog post
     },
     {
@@ -21,7 +21,7 @@ const BlogList = () => {
       date: 'July 10, 2024',
       description:
         'A full tutorial on how to build homebrew Wii U games. This is an extention of the Wii U VR project.',
-      imageUrl: 'src/assets/blogThumbnails/makingWiiUGames.jpg', // Replace with your image path
+      imageUrl: '/assets/blogThumbnails/makingWiiUGames.jpg', // Replace with your image path
       path: 'https://www.youtube.com/watch?v=_pC9j1yde9c', // Path to the blog post
     },
     {
@@ -30,7 +30,7 @@ const BlogList = () => {
       date: 'May 9, 2024',
       description:
         'Building a custom rhythm game based on Guitar Hero. This project uses the Midi files from the origional games along with the fan made ones.',
-      imageUrl: 'src/assets/blogThumbnails/makingGuitarHero.jpg', // Replace with your image path
+      imageUrl: '/assets/blogThumbnails/makingGuitarHero.jpg', // Replace with your image path
       path: 'https://www.youtube.com/watch?v=82LAlbSSgRY', // Path to the blog post
     },
   ];
