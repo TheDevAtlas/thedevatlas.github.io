@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 256 256">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ea6a6a;
+        stroke: #47172f;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-1, .cls-2, .cls-4, .cls-5, .cls-6, .cls-8 {
+        stroke-width: 5px;
+      }
+
+      .cls-2 {
+        stroke: #e89952;
+      }
+
+      .cls-2, .cls-6 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-3, .cls-5, .cls-7, .cls-9 {
+        stroke: #fff;
+      }
+
+      .cls-3, .cls-7, .cls-9 {
+        stroke-width: 7px;
+      }
+
+      .cls-4 {
+        fill: #c369ed;
+        stroke: #37013a;
+      }
+
+      .cls-10, .cls-11 {
+        fill: #0d0d0d;
+      }
+
+      .cls-10, .cls-12, .cls-13 {
+        display: none;
+      }
+
+      .cls-6 {
+        stroke: #000;
+      }
+
+      .cls-7 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .cls-8 {
+        fill: #6b92e8;
+        stroke: #1e3e47;
+      }
+
+      .cls-9 {
+        fill: url(#linear-gradient-3);
+      }
+
+      .cls-13 {
+        fill: #2b2b2b;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="52.02" y1="87.81" x2="52.02" y2="137.86" gradientTransform="translate(0 0)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#00bcf2"/>
+      <stop offset="1" stop-color="#2a3386"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="153.02" y1="62.78" x2="153.02" y2="137.86" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="115.35" y1="123.56" x2="115.35" y2="193.23" xlink:href="#linear-gradient"/>
+  </defs>
+  <!-- Generator: Adobe Illustrator 28.7.1, SVG Export Plug-In . SVG Version: 1.2.0 Build 142)  -->
+  <g>
+    <g id="Background" class="cls-12">
+      <rect id="Grey" class="cls-13" x="-11.88" y="-14.87" width="279" height="279"/>
+      <rect id="Black" class="cls-10" x="-11.88" y="-14.87" width="279" height="279"/>
+      <rect id="Black-2" data-name="Black" class="cls-11" x="-11.88" y="-14.87" width="279" height="279"/>
+    </g>
+    <g id="Logo">
+      <g id="NeonWhite" class="cls-12">
+        <polygon class="cls-5" points="136.92 174.13 91.6 174.13 136.92 219.46 136.92 174.13"/>
+        <polygon class="cls-5" points="136.92 36.54 68.94 106.15 136.92 174.13 136.92 36.54"/>
+        <polygon class="cls-5" points="187.06 161.33 123.98 91.81 123.98 187.08 163.89 187.08 187.06 161.33"/>
+      </g>
+      <g id="Neonblue" class="cls-12">
+        <polygon class="cls-8" points="136.92 174.13 91.6 174.13 136.92 219.46 136.92 174.13"/>
+        <polygon class="cls-8" points="136.92 36.54 68.94 106.15 136.92 174.13 136.92 36.54"/>
+        <polygon class="cls-8" points="187.06 161.33 123.98 91.81 123.98 187.08 163.89 187.08 187.06 161.33"/>
+      </g>
+      <g id="NeonRed" class="cls-12">
+        <polygon class="cls-1" points="136.92 174.13 91.6 174.13 136.92 219.46 136.92 174.13"/>
+        <polygon class="cls-1" points="136.92 36.54 68.94 106.15 136.92 174.13 136.92 36.54"/>
+        <polygon class="cls-1" points="187.06 161.33 123.98 91.81 123.98 187.08 163.89 187.08 187.06 161.33"/>
+      </g>
+      <g id="NeonPurple" class="cls-12">
+        <polygon class="cls-4" points="136.92 174.13 91.6 174.13 136.92 219.46 136.92 174.13"/>
+        <polygon class="cls-4" points="136.92 36.54 68.94 106.15 136.92 174.13 136.92 36.54"/>
+        <polygon class="cls-4" points="187.06 161.33 123.98 91.81 123.98 187.08 163.89 187.08 187.06 161.33"/>
+      </g>
+      <g id="WhiteBlackLogo" class="cls-12">
+        <polygon class="cls-6" points="136.92 174.13 91.6 174.13 136.92 219.46 136.92 174.13"/>
+        <polygon class="cls-6" points="136.92 36.54 68.94 106.15 136.92 174.13 136.92 36.54"/>
+        <polygon class="cls-6" points="187.06 161.33 123.98 91.81 123.98 187.08 163.89 187.08 187.06 161.33"/>
+      </g>
+      <g id="LogoMain" class="cls-12">
+        <polygon class="cls-2" points="81.87 136.92 81.87 91.6 36.54 136.92 81.87 136.92"/>
+        <polygon class="cls-2" points="219.46 136.92 149.85 68.94 81.87 136.92 219.46 136.92"/>
+        <polygon class="cls-2" points="94.67 187.06 164.19 123.98 68.92 123.98 68.92 163.89 94.67 187.06"/>
+      </g>
+      <g id="LogoMain-2" data-name="LogoMain" class="cls-12">
+        <polygon class="cls-2" points="81.87 136.92 81.87 91.6 36.54 136.92 81.87 136.92"/>
+        <polygon class="cls-2" points="219.46 136.92 149.85 68.94 81.87 136.92 219.46 136.92"/>
+        <polygon class="cls-2" points="94.67 187.06 164.19 123.98 68.92 123.98 68.92 163.89 94.67 187.06"/>
+      </g>
+      <g id="NeonWhite-2" data-name="NeonWhite">
+        <polygon class="cls-3" points="77.05 137.86 77.05 87.8 27 137.86 77.05 137.86"/>
+        <polygon class="cls-7" points="229 137.86 152.13 62.78 77.05 137.86 229 137.86"/>
+        <polygon class="cls-9" points="91.19 193.22 167.97 123.56 62.75 123.56 62.75 167.63 91.19 193.22"/>
+      </g>
+    </g>
+  </g>
+</svg>
