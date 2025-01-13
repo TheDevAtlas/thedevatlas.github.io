@@ -3,11 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Gear Rotation (Orthographic)</title>
+    <title>The Dev Atlas</title>
+    <link rel="stylesheet" href="kenney.css">
+    <link rel="stylesheet" href="kenney-sidebar.css">
     <style>
-        body {
+        gear {
             margin: 0;
-            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #131313;
         }
         canvas {
             display: block;
@@ -15,99 +21,180 @@
     </style>
 </head>
 <body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/OBJLoader.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three.meshline"></script>
-    <script>
-        // Scene, camera, and renderer setup
-        const scene = new THREE.Scene();
+    <script type="text/javascript" src="https://kenney.nl/data/js/mobile-menu.js"></script>
+    <div id="header-container">
+        <div id="header">
+        
+            <div class="logo-full mobile-show">
+                <a href="https://kenney.nl"><img src="https://kenney.nl/data/img/logo.png" srcset="https://kenney.nl/data/img/logo@2.png 2x"></a>
+                                </div>
+            
+                <div class="navigation">
+                
+                    <ul>
+                        <li class="icon mobile-show"><a href="#" onclick="openNavigation()"><span><img width="20" height="20" style="vertical-align: middle;" src="https://kenney.nl/data/img/icons/menu.svg"></span></a></li>
+                    
+                        <li class="logo mobile-hide">
+                            <a href="https://kenney.nl"><img src="https://kenney.nl/data/img/logo.png" srcset="https://kenney.nl/data/img/logo@2.png 2x"></a>
+                                                        </li>
+                        
+                        <div class="mobile-hide">
+                            <!-- <li class="item active"><a href="#"><span>Projects</span></a></li> -->
+                            <li class="item "><a href="#"><span>Projects</span></a></li>
+                            <li class="item "><a href="#"><span>Tools</span></a></li>
+                            <li class="item "><a href="#"><span>Assets</span></a></li>
+                            <li class="item "><a href="#"><span>Tutorials</span></a></li>
+                        </div>
+                    </ul>
+                    
+                </div>
+                
+                <div class="navigation right">
+                
+                    <ul class="mobile-hide">
+                        <li class="icon"><a target="_blank" href="https://twitter.com/KenneyNL"><span><img style="vertical-align: middle;" src="icons/patreon.svg"></span></a></li>
+                        <li class="icon"><a target="_blank" href="https://twitter.com/KenneyNL"><span><img style="vertical-align: middle;" src="icons/itchdotio.svg"></span></a></li>
+                        <li class="icon"><a target="_blank" href="https://twitter.com/KenneyNL"><span><img style="vertical-align: middle;" src="icons/steam.svg"></span></a></li>
+                        <li class="icon"><a target="_blank" href="https://twitter.com/KenneyNL"><span><img style="vertical-align: middle;" src="icons/github.svg"></span></a></li>
+                        <li class="icon"><a target="_blank" href="https://twitter.com/KenneyNL"><span><img style="vertical-align: middle;" src="icons/discord.svg"></span></a></li>
+                        <li class="icon"><a target="_blank" href="https://twitter.com/KenneyNL"><span><img style="vertical-align: middle;" src="icons/youtube.svg"></span></a></li>
+                    </ul>
+                
+                </div>
+                
+                <div id="sidebar" class="sidebar">
+                
+                    <a href="javascript:void(0)" class="close" onclick="closeNavigation()">×</a>
+                    
+                    <div class="sidebar-menu">
+                        <a href="#">Projects</a>
+                        <a href="#">Tools</a>
+                        <a href="#">Assets</a>
+                        <a href="#">Tutorials</a>
+                    </div>
+                    
+                    <hr>
+                    
+                    <div class="sidebar-menu small">
+                        <a href="https://kenney.nl/support">Support</a>
+                        <a href="https://kenney.nl/knowledge-base">Knowledge Base</a>
+                        <a href="https://kenney.nl/donate">Donate</a>
+                        <a href="https://twitter.com/KenneyNL" target="_blank">Twitter</a>
+                    </div>
+                    
+                </div>
+                
+                <div id="sidebar-notifications" class="sidebar lato no-select">
+                
+                    <a href="javascript:void(0)" class="close" onclick="closeNotifications()">×</a>
+                    
+                    <h3>News</h3>
+                    
+                                            
+                                            
+                </div>
+            
+            <div style="clear:both"></div>
+            
+        </div>
+    </div>
+    <div class="gear">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/OBJLoader.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/three.meshline"></script>
+        <script>
+            // Scene, camera, and renderer setup
+            const scene = new THREE.Scene();
 
-        // Setup orthographic camera
-        const aspect = window.innerWidth / window.innerHeight;
-        const camera = new THREE.OrthographicCamera(
-            -aspect * 2.5, aspect * 2.5, 2.5, -2.5, 0.1, 1000
-        );
-        camera.position.z = 5;
+            // Set square renderer size
+            const rendererSize = 500; // 500px square
+            const aspect = 1; // Square aspect ratio
+            const camera = new THREE.OrthographicCamera(
+                -1.2, 1.2, 1.2, -1.2, 0.1, 1000
+            );
+            camera.position.z = 5;
 
-        const renderer = new THREE.WebGLRenderer();
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        document.body.appendChild(renderer.domElement);
+            const renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setSize(rendererSize, rendererSize);
+            document.body.appendChild(renderer.domElement);
 
-        // Add a light
-        const light = new THREE.DirectionalLight(0xffffff, 1);
-        light.position.set(5, 5, 5).normalize();
-        scene.add(light);
+            // Add a light
+            const light = new THREE.DirectionalLight(0xffffff, 1);
+            light.position.set(5, 5, 5).normalize();
+            scene.add(light);
+            scene.background = new THREE.Color(0x131313); // 0x131313
 
-        // Load the OBJ model
-        const objLoader = new THREE.OBJLoader();
-        let gear;
-        let targetSpeed = 0.00125; // Half the original speed
-        let currentSpeed = 0; // Initial speed for lerp
-        const lerpFactor = 0.075; // How fast the transition happens
+            // Load the OBJ model
+            const objLoader = new THREE.OBJLoader();
+            let gear;
+            let targetSpeed = 0.00125; // Half the original speed
+            let currentSpeed = 0; // Initial speed for lerp
+            const lerpFactor = 0.075; // How fast the transition happens
 
-        objLoader.load('gear.obj', function (object) {
-            gear = object;
+            objLoader.load('gear.obj', function (object) {
+                gear = object;
 
-            // Apply smooth material
-            const material = new THREE.MeshPhongMaterial({ color: 0x333333 });
-            gear.traverse((child) => {
-                if (child.isMesh) {
-                    child.material = material;
+                // Apply smooth material
+                const material = new THREE.MeshPhongMaterial({ color: 0x333333 });
+                gear.traverse((child) => {
+                    if (child.isMesh) {
+                        child.material = material;
+                    }
+                });
+
+                // Add edges
+                const edges = new THREE.EdgesGeometry(gear.children[0].geometry);
+
+                // Create a buffer geometry for edges
+                const edgePositions = edges.attributes.position.array;
+                const lineGeometry = new THREE.BufferGeometry();
+                lineGeometry.setAttribute('position', new THREE.BufferAttribute(edgePositions, 3));
+
+                // Create a MeshLine
+                const meshLine = new MeshLine();
+                meshLine.setGeometry(lineGeometry);
+
+                // Create a material for the MeshLine
+                const meshLineMaterial = new MeshLineMaterial({
+                    color: 0xffffff,
+                    lineWidth: 0.02, // Adjust thickness
+                });
+
+                // Add the MeshLine to the scene
+                const thickEdges = new THREE.Mesh(meshLine.geometry, meshLineMaterial);
+                gear.add(thickEdges);
+
+                // Adjust rotation
+                gear.rotation.x = Math.PI / 2.5;
+                gear.rotation.z = Math.PI / 10;
+                scene.add(gear);
+
+                // Add hover effect
+                renderer.domElement.addEventListener('mouseover', () => {
+                    targetSpeed = 0.005; // Double the speed
+                });
+
+                renderer.domElement.addEventListener('mouseout', () => {
+                    targetSpeed = 0.00125; // Reset to half speed
+                });
+            });
+
+            // Animation loop
+            function animate() {
+                requestAnimationFrame(animate);
+
+                // Gradually adjust the speed
+                currentSpeed += (targetSpeed - currentSpeed) * lerpFactor;
+
+                // Rotate the gear
+                if (gear) {
+                    gear.rotateY(currentSpeed); // Use the interpolated speed
                 }
-            });
 
-            // Add edges
-            const edges = new THREE.EdgesGeometry(gear.children[0].geometry);
-
-            // Create a buffer geometry for edges
-            const edgePositions = edges.attributes.position.array;
-            const lineGeometry = new THREE.BufferGeometry();
-            lineGeometry.setAttribute('position', new THREE.BufferAttribute(edgePositions, 3));
-
-            // Create a MeshLine
-            const meshLine = new MeshLine();
-            meshLine.setGeometry(lineGeometry);
-
-            // Create a material for the MeshLine
-            const meshLineMaterial = new MeshLineMaterial({
-                color: 0xffffff,
-                lineWidth: 0.02, // Adjust thickness
-            });
-
-            // Add the MeshLine to the scene
-            const thickEdges = new THREE.Mesh(meshLine.geometry, meshLineMaterial);
-            gear.add(thickEdges);
-
-            // Adjust rotation
-            gear.rotation.x = Math.PI / 2.5;
-            gear.rotation.z = Math.PI / 10;
-            scene.add(gear);
-
-            // Add hover effect
-            renderer.domElement.addEventListener('mouseover', () => {
-                targetSpeed = 0.005; // Double the speed
-            });
-
-            renderer.domElement.addEventListener('mouseout', () => {
-                targetSpeed = 0.00125; // Reset to half speed
-            });
-        });
-
-        // Animation loop
-        function animate() {
-            requestAnimationFrame(animate);
-
-            // Gradually adjust the speed
-            currentSpeed += (targetSpeed - currentSpeed) * lerpFactor;
-
-            // Rotate the gear
-            if (gear) {
-                gear.rotateY(currentSpeed); // Use the interpolated speed
+                renderer.render(scene, camera);
             }
-
-            renderer.render(scene, camera);
-        }
-        animate();
-    </script>
+            animate();
+        </script>
+    </div>
 </body>
 </html>
