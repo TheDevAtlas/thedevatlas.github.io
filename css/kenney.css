@@ -299,7 +299,8 @@ pre.hljs .hljs-code-line::before {
 
 .navigation li a:hover span img{
 	
-	filter: invert(99%) sepia(1%) saturate(7497%) hue-rotate(167deg) brightness(106%) contrast(101%);
+	
+	filter: invert(31%) sepia(86%) saturate(1116%) hue-rotate(332deg) brightness(93%) contrast(87%);
 	
 }
 
