@@ -1,0 +1,34 @@
+.content{
+    border: 8px solid black;
+    display:grid;
+    justify-content: space-around;
+    align-items:center;
+    gap: 1em;
+}
+
+.box2{
+    border: 8px solid blue;
+    height: 725px;
+    width: 1450px;
+    background-color: rgb(231, 22, 22);
+    font-size: 40pt;
+    display:flex;
+    justify-content: space-around;
+    align-items:center;
+    gap: 0.25em;
+}
+
+.box3{
+    width: 100%;
+    height: 100%;
+    border: 8px solid blue;
+    background-color: rgb(231, 22, 22);
+    font-size: 40pt;
+    display:flex;
+    justify-content: space-around;
+    align-items:center;
+}
+
+.background{
+    background-color: #131313;
+}

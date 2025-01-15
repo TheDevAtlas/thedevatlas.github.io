@@ -1,0 +1,44 @@
+.header{
+    border: 8px solid black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1em;
+    height: 125px;
+}
+
+.left-header{
+    border: 8px solid red;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    gap: 1em;
+    margin-left: 0.5em;
+}
+
+.right-header{
+    border: 8px solid red;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 100%;
+    gap: 1em;
+    margin-right: 0.5em;
+}
+
+.box{
+    border: 8px solid blue;
+    height: 80px;
+    width: 80px;
+    background-color: rgb(231, 22, 22);
+    font-size: 40pt;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.box img{
+    height: 200%;
+    width: 200%;
+}

@@ -1,223 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Dev Atlas</title>
-    		<link rel="stylesheet" type="text/css" href="css/bootstrap-grid.min.css">
-		<link rel="stylesheet" type="text/css" href="css/fonts.css">
-		<link rel="stylesheet" type="text/css" href="css/kenney.css">
-		<link rel="stylesheet" type="text/css" href="css/kenney-sidebar.css">
-		<link rel="stylesheet" type="text/css" href="css/animate.min.css">
-		<link rel="stylesheet" type="text/css" href="css/code-github-dark-dimmed.css">
-</head>
-<body>
-    <script type="text/javascript" src="mobile-menu.js"></script>
-    <div id="header-container">
-        <div id="header">
-        
-            <div class="logo-full mobile-show">
-                <a href="https://kenney.nl"><img src="badlogo.png" srcset="badlogo.png"></a>
-                                </div>
-            
-                <div class="navigation">
-                
-                    <ul>
-                        <li class="icon mobile-show"><a href="#" onclick="openNavigation()"><span><img width="20" height="20" style="vertical-align: middle;" src="https://kenney.nl/data/img/icons/menu.svg"></span></a></li>
-                    
-                        <li class="logo mobile-hide">
-                            <a href="https://kenney.nl"><img src="badlogo.png" srcset="badlogo.png"></a>
-                                                        </li>
-                        
-                        <div class="mobile-hide">
-                            <!-- <li class="item active"><a href="#"><span>Projects</span></a></li> -->
-                            <li class="item "><a href="#"><span>Projects</span></a></li>
-                            <li class="item "><a href="#"><span>Tools</span></a></li>
-                            <li class="item "><a href="#"><span>Assets</span></a></li>
-                            <li class="item "><a href="#"><span>Tutorials</span></a></li>
-                        </div>
-                    </ul>
-                    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device.width, height=device.height">
+        <title>Flexbox Test</title>
+        <link rel="stylesheet" href="header.css">
+        <link rel="stylesheet" href="content.css">
+    </head>
+    <body class="background">
+        <div class="header">
+            <div class="left-header">
+                <div class="box">
+                    <img src="logo.png" alt="logo"></img>
                 </div>
-                
-                <div class="navigation right">
-                
-                    <ul class="mobile-hide">
-                        <li class="icon"><a target="_blank" href="https://twitter.com/KenneyNL"><span><img style="vertical-align: middle;" src="icons/patreon.svg"></span></a></li>
-                        <li class="icon"><a target="_blank" href="https://twitter.com/KenneyNL"><span><img style="vertical-align: middle;" src="icons/itchdotio.svg"></span></a></li>
-                        <li class="icon"><a target="_blank" href="https://twitter.com/KenneyNL"><span><img style="vertical-align: middle;" src="icons/steam.svg"></span></a></li>
-                        <li class="icon"><a target="_blank" href="https://twitter.com/KenneyNL"><span><img style="vertical-align: middle;" src="icons/github.svg"></span></a></li>
-                        <li class="icon"><a target="_blank" href="https://twitter.com/KenneyNL"><span><img style="vertical-align: middle;" src="icons/discord.svg"></span></a></li>
-                        <li class="icon"><a target="_blank" href="https://twitter.com/KenneyNL"><span><img style="vertical-align: middle;" src="icons/youtube.svg"></span></a></li>
-                    </ul>
-                
-                </div>
-                
-                <div id="sidebar" class="sidebar">
-                
-                    <a href="javascript:void(0)" class="close" onclick="closeNavigation()">×</a>
-                    
-                    <div class="sidebar-menu">
-                        <a href="#">Projects</a>
-                        <a href="#">Tools</a>
-                        <a href="#">Assets</a>
-                        <a href="#">Tutorials</a>
-                    </div>
-                    
-                    <hr>
-                    
-                    <div class="sidebar-menu small">
-                        <a href="https://kenney.nl/support">Support</a>
-                        <a href="https://kenney.nl/knowledge-base">Knowledge Base</a>
-                        <a href="https://kenney.nl/donate">Donate</a>
-                        <a href="https://twitter.com/KenneyNL" target="_blank">Twitter</a>
-                    </div>
-                    
-                </div>
-                
-                <div id="sidebar-notifications" class="sidebar lato no-select">
-                
-                    <a href="javascript:void(0)" class="close" onclick="closeNotifications()">×</a>
-                    
-                    <h3>News</h3>
-                    
-                                            
-                                            
-                </div>
-            
-            <div style="clear:both"></div>
-            
+                <div class="box">1</div>
+            </div>
+            <div class="right-header">
+                <div class="box">2</div>
+                <div class="box">2</div>
+            </div>
         </div>
-    </div>
+        <div class="content">
+            <div class="hero">
+                <div class="box2">
+                    <div class="box3">
 
-    <div id="content" style="display:flex; align-items: center; justify-content: space-between; text-align: left; padding: 0em; padding-left: 5em; padding-right: 5em; flex-wrap: nowrap; gap: 2em;">
-        <section class="mobile-padding" style="flex: 1; min-width: 300px; padding-top: 6em;">
-          <h1 class="no-select">Learn, Build, and Create together.</h1>
-          <h2 class="no-select">TheDevAtlas is the one place for all of your Assets, Tools, Tutorials, and Community.</h2>
-          <p class="margin-top" style="margin-bottom: 0.5em"><a href="https://kenney.nl/assets" class="button">Tutorials<span class="chevron"></span></a></p>
-          <p class="link" style="font-size:0.9em; font-weight:bold"><a href="https://kenney.itch.io/kenney-game-assets" target="_blank">Or Check Out The Blog<span class="chevron"></span></a></p>
-        </section>
-      
-        <div class="gear" style="flex: 1; display: flex; justify-content: center; align-items: center; min-width: 300px; height: 500px;">
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/OBJLoader.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/three.meshline"></script>
-            <script>
-                // Scene, camera, and renderer setup
-                const scene = new THREE.Scene();
-    
-                // Set square renderer size
-                const rendererSize = 500; // 500px square
-                const aspect = 1; // Square aspect ratio
-                const camera = new THREE.OrthographicCamera(
-                    -1.2, 1.2, 1.2, -1.2, 0.1, 1000
-                );
-                camera.position.z = 5;
-    
-                const renderer = new THREE.WebGLRenderer({ antialias: true });
-                renderer.setSize(rendererSize, rendererSize);
-                const gearContainer = document.querySelector('.gear');
-                gearContainer.appendChild(renderer.domElement);
-                //document.body.appendChild(renderer.domElement);
-    
-                // Add a light
-                const light = new THREE.DirectionalLight(0xffffff, 1);
-                light.position.set(5, 5, 5).normalize();
-                scene.add(light);
-                scene.background = new THREE.Color(0x131313); // 0x131313
-    
-                // Load the OBJ model
-                const objLoader = new THREE.OBJLoader();
-                let gear;
-                let targetSpeed = 0.00125; // Half the original speed
-                let currentSpeed = 0; // Initial speed for lerp
-                const lerpFactor = 0.075; // How fast the transition happens
-    
-                objLoader.load('gear.obj', function (object) {
-                    gear = object;
-    
-                    // Apply smooth material
-                    const material = new THREE.MeshPhongMaterial({ color: 0x333333 });
-                    gear.traverse((child) => {
-                        if (child.isMesh) {
-                            child.material = material;
-                        }
-                    });
-    
-                    // Add edges
-                    const edges = new THREE.EdgesGeometry(gear.children[0].geometry);
-    
-                    // Create a buffer geometry for edges
-                    const edgePositions = edges.attributes.position.array;
-                    const lineGeometry = new THREE.BufferGeometry();
-                    lineGeometry.setAttribute('position', new THREE.BufferAttribute(edgePositions, 3));
-    
-                    // Create a MeshLine
-                    const meshLine = new MeshLine();
-                    meshLine.setGeometry(lineGeometry);
-    
-                    // Create a material for the MeshLine
-                    const meshLineMaterial = new MeshLineMaterial({
-                        color: 0xffffff,
-                        lineWidth: 0.02, // Adjust thickness
-                    });
-    
-                    // Add the MeshLine to the scene
-                    const thickEdges = new THREE.Mesh(meshLine.geometry, meshLineMaterial);
-                    gear.add(thickEdges);
-    
-                    // Adjust rotation
-                    gear.rotation.x = Math.PI / 2.5;
-                    gear.rotation.z = Math.PI / 10;
-                    scene.add(gear);
-    
-                    // Add hover effect
-                    renderer.domElement.addEventListener('mouseover', () => {
-                        targetSpeed = 0.005; // Double the speed
-                    });
-    
-                    renderer.domElement.addEventListener('mouseout', () => {
-                        targetSpeed = 0.00125; // Reset to half speed
-                    });
-                });
-    
-                // Animation loop
-                function animate() {
-                    requestAnimationFrame(animate);
-    
-                    // Gradually adjust the speed
-                    currentSpeed += (targetSpeed - currentSpeed) * lerpFactor;
-    
-                    // Rotate the gear
-                    if (gear) {
-                        gear.rotateY(currentSpeed); // Use the interpolated speed
-                    }
-    
-                    renderer.render(scene, camera);
-                }
-                animate();
-            </script>
-        </div>
-      </div>
-    
-    
-    <footer>
-	
-        <div class="row mobile-stack" style="color: white;">
-        
-            <div class="col horizontal-list">
-                <a href="https://kenney.nl/support"style="color: white;">Support</a>
-                <a href="https://kenney.nl/knowledge-base"style="color: white;">Knowledge Base</a>
-                <a href="https://kenney.nl/privacy-policy"style="color: white;">Privacy Policy</a>
-                <a href="https://kenney.nl/terms-of-service"style="color: white;">Terms of Service</a>
+                    </div>
+                    <div class="box3">
+                        <div class="gear">
+                            <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+                            <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/OBJLoader.js"></script>
+                            <script src="https://cdn.jsdelivr.net/npm/three.meshline"></script>
+                            <script>
+                                // Scene, camera, and renderer setup
+                                const scene = new THREE.Scene();
+                    
+                                // Set square renderer size
+                                const rendererSize = 725; // 500px square
+                                const aspect = 1; // Square aspect ratio
+                                const camera = new THREE.OrthographicCamera(
+                                    -1.2, 1.2, 1.2, -1.2, 0.1, 1000
+                                );
+                                camera.position.z = 5;
+                    
+                                const renderer = new THREE.WebGLRenderer({ antialias: true });
+                                renderer.setSize(rendererSize, rendererSize);
+                                const gearContainer = document.querySelector('.gear');
+                                gearContainer.appendChild(renderer.domElement);
+                                //document.body.appendChild(renderer.domElement);
+                    
+                                // Add a light
+                                const light = new THREE.DirectionalLight(0xffffff, 1);
+                                light.position.set(5, 5, 5).normalize();
+                                scene.add(light);
+                                scene.background = new THREE.Color(0x131313); // 0x131313
+                    
+                                // Load the OBJ model
+                                const objLoader = new THREE.OBJLoader();
+                                let gear;
+                                let targetSpeed = 0.00125; // Half the original speed
+                                let currentSpeed = 0; // Initial speed for lerp
+                                const lerpFactor = 0.075; // How fast the transition happens
+                    
+                                objLoader.load('gear.obj', function (object) {
+                                    gear = object;
+                    
+                                    // Apply smooth material
+                                    const material = new THREE.MeshPhongMaterial({ color: 0x333333 });
+                                    gear.traverse((child) => {
+                                        if (child.isMesh) {
+                                            child.material = material;
+                                        }
+                                    });
+                    
+                                    // Add edges
+                                    const edges = new THREE.EdgesGeometry(gear.children[0].geometry);
+                    
+                                    // Create a buffer geometry for edges
+                                    const edgePositions = edges.attributes.position.array;
+                                    const lineGeometry = new THREE.BufferGeometry();
+                                    lineGeometry.setAttribute('position', new THREE.BufferAttribute(edgePositions, 3));
+                    
+                                    // Create a MeshLine
+                                    const meshLine = new MeshLine();
+                                    meshLine.setGeometry(lineGeometry);
+                    
+                                    // Create a material for the MeshLine
+                                    const meshLineMaterial = new MeshLineMaterial({
+                                        color: 0xffffff,
+                                        lineWidth: 0.02, // Adjust thickness
+                                    });
+                    
+                                    // Add the MeshLine to the scene
+                                    const thickEdges = new THREE.Mesh(meshLine.geometry, meshLineMaterial);
+                                    gear.add(thickEdges);
+                    
+                                    // Adjust rotation
+                                    gear.rotation.x = Math.PI / 2.5;
+                                    gear.rotation.z = Math.PI / 10;
+                                    scene.add(gear);
+                    
+                                    // Add hover effect
+                                    renderer.domElement.addEventListener('mouseover', () => {
+                                        targetSpeed = 0.005; // Double the speed
+                                    });
+                    
+                                    renderer.domElement.addEventListener('mouseout', () => {
+                                        targetSpeed = 0.00125; // Reset to half speed
+                                    });
+                                });
+                    
+                                // Animation loop
+                                function animate() {
+                                    requestAnimationFrame(animate);
+                    
+                                    // Gradually adjust the speed
+                                    currentSpeed += (targetSpeed - currentSpeed) * lerpFactor;
+                    
+                                    // Rotate the gear
+                                    if (gear) {
+                                        gear.rotateY(currentSpeed); // Use the interpolated speed
+                                    }
+                    
+                                    renderer.render(scene, camera);
+                                }
+                                animate();
+                            </script>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
-            <div class="col text-right mobile-text-center mobile-margin-top horizontal-list">
-                <span>Copyright © 2010 - 2025 · All rights reserved</span>       
+            <div class="community">
+                <div class="box2">
+                    <div class="box3">
+
+                    </div>
+                    <div class="box3">
+
+                    </div>
+                </div>
             </div>
-        
         </div>
-        
-    </footer>
-</body>
+        <div class="header">
+            <div class="left-header">
+                <div class="box">1</div>
+                <div class="box">1</div>
+            </div>
+            <div class="right-header">
+                <div class="box">2</div>
+                <div class="box">2</div>
+            </div>
+        </div>
+    </body>
 </html>
