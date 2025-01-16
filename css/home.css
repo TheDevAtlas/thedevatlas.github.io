@@ -86,6 +86,10 @@
     .gear {
         margin-top: 20px; /* Add space between sections */
         min-width: 0px;
+        width: 100%;
+        display: grid;
+        align-items: center;
+        justify-content: center;
     }
 
     .buttons {
