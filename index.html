@@ -2,125 +2,33 @@
 <html lang="en">
 
     <head>
+        <title>TheDevAtlas - Home</title>
+
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>TheDevAtlas - Home</title>
         <link rel="stylesheet" href="css/header.css">
-
         <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
     </head>
     
     <body class="background">
 
-        <div class="header">
-
-            <div class="left-header">
-                <div class="logo-hold">
-
-                    <div class="left-logo">
-                        <img src="icons/Logo.png" alt="logo"></img>
-                    </div>
-
-                    <a href="https://thedevatlas.com">
-                        <div class="left-logo-hover">
-                            <img src="icons/Logo-Glow.png" alt="logo"></img>
-                        </div>
-                    </a>
-
-                </div>
-
-                <a href="https://thedevatlas.com"><div class="link">Projects</div></a>
-                <a href="https://thedevatlas.com"><div class="link">Tools</div></a>
-                <a href="https://thedevatlas.com"><div class="link">Assets</div></a>
-                <a href="https://thedevatlas.com"><div class="link">Tutorials</div></a>
-
-            </div>
-
-            <div class="right-header">
-                <div class="icon-links">
-                    <a class="icon" href="https://thedevatlas.com">
-                        <img src="icons/youtube.svg" alt="youtube"></img>
-                    </a>
-                    <a class="icon" href="https://thedevatlas.com">
-                        <img src="icons/discord.svg" alt="discord"></img>
-                    </a>
-                    <a class="icon" href="https://thedevatlas.com">
-                        <img src="icons/github.svg" alt="github"></img>
-                    </a>
-                    <a class="icon" href="https://thedevatlas.com">
-                        <img src="icons/steam.svg" alt="steam"></img>
-                    </a>
-                    <a class="icon" href="https://thedevatlas.com">
-                        <img src="icons/itchdotio.svg" alt="itch dot io"></img>
-                    </a>
-                    <a class="icon" href="https://thedevatlas.com">
-                        <img src="icons/patreon.svg" alt="patreon"></img>
-                    </a>
-                    <div class="auth-buttons">
-                        <button class="sign-up-button">Sign In</button>
-                        <button class="sign-in-button">Sign Up</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mobile-header">
-                <div class="box">
-                    <div class="hamburger" onclick="toggleSidebar()">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="mobile-logo">
-                        <div class="logo-hold">
+        <div id="header-container"></div>
+    
         
-                            <div class="left-logo">
-                                <img src="icons/Logo.png" alt="logo"></img>
-                            </div>
-            
-                            <a href="https://thedevatlas.com">
-                                <div class="left-logo-hover">
-                                    <img src="icons/Logo-Glow.png" alt="logo"></img>
-                                </div>
-                            </a>
-            
-                        </div>
-                    </div>
-                </div>
-                <div class="box">
-
-                </div>
-            </div>
-            
-        
-            <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
-        
-            <div class="sidebar">
-                <a href="https://thedevatlas.com"><div class="sidebar-link">Projects</div></a>
-                <a href="https://thedevatlas.com"><div class="sidebar-link">Tools</div></a>
-                <a href="https://thedevatlas.com"><div class="sidebar-link">Assets</div></a>
-                <a href="https://thedevatlas.com"><div class="sidebar-link">Tutorials</div></a>
-                <div class="auth-buttons">
-                    <button class="sign-up-button">Sign In</button>
-                    <button class="sign-in-button">Sign Up</button>
-                </div>
-            </div>
-
-        </div>
-
-        <script>
-            function toggleSidebar() {
-                const sidebar = document.querySelector('.sidebar');
-                const overlay = document.querySelector('.sidebar-overlay');
-                sidebar.classList.toggle('open');
-                overlay.classList.toggle('open');
-            }
-        </script>
-
+    
     </body>
 
 </html>
+
+<!-- Load header.html into #header-container -->
+<script>
+    fetch('component/header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-container').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading header:', error));
+</script>
