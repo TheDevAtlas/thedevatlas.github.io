@@ -56,10 +56,19 @@
                 </div>
             </div>
         </div>
-    
-    </body>
 
+    </body>
 </html>
+
+<!-- Header Sidebar Script -->
+<script>
+    function toggleSidebar() {
+        const sidebar = document.querySelector('.sidebar');
+        const overlay = document.querySelector('.sidebar-overlay');
+        sidebar.classList.toggle('open');
+        overlay.classList.toggle('open');
+    }
+</script>
 
 <!-- Load header.html into #header-container -->
 <script>
@@ -70,4 +79,3 @@
         })
         .catch(error => console.error('Error loading header:', error));
 </script>
-
