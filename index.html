@@ -94,6 +94,9 @@
     renderer.setSize(rendererSize, rendererSize);
     const gearContainer = document.querySelector('.gear');
     gearContainer.appendChild(renderer.domElement);
+
+    const canvas = renderer.domElement;
+    canvas.style.display = 'flex';
     //document.body.appendChild(renderer.domElement);
 
     // Add a light
