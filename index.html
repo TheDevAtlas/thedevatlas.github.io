@@ -96,7 +96,10 @@
     gearContainer.appendChild(renderer.domElement);
 
     const canvas = renderer.domElement;
-    canvas.style.display = 'flex';
+    canvas.style.display = 'flexbox';
+    canvas.style.margin = 'auto'; // Center within flexbox if necessary
+    canvas.style.width = '100%';  // Optional: Adjust width
+    canvas.style.height = '100%'; // Optional: Adjust height
     //document.body.appendChild(renderer.domElement);
 
     // Add a light
