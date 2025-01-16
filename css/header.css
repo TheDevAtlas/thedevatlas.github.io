@@ -263,6 +263,8 @@ a:active {
     .mobile-header{
         padding: 2em;
         display: flex;
+        align-items: center;
+        justify-content: center;
         height: 100%;
         width: 100%;
     }
@@ -277,9 +279,17 @@ a:active {
         align-items: center;
     }
 
-    .box{
+    .hamBox{
         display:flex;
         justify-content:start;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+    }
+
+    .logoBox{
+        display:flex;
+        justify-content:center;
         align-items: center;
         height: 100%;
         width: 100%;

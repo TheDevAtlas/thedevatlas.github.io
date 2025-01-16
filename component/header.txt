@@ -50,14 +50,14 @@
     </div>
 
     <div class="mobile-header">
-        <div class="box">
+        <div class="hamBox">
             <div class="hamburger" onclick="toggleSidebar()">
                 <div></div>
                 <div></div>
                 <div></div>
             </div>
         </div>
-        <div class="box">
+        <div class="logoBox">
             <div class="mobile-logo">
                 <div class="logo-hold">
 
@@ -74,7 +74,7 @@
                 </div>
             </div>
         </div>
-        <div class="box">
+        <div class="hamBox">
 
         </div>
     </div>

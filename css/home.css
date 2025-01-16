@@ -31,7 +31,7 @@
 
 .gear {
     flex: 1; /* Takes up equal space */
-    min-width: 300px; /* Ensures it doesn’t get too small */
+    min-width: 300px;
     height: auto;
 }
 
@@ -84,6 +84,7 @@
 
     .gear {
         margin-top: 20px; /* Add space between sections */
+        min-width: 50px;
     }
 
     .buttons {
