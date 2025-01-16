@@ -1,0 +1,53 @@
+.footer{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 1em;
+    height: 100px;
+    color: #ffffff;
+    font-family: "Archivo Black", serif;
+    font-size: 10pt;
+    background-color: #202020;
+    text-align: center;
+}
+
+.footcont{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    gap: 2em;
+}
+
+.contact{
+    display:grid;
+    justify-content:center;
+    align-items: center;
+    gap: 0.5em;
+}
+
+/* #0C91D1 */
+
+.f-icon {
+    display: grid;
+    align-items: center; /* Centers the content of each icon */
+    justify-content: center;
+}
+
+.f-icon:hover{
+    scale: 1.1;
+    filter: invert(68%) sepia(84%) saturate(5632%) hue-rotate(172deg) brightness(91%) contrast(91%);
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column; /* Stack items vertically */
+        gap: 1em; /* Adjust spacing for vertical layout */
+        height: 250px;
+    }
+
+}
