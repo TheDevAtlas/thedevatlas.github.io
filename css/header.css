@@ -262,7 +262,7 @@ a:active {
 }
 
 /* Responsive styles */
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 980px) {
 
     .mobile-header{
         padding: 2em;
