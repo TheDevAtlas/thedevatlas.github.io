@@ -76,6 +76,7 @@
         flex-direction: column; /* Stack vertically */
         align-items: center;
         text-align: center; /* Center text on mobile */
+        width: 100%;
     }
 
     .gear-text {
@@ -84,7 +85,7 @@
 
     .gear {
         margin-top: 20px; /* Add space between sections */
-        min-width: 50px;
+        min-width: 0px;
     }
 
     .buttons {
