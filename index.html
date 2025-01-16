@@ -1,155 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device.width, height=device.height">
-        <title>Flexbox Test</title>
+        <title>TheDevAtlas - Home</title>
         <link rel="stylesheet" href="css/header.css">
-        <link rel="stylesheet" href="css/content.css">
-    </head>
-    <body class="background">
-        <div class="header">
-            <div class="left-header">
-                <div class="box">
-                    <img src="icons/logo.png" alt="logo"></img>
-                </div>
-                <div class="box">1</div>
-            </div>
-            <div class="right-header">
-                <div class="box">2</div>
-                <div class="box">2</div>
-            </div>
-        </div>
-        <div class="content">
-            <div class="hero">
-                <div class="box2">
-                    <div class="box3">
 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    </head>
+    
+    <body class="background">
+
+        <div class="header">
+
+            <div class="left-header">
+                <div class="logo-hold">
+
+                    <div class="left-logo">
+                        <img src="icons/logo.png" alt="logo"></img>
                     </div>
-                    <div class="box3">
-                        <div class="gear">
-                            <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-                            <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/OBJLoader.js"></script>
-                            <script src="https://cdn.jsdelivr.net/npm/three.meshline"></script>
-                            <script>
-                                // Scene, camera, and renderer setup
-                                const scene = new THREE.Scene();
-                    
-                                // Set square renderer size
-                                const rendererSize = 725; // 500px square
-                                const aspect = 1; // Square aspect ratio
-                                const camera = new THREE.OrthographicCamera(
-                                    -1.2, 1.2, 1.2, -1.2, 0.1, 1000
-                                );
-                                camera.position.z = 5;
-                    
-                                const renderer = new THREE.WebGLRenderer({ antialias: true });
-                                renderer.setSize(rendererSize, rendererSize);
-                                const gearContainer = document.querySelector('.gear');
-                                gearContainer.appendChild(renderer.domElement);
-                                //document.body.appendChild(renderer.domElement);
-                    
-                                // Add a light
-                                const light = new THREE.DirectionalLight(0xffffff, 1);
-                                light.position.set(5, 5, 5).normalize();
-                                scene.add(light);
-                                scene.background = new THREE.Color(0x131313); // 0x131313
-                    
-                                // Load the OBJ model
-                                const objLoader = new THREE.OBJLoader();
-                                let gear;
-                                let targetSpeed = 0.00125; // Half the original speed
-                                let currentSpeed = 0; // Initial speed for lerp
-                                const lerpFactor = 0.075; // How fast the transition happens
-                    
-                                objLoader.load('gear.obj', function (object) {
-                                    gear = object;
-                    
-                                    // Apply smooth material
-                                    const material = new THREE.MeshPhongMaterial({ color: 0x333333 });
-                                    gear.traverse((child) => {
-                                        if (child.isMesh) {
-                                            child.material = material;
-                                        }
-                                    });
-                    
-                                    // Add edges
-                                    const edges = new THREE.EdgesGeometry(gear.children[0].geometry);
-                    
-                                    // Create a buffer geometry for edges
-                                    const edgePositions = edges.attributes.position.array;
-                                    const lineGeometry = new THREE.BufferGeometry();
-                                    lineGeometry.setAttribute('position', new THREE.BufferAttribute(edgePositions, 3));
-                    
-                                    // Create a MeshLine
-                                    const meshLine = new MeshLine();
-                                    meshLine.setGeometry(lineGeometry);
-                    
-                                    // Create a material for the MeshLine
-                                    const meshLineMaterial = new MeshLineMaterial({
-                                        color: 0xffffff,
-                                        lineWidth: 0.02, // Adjust thickness
-                                    });
-                    
-                                    // Add the MeshLine to the scene
-                                    const thickEdges = new THREE.Mesh(meshLine.geometry, meshLineMaterial);
-                                    gear.add(thickEdges);
-                    
-                                    // Adjust rotation
-                                    gear.rotation.x = Math.PI / 2.5;
-                                    gear.rotation.z = Math.PI / 10;
-                                    scene.add(gear);
-                    
-                                    // Add hover effect
-                                    renderer.domElement.addEventListener('mouseover', () => {
-                                        targetSpeed = 0.005; // Double the speed
-                                    });
-                    
-                                    renderer.domElement.addEventListener('mouseout', () => {
-                                        targetSpeed = 0.00125; // Reset to half speed
-                                    });
-                                });
-                    
-                                // Animation loop
-                                function animate() {
-                                    requestAnimationFrame(animate);
-                    
-                                    // Gradually adjust the speed
-                                    currentSpeed += (targetSpeed - currentSpeed) * lerpFactor;
-                    
-                                    // Rotate the gear
-                                    if (gear) {
-                                        gear.rotateY(currentSpeed); // Use the interpolated speed
-                                    }
-                    
-                                    renderer.render(scene, camera);
-                                }
-                                animate();
-                            </script>
+
+                    <a href="https://thedevatlas.com">
+                        <div class="left-logo-hover">
+                            <img src="icons/logo-glow.png" alt="logo"></img>
+                        </div>
+                    </a>
+
+                </div>
+
+                <a href="https://thedevatlas.com"><div class="link">Projects</div></a>
+                <a href="https://thedevatlas.com"><div class="link">Tools</div></a>
+                <a href="https://thedevatlas.com"><div class="link">Assets</div></a>
+                <a href="https://thedevatlas.com"><div class="link">Tutorials</div></a>
+
+            </div>
+
+            <div class="right-header">
+                <div class="icon-links">
+                    <a class="icon" href="https://thedevatlas.com">
+                        <img src="icons/youtube.svg" alt="youtube"></img>
+                    </a>
+                    <a class="icon" href="https://thedevatlas.com">
+                        <img src="icons/discord.svg" alt="discord"></img>
+                    </a>
+                    <a class="icon" href="https://thedevatlas.com">
+                        <img src="icons/github.svg" alt="github"></img>
+                    </a>
+                    <a class="icon" href="https://thedevatlas.com">
+                        <img src="icons/steam.svg" alt="steam"></img>
+                    </a>
+                    <a class="icon" href="https://thedevatlas.com">
+                        <img src="icons/itchdotio.svg" alt="itch dot io"></img>
+                    </a>
+                    <a class="icon" href="https://thedevatlas.com">
+                        <img src="icons/patreon.svg" alt="patreon"></img>
+                    </a>
+                    <div class="auth-buttons">
+                        <button class="sign-up-button">Sign In</button>
+                        <button class="sign-in-button">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mobile-header">
+                <div class="box">
+                    <div class="hamburger" onclick="toggleSidebar()">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="mobile-logo">
+                        <div class="logo-hold">
+        
+                            <div class="left-logo">
+                                <img src="icons/logo.png" alt="logo"></img>
+                            </div>
+            
+                            <a href="https://thedevatlas.com">
+                                <div class="left-logo-hover">
+                                    <img src="icons/logo-glow.png" alt="logo"></img>
+                                </div>
+                            </a>
+            
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="community">
-                <div class="box2">
-                    <div class="box3">
+                <div class="box">
 
-                    </div>
-                    <div class="box3">
-
-                    </div>
                 </div>
             </div>
-        </div>
-        <div class="header">
-            <div class="left-header">
-                <div class="box">1</div>
-                <div class="box">1</div>
+            
+        
+            <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+        
+            <div class="sidebar">
+                <a href="https://thedevatlas.com"><div class="sidebar-link">Projects</div></a>
+                <a href="https://thedevatlas.com"><div class="sidebar-link">Tools</div></a>
+                <a href="https://thedevatlas.com"><div class="sidebar-link">Assets</div></a>
+                <a href="https://thedevatlas.com"><div class="sidebar-link">Tutorials</div></a>
+                <div class="auth-buttons">
+                    <button class="sign-up-button">Sign In</button>
+                    <button class="sign-in-button">Sign Up</button>
+                </div>
             </div>
-            <div class="right-header">
-                <div class="box">2</div>
-                <div class="box">2</div>
-            </div>
+
         </div>
+
+        <script>
+            function toggleSidebar() {
+                const sidebar = document.querySelector('.sidebar');
+                const overlay = document.querySelector('.sidebar-overlay');
+                sidebar.classList.toggle('open');
+                overlay.classList.toggle('open');
+            }
+        </script>
+
     </body>
+
 </html>

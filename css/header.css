@@ -1,44 +1,344 @@
+.background{
+    background-color: #131313;
+}
+
 .header{
-    border: 8px solid black;
     display: flex;
     justify-content: space-around;
     align-items: center;
     gap: 1em;
-    height: 125px;
+    height: 150px;
 }
 
 .left-header{
-    border: 8px solid red;
     display: flex;
     justify-content: start;
     align-items: center;
     width: 100%;
     gap: 1em;
-    margin-left: 0.5em;
+    margin-left: 1em;
 }
 
 .right-header{
-    border: 8px solid red;
     display: flex;
     justify-content: end;
     align-items: center;
     width: 100%;
+    height: 100%;
     gap: 1em;
     margin-right: 0.5em;
 }
 
-.box{
-    border: 8px solid blue;
+.left-logo{
     height: 80px;
     width: 80px;
-    background-color: rgb(231, 22, 22);
     font-size: 40pt;
     display: flex;
     justify-content:center;
     align-items: center;
+    padding-left: 1em;
+    padding-right: 1em;
+    position:relative;
+    top: 0;
+    left: 0;
 }
 
-.box img{
+.left-logo img{
     height: 200%;
     width: 200%;
+}
+
+.left-logo-hover{
+    height: 80px;
+    width: 80px;
+    font-size: 40pt;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    padding-left: 1em;
+    padding-right: 1em;
+    position:absolute;
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.left-logo-hover:hover{
+    height: 82px;
+    width: 82px;
+    font-size: 40pt;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    padding-left: 1em;
+    padding-right: 1em;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    opacity: 1;
+}
+
+.left-logo-hover img{
+    height: 200%;
+    width: 200%;
+}
+
+.logo-hold{
+    position:relative;
+    top: 0;
+    left: 0;
+}
+
+.link {
+    font-size: 15px;
+    color: white; /* Ensure the text color is white */
+    text-decoration: none; /* Remove the underline */
+    font-family: "Archivo Black", serif;
+    font-weight: 400;
+    font-style: normal;
+    padding: 1em;
+    transition: all 0.5s ease;
+}
+
+.link:visited {
+    color: white; /* Ensure visited links remain white */
+    text-decoration: none; /* Remove any underline from visited links */
+}
+
+.link:hover {
+    font-size: 16px;
+    color: white; /* Keep the text color white on hover */
+    text-decoration: underline; /* Add underline on hover */
+    text-decoration-thickness: 2.5px;
+    text-underline-offset: 4px;
+}
+
+.link:focus, .link:active {
+    color: white; /* Keep the color consistent when active or focused */
+    text-decoration: none; /* Prevent undesired underlines */
+}
+
+a {
+    color: inherit; /* Inherit the text color */
+    text-decoration: none; /* Remove underline by default */
+}
+
+a:visited {
+    color: inherit; /* Make visited links inherit text color */
+}
+
+a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+a:active {
+    color: inherit; /* Ensure active link color remains the same */
+}
+
+.right-header {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 100%;
+    height: 100%; /* Ensure the height matches its parent */
+}
+
+.icon-links {
+    display: flex;
+    align-items: center; /* Ensures vertical alignment within this container */
+    gap: 2em;
+}
+
+.icon {
+    display: flex;
+    align-items: center; /* Centers the content of each icon */
+    justify-content: center;
+}
+
+/* #0C91D1 */
+
+.icon:hover{
+    scale: 1.1;
+    filter: invert(68%) sepia(84%) saturate(5632%) hue-rotate(172deg) brightness(91%) contrast(91%);
+}
+
+.auth-buttons {
+    gap: 10px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    padding-right: 2em;
+}
+
+.sign-up-button,
+.sign-in-button {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-family: 'Archivo Black', sans-serif;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.5s ease;
+}
+
+.sign-up-button {
+    background-color: #214D9B00; /* Green color */
+    color: white;
+    transition: all 0.5s ease;
+}
+
+.sign-in-button {
+    background-color: #0C91D1; /* Blue color */
+    color: white;
+    transition: all 0.5s ease;
+}
+
+.sign-up-button:hover,
+.sign-in-button:hover {
+    background-color: #214D9B;
+}
+
+/* Hamburger menu styles */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.mobile-logo{
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+}
+
+.sidebar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    background-color: #131313;
+    padding: 1em;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    font-size: 18px;
+    margin: 1em 0;
+    transition: all 0.5s ease;
+}
+
+.sidebar.open {
+    display: block;
+}
+
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    transition: all 0.5s ease;
+}
+
+.sidebar-overlay.open {
+    display: block;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 900px) {
+
+    .mobile-header{
+        padding: 2em;
+        display: flex;
+        height: 100%;
+        width: 100%;
+    }
+
+    a:hover {
+        text-decoration: none; /* Add underline on hover */
+    }
+
+    .mobile-logo{
+        display:flex;
+        justify-content:center;
+        align-items: center;
+    }
+
+    .box{
+        display:flex;
+        justify-content:start;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+    }
+
+    .left-header, .right-header {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+        transition: all 0.5s ease;
+    }
+
+
+    .hamburger:hover {
+        scale: 1.2;
+    }
+
+    .icon{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1250px) {
+    .icon{
+        display: none;
+    }
+}
+
+.sidebar-link {
+    font-size: 20px;
+    color: white; /* Ensure the text color is white */
+    text-decoration: none; /* Remove the underline */
+    font-family: "Archivo Black", serif;
+    font-weight: 400;
+    font-style: normal;
+    padding: 1em;
+    transition: all 0.5s ease;
+}
+
+.sidebar-link:visited {
+    color: white; /* Ensure visited links remain white */
+    text-decoration: none; /* Remove any underline from visited links */
+}
+
+.sidebar-link:hover {
+    font-size: 22px;
+    color: white; /* Keep the text color white on hover */
+    text-decoration: underline; /* Add underline on hover */
+    text-decoration-thickness: 2.5px;
+    text-underline-offset: 4px;
+}
+
+.sidebar-link:focus, .link:active {
+    color: white; /* Keep the color consistent when active or focused */
+    text-decoration: none; /* Prevent undesired underlines */
 }
