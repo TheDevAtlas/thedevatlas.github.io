@@ -20,7 +20,7 @@
         </a>
     </div>
     <div class="footcont">
-        Copyright • 2004 - 2025 • All Rights Reserved
+        Copyright • 2004 • 2025 • All Rights Reserved
     </div>
     <div class="footcont">
         <div class="contact">
