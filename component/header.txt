@@ -39,7 +39,7 @@
             <a class="icon" href="https://thedevatlas.itch.io/">
                 <img src="icons/itchdotio.svg" alt="itch dot io"></img>
             </a>
-            <a class="icon" href="patreon.com/TheDevAtlas">
+            <a class="icon" href="https://patreon.com/TheDevAtlas">
                 <img src="icons/patreon.svg" alt="patreon"></img>
             </a>
             <div class="auth-buttons">
