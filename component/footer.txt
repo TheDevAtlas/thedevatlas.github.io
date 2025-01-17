@@ -1,21 +1,21 @@
 <div class="footer">
     <div class="footcont">
-        <a class="f-icon" href="https://thedevatlas.com">
+        <a class="f-icon" href="https://www.youtube.com/@thedevatlas">
             <img src="icons/youtube.svg" alt="youtube"></img>
         </a>
-        <a class="f-icon" href="https://thedevatlas.com">
+        <a class="f-icon" href="https://discord.gg/BUEZUdaeWJ">
             <img src="icons/discord.svg" alt="discord"></img>
         </a>
-        <a class="f-icon" href="https://thedevatlas.com">
+        <a class="f-icon" href="https://github.com/TheDevAtlas">
             <img src="icons/github.svg" alt="github"></img>
         </a>
         <a class="f-icon" href="https://thedevatlas.com">
             <img src="icons/steam.svg" alt="steam"></img>
         </a>
-        <a class="f-icon" href="https://thedevatlas.com">
+        <a class="f-icon" href="https://thedevatlas.itch.io/">
             <img src="icons/itchdotio.svg" alt="itch dot io"></img>
         </a>
-        <a class="f-icon" href="https://thedevatlas.com">
+        <a class="f-icon" href="patreon.com/TheDevAtlas">
             <img src="icons/patreon.svg" alt="patreon"></img>
         </a>
     </div>
