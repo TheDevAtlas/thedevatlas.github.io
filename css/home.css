@@ -63,6 +63,7 @@
     border: none;
     border-radius: 5px;
     transition: background-color 0.3s;
+    font-family: "Archivo Black", serif;
 }
 
 .btn:hover {
@@ -90,23 +91,36 @@
         display: grid;
         align-items: center;
         justify-content: center;
+        overflow: hidden;
     }
 
     .buttons {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        display:flex;
+        align-items:center;
+        justify-content:center;
         gap: 10px; /* Spacing between buttons */
     }
 
     .big-text {
-        font-size: 1.25rem;
+        font-size: 1.5rem;
         font-weight: bold;
         margin: 0 0 20px;
     }
     
     .small-text {
-        font-size: 0.5rem;
+        font-size: 1rem;
         margin: 0 0 2em;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 1.2rem;
+        cursor: pointer;
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+        max-height: 50px;
     }
 }
