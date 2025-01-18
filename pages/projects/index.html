@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>TheDevAtlas - Projects</title>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="../../css/home.css">
+
+        <link rel="stylesheet" href="../../css/header.css">
+        <link rel="stylesheet" href="../../css/footer.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap">
+    </head>
+
+    <body class="background" style="background-color: #131313">
+        <div id="header-container"></div>
+        <div id="content-container"></div>
+        <div id="footer-container"></div>
+    </body>
+
+</html>
+
+<!-- Header Sidebar Script -->
+<script>
+    function toggleSidebar() {
+        const sidebar = document.querySelector('.sidebar');
+        const overlay = document.querySelector('.sidebar-overlay');
+        sidebar.classList.toggle('open');
+        overlay.classList.toggle('open');
+    }
+</script>
+
+<!-- Load header.txt into #header-container -->
+<script>
+    fetch('../../component/header.txt')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-container').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading header:', error));
+</script>
+
+<!-- Load footer.txt into #footer-container -->
+<script>
+    fetch('../../component/footer.txt')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-container').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading footer:', error));
+</script>

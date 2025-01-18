@@ -4,43 +4,43 @@
         <div class="logo-hold">
 
             <div class="left-logo">
-                <img src="icons/Logo.png" alt="logo"></img>
+                <img src="../../icons/Logo.png" alt="logo"></img>
             </div>
 
             <a href="https://thedevatlas.com">
                 <div class="left-logo-hover">
-                    <img src="icons/Logo-Glow.png" alt="logo"></img>
+                    <img src="../../icons/Logo-Glow.png" alt="logo"></img>
                 </div>
             </a>
 
         </div>
 
-        <a href="https://thedevatlas.com"><div class="link">Projects</div></a>
-        <a href="https://thedevatlas.com"><div class="link">Tools</div></a>
-        <a href="https://thedevatlas.com"><div class="link">Assets</div></a>
-        <a href="https://thedevatlas.com"><div class="link">Tutorials</div></a>
+        <a href="/pages/projects"><div class="link">Projects</div></a>
+        <a href="/pages/tools"><div class="link">Tools</div></a>
+        <a href="/pages/assets"><div class="link">Assets</div></a>
+        <a href="/pages/tutorials"><div class="link">Tutorials</div></a>
 
     </div>
 
     <div class="right-header">
         <div class="icon-links">
             <a class="icon" href="https://www.youtube.com/@thedevatlas">
-                <img src="icons/youtube.svg" alt="youtube"></img>
+                <img src="../../icons/youtube.svg" alt="youtube"></img>
             </a>
             <a class="icon" href="https://discord.gg/BUEZUdaeWJ">
-                <img src="icons/discord.svg" alt="discord"></img>
+                <img src="../../icons/discord.svg" alt="discord"></img>
             </a>
             <a class="icon" href="https://github.com/TheDevAtlas">
-                <img src="icons/github.svg" alt="github"></img>
+                <img src="../../icons/github.svg" alt="github"></img>
             </a>
             <a class="icon" href="https://thedevatlas.com">
-                <img src="icons/steam.svg" alt="steam"></img>
+                <img src="../../icons/steam.svg" alt="steam"></img>
             </a>
             <a class="icon" href="https://thedevatlas.itch.io/">
-                <img src="icons/itchdotio.svg" alt="itch dot io"></img>
+                <img src="../../icons/itchdotio.svg" alt="itch dot io"></img>
             </a>
             <a class="icon" href="https://patreon.com/TheDevAtlas">
-                <img src="icons/patreon.svg" alt="patreon"></img>
+                <img src="../../icons/patreon.svg" alt="patreon"></img>
             </a>
             <div class="auth-buttons">
                 <button class="sign-up-button">Sign In</button>
@@ -62,12 +62,12 @@
                 <div class="logo-hold">
 
                     <div class="left-logo">
-                        <img src="icons/Logo.png" alt="logo"></img>
+                        <img src="../../icons/Logo.png" alt="logo"></img>
                     </div>
     
                     <a href="https://thedevatlas.com">
                         <div class="left-logo-hover">
-                            <img src="icons/Logo-Glow.png" alt="logo"></img>
+                            <img src="../../icons/Logo-Glow.png" alt="logo"></img>
                         </div>
                     </a>
     
@@ -83,10 +83,10 @@
     <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
 
     <div class="sidebar">
-        <a href="https://thedevatlas.com"><div class="sidebar-link">Projects</div></a>
-        <a href="https://thedevatlas.com"><div class="sidebar-link">Tools</div></a>
-        <a href="https://thedevatlas.com"><div class="sidebar-link">Assets</div></a>
-        <a href="https://thedevatlas.com"><div class="sidebar-link">Tutorials</div></a>
+        <a href="/pages/projects"><div class="sidebar-link">Projects</div></a>
+        <a href="/pages/tools"><div class="sidebar-link">Tools</div></a>
+        <a href="/pages/assets"><div class="sidebar-link">Assets</div></a>
+        <a href="/pages/tutorials"><div class="sidebar-link">Tutorials</div></a>
         <div class="auth-buttons">
             <button class="sign-up-button">Sign In</button>
             <button class="sign-in-button">Sign Up</button>
