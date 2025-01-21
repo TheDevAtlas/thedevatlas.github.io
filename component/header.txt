@@ -15,10 +15,10 @@
 
         </div>
 
-        <a href="/pages/projects"><div class="link">Projects</div></a>
-        <a href="/pages/tools"><div class="link">Tools</div></a>
-        <a href="/pages/assets"><div class="link">Assets</div></a>
-        <a href="/pages/tutorials"><div class="link">Tutorials</div></a>
+        <a href="/projects"><div class="link">Projects</div></a>
+        <a href="/tools"><div class="link">Tools</div></a>
+        <a href="/assets"><div class="link">Assets</div></a>
+        <a href="/tutorials"><div class="link">Tutorials</div></a>
 
     </div>
 
@@ -83,10 +83,10 @@
     <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
 
     <div class="sidebar">
-        <a href="/pages/projects"><div class="sidebar-link">Projects</div></a>
-        <a href="/pages/tools"><div class="sidebar-link">Tools</div></a>
-        <a href="/pages/assets"><div class="sidebar-link">Assets</div></a>
-        <a href="/pages/tutorials"><div class="sidebar-link">Tutorials</div></a>
+        <a href="/projects"><div class="sidebar-link">Projects</div></a>
+        <a href="/tools"><div class="sidebar-link">Tools</div></a>
+        <a href="/assets"><div class="sidebar-link">Assets</div></a>
+        <a href="/tutorials"><div class="sidebar-link">Tutorials</div></a>
         <div class="auth-buttons">
             <a href="https://thedevatlas.com"><button class="sign-up-button" aria-label="Sign In">Sign In</button></a>
             <a href="https://thedevatlas.com"><button class="sign-in-button" aria-label="Sign Up">Sign Up</button></a>
