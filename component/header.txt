@@ -43,8 +43,8 @@
                 <img src="../../icons/patreon.svg" alt="patreon"></img>
             </a>
             <div class="auth-buttons">
-                <button class="sign-up-button">Sign In</button>
-                <button class="sign-in-button">Sign Up</button>
+                <a href="https://thedevatlas.com"><button class="sign-up-button">Sign In</button></a>
+                <a href="https://thedevatlas.com"><button class="sign-in-button">Sign Up</button></a>
             </div>
         </div>
     </div>
@@ -88,8 +88,8 @@
         <a href="/pages/assets"><div class="sidebar-link">Assets</div></a>
         <a href="/pages/tutorials"><div class="sidebar-link">Tutorials</div></a>
         <div class="auth-buttons">
-            <button class="sign-up-button">Sign In</button>
-            <button class="sign-in-button">Sign Up</button>
+            <a href="https://thedevatlas.com"><button class="sign-up-button" aria-label="Sign In">Sign In</button></a>
+            <a href="https://thedevatlas.com"><button class="sign-in-button" aria-label="Sign Up">Sign Up</button></a>
         </div>
     </div>
 
