@@ -137,12 +137,16 @@
     box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3);
 }
 
+.article-card:hover{
+    outline: 2px solid white;
+}
+
 /* Ensure image fills the card */
 .article-card img {
     width: 100%;
     height: 100%;
     object-fit:cover;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.2s ease-in-out;
 }
 
 /* Image zoom effect on hover */
