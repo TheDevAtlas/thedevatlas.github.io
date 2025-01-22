@@ -1,0 +1,202 @@
+/* General container styling */
+
+#content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: "Ubuntu", serif;
+    font-weight: 700;
+    font-style: normal;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+
+/* Search bar styling */
+.search-bar {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: "Ubuntu", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+#search-input {
+    width: 60%;
+    max-width: 600px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    font-family: "Ubuntu", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Tag filter buttons */
+.filter-options {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    font-family: "Ubuntu", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.tag-filter {
+    padding: 10px 20px;
+    border: none;
+    background-color: #e0e0e0;
+    color: #333;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    font-family: "Ubuntu", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.tag-filter:hover,
+.tag-filter.active {
+    background-color: #0C91D1;
+    color: #fff;
+}
+
+/* Sorting dropdown */
+.sort-options {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#sort-select {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: "Ubuntu", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Styling for the clear filters button */
+.clear-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #ff5555;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+.clear-button:hover {
+    background-color: #ff0000;
+}
+
+
+/* Article grid layout - 3 columns */
+#article-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    width: 100%;
+    flex: 1;
+}
+
+/* Individual article card with 16:9 aspect ratio */
+.article-container {
+    /* width: calc(33.33% - 20px); Adjust for 3-column layout */
+    gap: 0.5em;
+    max-width: 400px;
+    position: relative;
+    display:grid;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Card design with aspect ratio */
+.article-card {
+    position: relative;
+    width: 300px;
+    aspect-ratio: 16 / 9;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3);
+}
+
+.article-card:hover{
+    outline: 2px solid white;
+}
+
+/* Ensure image fills the card */
+.article-card img {
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Image zoom effect on hover */
+.article-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Ensure the title and tags are positioned under the image */
+.article-details {
+    position:relative;
+    text-align: start;
+    padding: 10px 0;
+}
+
+/* Reduce spacing between articles */
+#article-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; /* Reduced from 20px */
+    width: 100%;
+}
+
+/* Make title and tags clickable */
+.tag-link{
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease-in-out;
+    font-size: 0.9em;
+    cursor: pointer;
+    font-family: "Ubuntu", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Make title and tags clickable */
+.article-title a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease-in-out;
+    font-size: 1em;
+}
+
+.article-title a:hover,
+.tag-link:hover {
+    color: #0C91D1;
+}
+
+@media (max-width: 768px) {
+    #search-input {
+        width: 80%;
+    }
+}
