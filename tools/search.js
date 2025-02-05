@@ -16,11 +16,11 @@ fetch('tools.json')
                 articleElement.classList.add('article-container');
                 articleElement.innerHTML = `
                     <div class="article-card">
-                        <img src="${article.image}" alt="${article.title}">
+                        <a href="${article.link}"><img src="${article.image}" alt="${article.title}"></a>
                     </div>
                     <div class="article-details">
                         <div class="article-title">
-                            <a href="article.html?title=${encodeURIComponent(article.title)}">${article.title}</a>
+                            <a href="${article.link}">${article.title}</a>
                         </div>
                         <div class="article-tags">
                             ${article.tags.map(tag => `<span class="tag-link" data-tag="${tag}">${tag}</span>`).join(' • ')}

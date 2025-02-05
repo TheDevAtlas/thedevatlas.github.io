@@ -2,13 +2,8 @@
     {
         "title": "Rhystic Sentinel - AI Playing Cards",
         "tags": ["Unity", "AI"],
-        "image": "article/Rhystic Sentinel/Rhystic-Sentinel.png",
-        "date": "2024-01-15"
-    },
-    {
-        "title": "HavokMax - Skylander Ripper",
-        "tags": ["Skylanders"],
-        "image": "article/Skylanders/Havok-Max.png",
-        "date": "2024-01-15"
+        "image": "rhystic-sentinel/Rhystic-Sentinel.png",
+        "date": "2024-01-15",
+        "link": "rhystic-sentinel/"
     }
 ]
