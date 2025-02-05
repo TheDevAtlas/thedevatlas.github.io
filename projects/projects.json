@@ -2,19 +2,8 @@
     {
         "title": "Making My Own Guitar Hero",
         "tags": ["Unity"],
-        "image": "article/guitar-hero/making-my-own-guitar-hero.jpg",
-        "date": "2024-01-15"
-    },
-    {
-        "title": "Making A Portal VR Game",
-        "tags": ["Unity", "Wii U"],
-        "image": "article/portal-wii-u/portal-for-wii-u.jpg",
-        "date": "2023-12-20"
-    },
-    {
-        "title": "Wii Are Resorting To Violence",
-        "tags": ["Unity", "Wii U"],
-        "image": "article/wii-resort-violence/wii-are-resorting-to-violence.jpg",
-        "date": "2024-02-05"
+        "image": "guitar-hero/making-my-own-guitar-hero.jpg",
+        "date": "2024-01-15",
+        "link": "guitar-hero/"
     }
 ]
