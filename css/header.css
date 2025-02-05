@@ -130,6 +130,7 @@ a:hover {
 
 a:active {
     color: inherit; /* Ensure active link color remains the same */
+    text-decoration: none;
 }
 
 .right-header {
