@@ -1,206 +1,183 @@
+<!--Webpage Information and Other References-->
 <!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TheDevAtlas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
 
-    <head>
-        <title>TheDevAtlas - Home</title>
+<!--Main Page Background-->
+<div style="
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 180%;
+    background: url('assets/background/heroback.png') center center / cover no-repeat;
+    z-index: -1;
+"></div>
 
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--Header-->
+<div id="header-container"></div>
 
-        <link rel="stylesheet" href="css/home.css">
 
-        <link rel="stylesheet" href="css/header.css">
-        <link rel="stylesheet" href="css/footer.css">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-    </head>
+
+
+<!--Web Content For The Page-->
+<main class="main-content" style="padding: 5% 10%; display: flex; flex-direction: column; gap: 100px;">
+
+    <!--Hero Section-->
+    <!--Hero Section-->
+    <div style="display: flex; justify-content: center;">
+        <div style="display: flex; flex-wrap: wrap; align-items: stretch; width: 100%; max-width: 1400px;">
+        <div style="flex: 1 1 50%; min-width: 300px; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center;">
+            <h1 style="margin-bottom: 20px;">Learn, Build, and Create</h1>
+            <p style="line-height: 1.6; font-size: 1.1em;">
+            Explore projects and assets, join the community, and write some code... one line at a time.
+            </p>
+        </div>
+        <div style="flex: 1 1 50%; min-width: 300px; padding: 20px; box-sizing: border-box; text-align: center; display: flex; align-items: center; justify-content: center;">
+            <!-- 3D Canvas Here -->
+            <div id="threejs-container" style="width: 100%; height: 400px;"></div>
+        </div>
+        </div>
+    </div>
+  
+
+    <!-- Projects Section -->
+    <div style="display: flex; justify-content: center;">
+        <div style="display: flex; flex-wrap: wrap; align-items: stretch; width: 100%; max-width: 1400px;">
+        <div style="flex: 1 1 50%; min-width: 300px; padding: 20px; box-sizing: border-box; text-align: center; display: flex; align-items: center; justify-content: center;">
+            <!-- 3D Canvas Here -->
+            <div id="threejs-container-2" style="width: 100%; height: 400px;"></div>
+        </div>
+        <div style="flex: 1 1 50%; min-width: 300px; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center;">
+            <h1 style="margin-bottom: 20px;">We build tons of projects for you to see!</h1>
+            <p style="line-height: 1.6; font-size: 1.1em;">
+            Whether it is side projects or game development, there is something for everyone.
+            </p>
+        </div>
+        </div>
+    </div>
     
-    <body class="background" style="background-color: #131313">
+    <!-- Assets Section -->
+    <div style="display: flex; justify-content: center;">
+        <div style="display: flex; flex-wrap: wrap; align-items: stretch; width: 100%; max-width: 1400px;">
+        <div style="flex: 1 1 50%; min-width: 300px; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center;">
+            <h1 style="margin-bottom: 20px;">Reverse Engineering</h1>
+            <p style="line-height: 1.6; font-size: 1.1em;">
+            The only way to learn is by doing. We have taken a deeper look into how game developers have built their games.
+            </p>
+        </div>
+        <div style="flex: 1 1 50%; min-width: 300px; padding: 20px; box-sizing: border-box; text-align: center; display: flex; align-items: center; justify-content: center;">
+            <!-- 3D Canvas Here -->
+            <div id="threejs-container-3" style="width: 100%; height: 400px;"></div>
+        </div>
+        </div>
+    </div>
+    
 
-        <div id="header-container"></div>
-
-        <div id="content-container" style="min-height: calc(100vh - 310px)">
-
-            <div class="content">
-                <div class="first-section">
-                    <div class="gear-text">
-                        <h1 class="big-text">Learn, Build, and Create Together.</h1>
-                        <p class="small-text">Explore free tools and assets, Join the community, and Forge your path forward.</p>
-                        <div class="buttons">
-                            <a href="/tools"><button class="btn">Tools</button></a>
-                            <a href="/assets"><button class="btn">Assets</button></a>
-                            <a href="https://discord.gg/BUEZUdaeWJ"><button class="btn">Discord</button></a>
-                        </div>
-                    </div>
-                    <div class="gear"></div>
-                </div>
-
-                <div class="second-section">
-                    <div class="ss-left">
-                        <div class="ss-box">
-                            <img src="home/project-image.jpg" alt="Coding Projects" class="box-image">
-                            <h3>Coding Projects</h3>
-                            <p class="box-text">Explore my coding projects and see how I bring ideas to life.</p>
-                        </div>
-                        <div class="ss-box">
-                            <img src="home/tutorial-image.jpg" alt="Tutorials" class="box-image">
-                            <h3>Tutorials</h3>
-                            <p class="box-text">Learn with my tutorials designed to help you grow as a developer.</p>
-                        </div>
-                    </div>
-                    <div class="ss-right">
-                        <h1 class="big-text">Follow along with my projects.</h1>
-                        <p class="small-text">My projects, documented and explained, all in one place.</p>
-                        <div class="buttons">
-                            <a href="/projects"><button class="btn">Projects</button></a>
-                            <a href="/tutorials"><button class="btn">Tutorials</button></a>
-                        </div>
-                    </div>
-                </div>
-
+    <!--Discord and Patreon-->
+    <div style="display: flex; justify-content: center;">
+        <div style="display: flex; flex-wrap: wrap; align-items: stretch; width: 100%; max-width: 1400px;">
+            <div style="flex: 1 1 50%; min-width: 300px; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center;">
+                <h1 style="margin-bottom: 20px;">Join the Discord</h1>
+                <p style="line-height: 1.6; font-size: 1.1em;">
+                    Your place for projects, tutorials, and more.
+                </p>
+            </div>
+            <div style="flex: 1 1 50%; min-width: 300px; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center;">
+                <h1 style="margin-bottom: 20px;">Join the Patreon</h1>
+                <p style="line-height: 1.6; font-size: 1.1em;">
+                    Your place for projects, tutorials, and more.
+                </p>
             </div>
         </div>
-    
-        <div id="footer-container"></div>
+    </div>
 
-    </body>
+</main>
 
-</html>
 
-<!-- Header Sidebar Script -->
+
+
+
+<!--Footer-->
+<div id="footer-container"></div>
+
+<!--Load in the Header and Footer Components-->
 <script>
-    function toggleSidebar() {
-        const sidebar = document.querySelector('.sidebar');
-        const overlay = document.querySelector('.sidebar-overlay');
-        sidebar.classList.toggle('open');
-        overlay.classList.toggle('open');
-    }
+  async function loadComponent(id, path) {
+    const response = await fetch(path);
+    const text = await response.text();
+    document.getElementById(id).innerHTML = text;
+  }
+  loadComponent('header-container', '/components/header.html')
+    .then(() => {
+      // Initialize burger menu after header loads
+      const burger = document.getElementById('burger');
+      const nav = document.getElementById('site-nav');
+      burger.addEventListener('click', () => {
+        nav.classList.toggle('open');
+        burger.classList.toggle('open');
+      });
+    });
+  loadComponent('footer-container', '/components/footer.html');
 </script>
 
-<!-- Load header.txt into #header-container -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/geometries/TeapotGeometry.js"></script>
 <script>
-    fetch('component/header.txt')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('header-container').innerHTML = data;
-        })
-        .catch(error => console.error('Error loading header:', error));
-</script>
-
-<!-- Load footer.txt into #footer-container -->
-<script>
-    fetch('component/footer.txt')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('footer-container').innerHTML = data;
-        })
-        .catch(error => console.error('Error loading footer:', error));
-</script>
-
-<!-- Load gear into #gear -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/OBJLoader.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three.meshline"></script>
-<script>
-    // Scene, camera, and renderer setup
+  function createScene(containerId, geometry) {
     const scene = new THREE.Scene();
 
-    // Set square renderer size
-    const rendererSize = 725; // 500px square
-    const aspect = 1; // Square aspect ratio
-    const camera = new THREE.OrthographicCamera(
-        -1.2, 1.2, 1.2, -1.2, 0.1, 1000
-    );
-    camera.position.z = 5;
+    const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+    camera.position.z = 2;
 
-    const renderer = new THREE.WebGLRenderer({ antialias: true });
-    renderer.setSize(rendererSize, rendererSize);
-    const gearContainer = document.querySelector('.gear');
-    gearContainer.appendChild(renderer.domElement);
+    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+    const container = document.getElementById(containerId);
+    renderer.setSize(container.clientWidth, container.clientHeight);
+    renderer.setClearColor(0x000000, 0); // Transparent
 
-    const canvas = renderer.domElement;
-    canvas.style.display = 'flexbox';
-    canvas.style.margin = 'auto'; // Center within flexbox if necessary
-    canvas.style.width = '100%';  // Optional: Adjust width
-    canvas.style.height = '100%'; // Optional: Adjust height
-    //document.body.appendChild(renderer.domElement);
+    container.appendChild(renderer.domElement);
 
-    // Add a light
-    const light = new THREE.DirectionalLight(0xffffff, 1);
-    light.position.set(5, 5, 5).normalize();
-    scene.add(light);
-    scene.background = new THREE.Color(0x131313); // 0x131313
+    const material = new THREE.MeshNormalMaterial();
+    const mesh = new THREE.Mesh(geometry, material);
+    scene.add(mesh);
 
-    // Load the OBJ model
-    const objLoader = new THREE.OBJLoader();
-    let gear;
-    let targetSpeed = 0.00125; // Half the original speed
-    let currentSpeed = 0; // Initial speed for lerp
-    const lerpFactor = 0.075; // How fast the transition happens
-
-    objLoader.load('3d/gear/gear.obj', function (object) {
-        gear = object;
-
-        // Apply smooth material
-        const material = new THREE.MeshPhongMaterial({ color: 0x333333 });
-        gear.traverse((child) => {
-            if (child.isMesh) {
-                child.material = material;
-            }
-        });
-
-        // Add edges
-        const edges = new THREE.EdgesGeometry(gear.children[0].geometry);
-
-        // Create a buffer geometry for edges
-        const edgePositions = edges.attributes.position.array;
-        const lineGeometry = new THREE.BufferGeometry();
-        lineGeometry.setAttribute('position', new THREE.BufferAttribute(edgePositions, 3));
-
-        // Create a MeshLine
-        const meshLine = new MeshLine();
-        meshLine.setGeometry(lineGeometry);
-
-        // Create a material for the MeshLine
-        const meshLineMaterial = new MeshLineMaterial({
-            color: 0xffffff,
-            lineWidth: 0.02, // Adjust thickness
-        });
-
-        // Add the MeshLine to the scene
-        const thickEdges = new THREE.Mesh(meshLine.geometry, meshLineMaterial);
-        gear.add(thickEdges);
-
-        // Adjust rotation
-        gear.rotation.x = Math.PI / 2.5;
-        gear.rotation.z = Math.PI / 10;
-        scene.add(gear);
-
-        // Add hover effect
-        renderer.domElement.addEventListener('mouseover', () => {
-            targetSpeed = 0.005; // Double the speed
-        });
-
-        renderer.domElement.addEventListener('mouseout', () => {
-            targetSpeed = 0.00125; // Reset to half speed
-        });
-    });
-
-    // Animation loop
-    function animate() {
-        requestAnimationFrame(animate);
-
-        // Gradually adjust the speed
-        currentSpeed += (targetSpeed - currentSpeed) * lerpFactor;
-
-        // Rotate the gear
-        if (gear) {
-            gear.rotateY(currentSpeed); // Use the interpolated speed
-        }
-
-        renderer.render(scene, camera);
+    function resizeRenderer() {
+      const width = container.clientWidth;
+      const height = container.clientHeight;
+      renderer.setSize(width, height);
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
     }
+
+    window.addEventListener('resize', resizeRenderer);
+    resizeRenderer();
+
+    function animate() {
+      requestAnimationFrame(animate);
+
+      mesh.rotation.x += 0.01;
+      mesh.rotation.y += 0.01;
+
+      renderer.render(scene, camera);
+    }
+
     animate();
+  }
+
+  // Create the three scenes
+  createScene('threejs-container', new THREE.BoxGeometry());
+  createScene('threejs-container-2', new THREE.ConeGeometry(1, 1.5, 4)); // Pyramid!
+  createScene('threejs-container-3', new THREE.TeapotGeometry(0.7)); // Teapot!
 </script>
+
+
+
+</body>
+</html>
