@@ -241,12 +241,12 @@
         directionalLight.position.set(5, 5, 5).normalize();
         scene.add(directionalLight);
         const mtlLoader = new THREE.MTLLoader();
-        mtlLoader.setPath('/webAssets/3dhome/');
+        mtlLoader.setPath('webAssets/3dhome/');
         mtlLoader.load('WiiU.mtl', (materials) => {
           materials.preload();
           const objLoader = new THREE.OBJLoader();
           objLoader.setMaterials(materials);
-          objLoader.setPath('/webAssets/3dhome/');
+          objLoader.setPath('webAssets/3dhome/');
           objLoader.load('WiiU.obj', (obj) => {
             obj.scale.set(1.75, 1.75, 1.75);
             obj.rotation.x = Math.PI / 6;
@@ -395,7 +395,7 @@
         composer.addPass(edgePass);
         const loader = new THREE.OBJLoader();
         let object = null;
-        loader.load('/webAssets/3dhome/Gears.obj', (obj) => {
+        loader.load('webAssets/3dhome/Gears.obj', (obj) => {
           const material = new THREE.MeshPhysicalMaterial({
             color: 0x333333
           });
