@@ -190,7 +190,9 @@
     <!--Footer-->
     <div id="footer-container"></div>
     <!--Load in the Header and Footer Components-->
-    <script>
+
+
+    <!-- <script>
       async function loadComponent(id, path) {
         const response = await fetch(path);
         const text = await response.text();
@@ -206,7 +208,25 @@
         });
       });
       loadComponent('footer-container', '/_components/footer.txt');
-    </script>
+    </script> -->
+    <script>
+      fetch('_components/header.txt')
+          .then(response => response.text())
+          .then(data => {
+              document.getElementById('header-container').innerHTML = data;
+          })
+          .catch(error => console.error('Error loading header:', error));
+  </script>
+  
+  <!-- Load footer.txt into #footer-container -->
+  <script>
+      fetch('_components/footer.txt')
+          .then(response => response.text())
+          .then(data => {
+              document.getElementById('footer-container').innerHTML = data;
+          })
+          .catch(error => console.error('Error loading footer:', error));
+  </script>
     <!--3d Models To Use-->
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/OBJLoader.js"></script>
     <!--3d Scene-->
