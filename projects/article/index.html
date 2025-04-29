@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>Wii U Portal - Article</title>
-  <link rel="stylesheet" href="/_css/style.css" />
+  <link rel="stylesheet" href="/css/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     .article-container {
@@ -79,7 +79,7 @@
   </style>
 </head>
 <body>
-  <div style="position: fixed; top: 0; left: 0; width: 100%; height: 180%; background: url('/_assets/background/heroback.png') center center / cover no-repeat; z-index: -1;"></div>
+  <div style="position: fixed; top: 0; left: 0; width: 100%; height: 180%; background: url('/webAssets/background/heroback.png') center center / cover no-repeat; z-index: -1;"></div>
 
   <div id="header-container"></div>
 
@@ -90,7 +90,7 @@
       <span>Released: April 29, 2025</span> · 
       <span>Edited: April 30, 2025</span>
       <div class="author-box">
-        <img src="/_assets/images/author-jacob.png" alt="Jacob McGowan" />
+        <img src="/webAssets/images/author-jacob.png" alt="Jacob McGowan" />
         <span>By Jacob McGowan</span>
       </div>
     </div>
@@ -128,7 +128,7 @@
       Here’s what the final prototype looked like on real hardware:
     </p>
 
-    <img src="/_assets/images/portal-wiiu-screenshot.png" class="article-img" alt="Wii U Portal Screenshot" />
+    <img src="/webAssets/images/portal-wiiu-screenshot.png" class="article-img" alt="Wii U Portal Screenshot" />
 
     <blockquote>
       “The cake may be a lie, but the touchscreen physics are very real.” – Me, after debugging rotation drift for 6 hours.
@@ -177,7 +177,7 @@
       scene.add(directionalLight);
 
       const loader = new THREE.OBJLoader();
-      loader.load("/_assets/3dhome/WiiU.obj", function (object) {
+      loader.load("/webAssets/3dhome/WiiU.obj", function (object) {
         object.scale.set(1.5, 1.5, 1.5);
         scene.add(object);
 
