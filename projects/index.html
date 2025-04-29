@@ -30,7 +30,7 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     " onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.6)';"
     onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 16px rgba(0,0,0,0.4)';">
-      <img src="/_assets/images/project-thumb.png" alt="Project Thumbnail" style="width: 100%; border-radius: 8px;" />
+      <img src="./_assets/images/project-thumb.png" alt="Project Thumbnail" style="width: 100%; border-radius: 8px;" />
       <h2 style="margin-top: 15px;">Wii U Portal</h2>
       <p style="font-size: 1em; color: #ddd;">A reimagining of Portal for the Wii U. Physics puzzles meet touchscreen madness.</p>
       <a href="/projects/article" style="
@@ -69,8 +69,8 @@
       const html = await res.text();
       document.getElementById(id).innerHTML = html;
     }
-    loadComponent('header-container', '/_components/header.html');
-    loadComponent('footer-container', '/_components/footer.html');
+    loadComponent('header-container', './_components/header.html');
+    loadComponent('footer-container', './_components/footer.html');
   </script>
 </body>
 </html>
