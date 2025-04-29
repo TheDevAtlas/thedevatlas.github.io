@@ -278,48 +278,69 @@
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/CopyShader.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/effects/OutlineEffect.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/MTLLoader.js"></script>
 
 <script>
   // Function to create simple spinning scenes (for teapot)
-  function createScene(containerId, geometry) {
-    const scene = new THREE.Scene();
+  function createScene(containerId) {
+  const scene = new THREE.Scene();
 
-    const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
-    camera.position.z = 2;
+  const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+  camera.position.z = 3;
 
-    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-    const container = document.getElementById(containerId);
-    renderer.setSize(container.clientWidth, container.clientHeight);
-    renderer.setClearColor(0x000000, 0); // Transparent
+  const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+  const container = document.getElementById(containerId);
+  renderer.setSize(container.clientWidth, container.clientHeight);
+  renderer.setClearColor(0x000000, 0);
 
-    container.appendChild(renderer.domElement);
+  container.appendChild(renderer.domElement);
 
-    const material = new THREE.MeshNormalMaterial();
-    const mesh = new THREE.Mesh(geometry, material);
-    scene.add(mesh);
+  const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+  scene.add(ambientLight);
 
-    function resizeRenderer() {
-      const width = container.clientWidth;
-      const height = container.clientHeight;
-      renderer.setSize(width, height);
-      camera.aspect = width / height;
-      camera.updateProjectionMatrix();
-    }
+  const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+  directionalLight.position.set(5, 5, 5).normalize();
+  scene.add(directionalLight);
 
-    window.addEventListener('resize', resizeRenderer);
-    resizeRenderer();
+  const mtlLoader = new THREE.MTLLoader();
+  mtlLoader.setPath('/assets/3dhome/');
+  mtlLoader.load('WiiU.mtl', (materials) => {
+    materials.preload();
 
-    function animate() {
-      requestAnimationFrame(animate);
+    const objLoader = new THREE.OBJLoader();
+    objLoader.setMaterials(materials);
+    objLoader.setPath('/assets/3dhome/');
+    objLoader.load('WiiU.obj', (obj) => {
+      obj.scale.set(1.5, 1.5, 1.5);
+      obj.rotation.x = Math.PI / 6;
+      scene.add(obj);
 
-      mesh.rotation.x += 0.01;
-      mesh.rotation.y += 0.01;
+      object = obj; // For animation
+    });
+  });
 
-      renderer.render(scene, camera);
-    }
+  let object = null;
 
-    animate();
+  function resizeRenderer() {
+    const width = container.clientWidth;
+    const height = container.clientHeight;
+    renderer.setSize(width, height);
+    camera.aspect = width / height;
+    camera.updateProjectionMatrix();
   }
+
+  window.addEventListener('resize', resizeRenderer);
+  resizeRenderer();
+
+  function animate() {
+    requestAnimationFrame(animate);
+    if (object) object.rotation.y += 0.01;
+    renderer.render(scene, camera);
+  }
+
+  animate();
+}
+
 
   // Hero Scene: Load Gears.obj
   // Edge detection outline approach using a custom shader
