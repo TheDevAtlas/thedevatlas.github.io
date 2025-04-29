@@ -35,14 +35,15 @@
     <div style="display: flex; justify-content: center;">
         <div style="display: flex; flex-wrap: wrap; align-items: stretch; width: 100%; max-width: 1400px;">
         <div style="flex: 1 1 50%; min-width: 300px; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center;">
-            <h1 style="margin-bottom: 20px;">Learn, Build, and Create</h1>
-            <p style="line-height: 1.6; font-size: 1.1em;">
+            <h1 style="margin-bottom: 20px; font-size: 3em;">Learn, Build, and Create</h1>
+            <p style="line-height: 1.6; font-size: 1.5em;">
             Explore projects and assets, join the community, and write some code... one line at a time.
             </p>
         </div>
         <div style="flex: 1 1 50%; min-width: 300px; padding: 20px; box-sizing: border-box; text-align: center; display: flex; align-items: center; justify-content: center;">
             <!-- 3D Canvas Here -->
-            <div id="threejs-container" style="width: 100%; height: 400px;"></div>
+            <div id="threejs-container" style="width: 100%; height: 400px; display: flex; align-items: center; justify-content: center;"></div>
+
         </div>
         </div>
     </div>
@@ -56,8 +57,8 @@
             <div id="threejs-container-2" style="width: 100%; height: 400px;"></div>
         </div>
         <div style="flex: 1 1 50%; min-width: 300px; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center;">
-            <h1 style="margin-bottom: 20px;">We build tons of projects for you to see!</h1>
-            <p style="line-height: 1.6; font-size: 1.1em;">
+            <h1 style="margin-bottom: 20px; font-size: 3em;">We build tons of projects for you to see!</h1>
+            <p style="line-height: 1.6; font-size: 1.5em;">
             Whether it is side projects or game development, there is something for everyone.
             </p>
         </div>
@@ -68,8 +69,8 @@
     <div style="display: flex; justify-content: center;">
         <div style="display: flex; flex-wrap: wrap; align-items: stretch; width: 100%; max-width: 1400px;">
         <div style="flex: 1 1 50%; min-width: 300px; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center;">
-            <h1 style="margin-bottom: 20px;">Reverse Engineering</h1>
-            <p style="line-height: 1.6; font-size: 1.1em;">
+            <h1 style="margin-bottom: 20px; font-size: 3em;">Reverse Engineering</h1>
+            <p style="line-height: 1.6; font-size: 1.5em;">
             The only way to learn is by doing. We have taken a deeper look into how game developers have built their games.
             </p>
         </div>
@@ -128,9 +129,23 @@
   loadComponent('footer-container', '/components/footer.html');
 </script>
 
+<!--3d Models To Use-->
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/OBJLoader.js"></script>
+
+<!--3d Scene-->
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/geometries/TeapotGeometry.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/OBJLoader.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/EffectComposer.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/RenderPass.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/ShaderPass.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/CopyShader.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/effects/OutlineEffect.js"></script>
+
 <script>
+  // Function to create simple spinning scenes (for pyramid and teapot)
   function createScene(containerId, geometry) {
     const scene = new THREE.Scene();
 
@@ -171,11 +186,178 @@
     animate();
   }
 
-  // Create the three scenes
-  createScene('threejs-container', new THREE.BoxGeometry());
-  createScene('threejs-container-2', new THREE.ConeGeometry(1, 1.5, 4)); // Pyramid!
-  createScene('threejs-container-3', new THREE.TeapotGeometry(0.7)); // Teapot!
+  // Hero Scene: Load Gears.obj
+  // Edge detection outline approach using a custom shader
+  function createHeroScene() {
+  const scene = new THREE.Scene();
+
+  const camera = new THREE.OrthographicCamera(
+    -1.2, 1.2, 1.2, -1.2, 0.1, 1000
+  );
+  camera.position.z = 5;
+
+  const container = document.getElementById('threejs-container');
+  const renderer = new THREE.WebGLRenderer({ 
+    alpha: true, 
+    antialias: true 
+  });
+  renderer.setSize(container.clientWidth, container.clientHeight);
+  renderer.setClearColor(0x000000, 0); // Transparent
+
+  container.appendChild(renderer.domElement);
+
+  const light = new THREE.DirectionalLight(0xffffff, 1);
+  light.position.set(5, 5, 5).normalize();
+  scene.add(light);
+
+  // Create composer for post-processing
+  const composer = new THREE.EffectComposer(renderer);
+  const renderPass = new THREE.RenderPass(scene, camera);
+  composer.addPass(renderPass);
+
+  // Improved edge detection shader with thickness control
+  const edgeShader = {
+    uniforms: {
+      "tDiffuse": { value: null },
+      "resolution": { value: new THREE.Vector2(container.clientWidth, container.clientHeight) },
+      "outlineColor": { value: new THREE.Vector3(1, 1, 1) },
+      "outlineStrength": { value: 3.75 },  // Reduced from 10.0 to balance with thickness
+      "outlineThickness": { value: 2.0 }  // Adjustable thickness parameter
+    },
+    vertexShader: `
+      varying vec2 vUv;
+      void main() {
+        vUv = uv;
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+      }
+    `,
+    fragmentShader: `
+      uniform sampler2D tDiffuse;
+      uniform vec2 resolution;
+      uniform vec3 outlineColor;
+      uniform float outlineStrength;
+      uniform float outlineThickness;
+      varying vec2 vUv;
+      
+      void main() {
+        vec2 texel = vec2(1.0 / resolution.x, 1.0 / resolution.y);
+        vec4 center = texture2D(tDiffuse, vUv);
+        
+        // Use multiple samples at varying distances to create thicker outlines
+        float edge = 0.0;
+        
+        // Sample in a pattern around the current pixel at varying distances
+        for(float i = 1.0; i <= outlineThickness; i++) {
+          float weight = (outlineThickness - i + 1.0) / outlineThickness;
+          
+          // Sample neighboring pixels at the current distance
+          vec4 up = texture2D(tDiffuse, vUv + vec2(0.0, texel.y * i));
+          vec4 down = texture2D(tDiffuse, vUv + vec2(0.0, -texel.y * i));
+          vec4 left = texture2D(tDiffuse, vUv + vec2(-texel.x * i, 0.0));
+          vec4 right = texture2D(tDiffuse, vUv + vec2(texel.x * i, 0.0));
+          
+          // Also sample diagonals for better edge detection
+          vec4 upLeft = texture2D(tDiffuse, vUv + vec2(-texel.x * i, texel.y * i));
+          vec4 upRight = texture2D(tDiffuse, vUv + vec2(texel.x * i, texel.y * i));
+          vec4 downLeft = texture2D(tDiffuse, vUv + vec2(-texel.x * i, -texel.y * i));
+          vec4 downRight = texture2D(tDiffuse, vUv + vec2(texel.x * i, -texel.y * i));
+          
+          // Calculate differences with center pixel
+          float dx = length(left.rgb - right.rgb);
+          float dy = length(up.rgb - down.rgb);
+          float dxy1 = length(upLeft.rgb - downRight.rgb);
+          float dxy2 = length(upRight.rgb - downLeft.rgb);
+          
+          // Combine edge detection results with weight
+          edge += (sqrt(dx * dx + dy * dy) + sqrt(dxy1 * dxy1 + dxy2 * dxy2)) * weight;
+        }
+        
+        // Apply strength parameter and threshold
+        edge = smoothstep(0.1, 0.2, edge * outlineStrength);
+        
+        // Mix original color with outline color based on edge strength
+        gl_FragColor = mix(center, vec4(outlineColor, 1.0), edge);
+      }
+    `
+  };
+
+  const edgePass = new THREE.ShaderPass(edgeShader);
+  edgePass.renderToScreen = true;
+  composer.addPass(edgePass);
+
+  const loader = new THREE.OBJLoader();
+  let object = null;
+
+  loader.load('/assets/3dhome/Gears.obj', (obj) => {
+    const material = new THREE.MeshPhysicalMaterial({ color: 0x333333 });
+    object = obj;
+    object.traverse((child) => {
+      if (child.isMesh) {
+        child.material = material;
+      }
+    });
+    object.rotation.x = Math.PI / 2.5;
+    object.rotation.z = Math.PI / 10;
+    scene.add(object);
+  });
+
+  function resizeRenderer() {
+    const width = container.clientWidth;
+    const height = container.clientHeight;
+    
+    renderer.setSize(width, width);
+    composer.setSize(width, width);
+    
+    // Update shader resolution
+    edgePass.uniforms.resolution.value.set(width, width);
+    
+    camera.left = -1.2 * (width / width);
+    camera.right = 1.2 * (width / width);
+    camera.top = 1.2;
+    camera.bottom = -1.2;
+    camera.updateProjectionMatrix();
+
+    // Add hover effect
+    renderer.domElement.addEventListener('mouseover', () => {
+            targetSpeed = 0.0075; // Double the speed
+        });
+
+        renderer.domElement.addEventListener('mouseout', () => {
+            targetSpeed = 0.0025; // Reset to half speed
+        });
+  }
+
+  window.addEventListener('resize', resizeRenderer);
+  resizeRenderer();
+
+
+    let targetSpeed = 0.0025; // Half the original speed
+    let currentSpeed = 0; // Initial speed for lerp
+    const lerpFactor = 0.075; // How fast the transition happens
+
+  function animate() {
+    requestAnimationFrame(animate);
+
+    // Gradually adjust the speed
+    currentSpeed += (targetSpeed - currentSpeed) * lerpFactor;
+
+    // Rotate the gear
+    if (object) {
+        object.rotateY(currentSpeed); // Use the interpolated speed
+    }
+    composer.render();
+    //renderer.render(scene, camera);
+}
+
+  animate();
+}
+
+  // Create all three scenes
+  createHeroScene(); // Gears OBJ
+  createScene('threejs-container-2', new THREE.ConeGeometry(1, 1.5, 4)); // Pyramid
+  createScene('threejs-container-3', new THREE.TeapotGeometry(0.7)); // Teapot
 </script>
+
 
 
 
