@@ -19,12 +19,49 @@
 
     <section style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px;">
       <!-- Example Asset Card -->
-      <div style="width: 300px; background: white; border-radius: 12px; padding: 20px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); text-align: center;">
-        <img src="/_assets/images/asset-thumb.png" alt="Asset Thumbnail" style="width: 100%; border-radius: 8px;" />
-        <h2 style="margin-top: 15px;">Mii Maker Files</h2>
-        <p style="font-size: 1em; color: #444;">Unity-ready Mii-style character templates. Great for prototyping player avatars.</p>
-        <a href="#" style="margin-top: 10px; display: inline-block; padding: 10px 20px; background: #ff9800; color: white; text-decoration: none; border-radius: 6px;">Download</a>
-      </div>
+      <div style="
+  width: 300px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.6)';"
+onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 16px rgba(0,0,0,0.4)';">
+  
+  <img src="/_assets/images/asset-thumb.png" alt="Asset Thumbnail" style="width: 100%; border-radius: 8px;" />
+  
+  <h2 style="margin-top: 15px;">Mii Maker Files</h2>
+  
+  <p style="font-size: 1em; color: #ddd;">
+    Unity-ready Mii-style character templates. Great for prototyping player avatars.
+  </p>
+  
+  <a href="#" style="
+    margin-top: 10px;
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #f7971e, #ffd200);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1em;
+    box-shadow: 0 4px 15px rgba(247, 151, 30, 0.4);
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    position: relative;
+    transform: translateY(0);
+  " onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(247, 151, 30, 0.6)';"
+  onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(247, 151, 30, 0.4)';">
+    Download
+  </a>
+</div>
+
       <!-- More cards here -->
     </section>
   </main>
