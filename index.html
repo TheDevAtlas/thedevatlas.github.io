@@ -1,347 +1,252 @@
-<!--Webpage Information and Other References-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>TheDevAtlas</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/style.css">
-  </head>
-  <body>
-    <!--Main Page Background-->
-    <div style="
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 180%;
-    background: url('webAssets/background/heroback.png') center center / cover no-repeat;
-    z-index: -1;
-"></div>
-    <!--Header-->
-    <div id="header-container"></div>
-    <!--Web Content For The Page-->
-    <main class="main-content" style="padding: 5% 10%; display: flex; flex-direction: column; gap: 100px;">
-      <!--Hero Section-->
-      <div style="display: flex; justify-content: center;">
-        <div style="display: flex; flex-wrap: wrap; align-items: stretch; width: 100%; max-width: 1400px;">
-          <div style="flex: 1 1 50%; min-width: 300px; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center;">
-            <h1 style="margin-bottom: 20px; font-size: 3em;">Learn, Build, and Create</h1>
-            <p style="line-height: 1.6; font-size: 1.5em;"> Explore projects and assets, join the community, and write some code... one line at a time. </p>
-            <div style="display: flex; justify-content: center; gap: 20px; margin-top: 10px;">
-              <!-- Projects Button -->
-              <a href="/projects" style="
-                display: inline-block;
-                padding: 12px 30px;
-                background: linear-gradient(135deg, #fd746c, #ff9068);
-                color: white;
-                text-decoration: none;
-                border-radius: 8px;
-                font-weight: 600;
-                font-size: 1.2em;
-                box-shadow: 0 4px 15px rgba(253, 116, 108, 0.4);
-                transition: all 0.3s ease;
-                border: none;
-                cursor: pointer;
-                text-align: center;
-                position: relative;
-                transform: translateY(0);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(253, 116, 108, 0.6)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(253, 116, 108, 0.4)';"> Projects
-              </a>
-              <!-- Assets Button -->
-              <a href="/assets" style="
-                display: inline-block;
-                padding: 12px 30px;
-                background: linear-gradient(135deg, #f7971e, #ffd200);
-                color: white;
-                text-decoration: none;
-                border-radius: 8px;
-                font-weight: 600;
-                font-size: 1.2em;
-                box-shadow: 0 4px 15px rgba(247, 151, 30, 0.4);
-                transition: all 0.3s ease;
-                border: none;
-                cursor: pointer;
-                text-align: center;
-                position: relative;
-                transform: translateY(0);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(247, 151, 30, 0.6)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(247, 151, 30, 0.4)';"> Assets
-              </a>
-            </div>
-          </div>
-          <div style="flex: 1 1 50%; min-width: 300px; padding: 20px; box-sizing: border-box; text-align: center; display: flex; align-items: center; justify-content: center;">
-            <!-- 3D Canvas Here -->
-            <div id="threejs-container" style="width: 100%; height: 400px; display: flex; align-items: center; justify-content: center;"></div>
-          </div>
-        </div>
-      </div>
-      <!-- Projects Section -->
-      <div style="display: flex; justify-content: center;">
-        <div style="display: flex; flex-wrap: wrap; align-items: stretch; width: 100%; max-width: 1400px;">
-          <div style="flex: 1 1 50%; min-width: 300px; padding: 20px; box-sizing: border-box; text-align: center; display: flex; align-items: center; justify-content: center;">
-            <!-- 3D Canvas Here -->
-            <div id="threejs-container-2" style="width: 100%; height: 400px;"></div>
-          </div>
-          <div style="flex: 1 1 50%; min-width: 300px; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center;">
-            <h1 style="margin-bottom: 20px; font-size: 3em;">See What We’re Building</h1>
-            <p style="line-height: 1.6; font-size: 1.5em;"> Explore games, tools, and experiments. We don't just build, we put in passion into a new world of possibilities. </p>
-            <div style="display: flex; justify-content: center; gap: 20px; margin-top: 10px;">
-              <!-- YouTube Button -->
-              <a href="https://youtube.com" style="
-                  display: inline-block;
-                  padding: 12px 30px;
-                  background: linear-gradient(135deg, #FF7B7B, #FF0000);
-                  color: white;
-                  text-decoration: none;
-                  border-radius: 8px;
-                  font-weight: 600;
-                  font-size: 1.2em;
-                  box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4);
-                  transition: all 0.3s ease;
-                  border: none;
-                  cursor: pointer;
-                  text-align: center;
-                  position: relative;
-                  transform: translateY(0);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(255, 0, 0, 0.6)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(255, 0, 0, 0.4)';"> YouTube </a>
-              <!-- GitHub Button -->
-              <a href="https://github.com" style="
-                  display: inline-block;
-                  padding: 12px 30px;
-                  background: linear-gradient(135deg, #6e8efb, #a777e3);
-                  color: white;
-                  text-decoration: none;
-                  border-radius: 8px;
-                  font-weight: 600;
-                  font-size: 1.2em;
-                  box-shadow: 0 4px 15px rgba(51, 51, 51, 0.4);
-                  transition: all 0.3s ease;
-                  border: none;
-                  cursor: pointer;
-                  text-align: center;
-                  position: relative;
-                  transform: translateY(0);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(110, 142, 251, 0.6)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(110, 142, 251, 0.4)';"> GitHub </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Assets Section -->
-      <div style="display: flex; justify-content: center;">
-        <div style="display: flex; flex-wrap: wrap; align-items: stretch; width: 100%; max-width: 1400px;">
-          <div style="flex: 1 1 50%; min-width: 300px; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center;">
-            <h1 style="margin-bottom: 20px; font-size: 3em;">Reverse Engineering</h1>
-            <p style="line-height: 1.6; font-size: 1.5em;"> Dissect. Analyze. Rebuild. Learn what makes great games tick. The only way to learn is by doing. Reverse engineering unlocks new worlds of knowledge and creativity. </p>
-          </div>
-          <div style="flex: 1 1 50%; min-width: 300px; padding: 20px; box-sizing: border-box; text-align: center; display: flex; align-items: center; justify-content: center;">
-            <!-- 3D Canvas Here -->
-            <div id="threejs-container-3" style="width: 100%; height: 400px;"></div>
-          </div>
-        </div>
-      </div>
-      <!--Discord and Patreon-->
-      <div style="display: flex; justify-content: center;">
-        <div style="display: flex; flex-wrap: wrap; align-items: stretch; width: 100%; max-width: 1400px;">
-          <!-- Discord Section -->
-          <div style="flex: 1 1 50%; min-width: 300px; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center;">
-            <h1 style="margin-bottom: 20px;">Join the Discord</h1>
-            <p style="line-height: 1.6; font-size: 1.1em;"> Collaborate, learn, and grow with like-minded creators. A community for those who dream bigger, build smarter, and code harder. Get early access to projects and tutorials. </p>
-            <div style="display: flex; justify-content: center; gap: 20px; margin-top: 10px;">
-              <a href="/projects" style="
-                display: inline-block;
-                padding: 12px 30px;
-                background: linear-gradient(135deg, #4facfe, #00f2fe);
-                color: white;
-                text-decoration: none;
-                border-radius: 8px;
-                font-weight: 600;
-                font-size: 1.2em;
-                box-shadow: 0 4px 15px rgba(79, 172, 254, 0.4);
-                transition: all 0.3s ease;
-                border: none;
-                cursor: pointer;
-                text-align: center;
-                position: relative;
-                transform: translateY(0);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(79, 172, 254, 0.6)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(79, 172, 254, 0.4)';"> Discord </a>
-            </div>
-          </div>
-          <!-- Patreon Section -->
-          <div style="flex: 1 1 50%; min-width: 300px; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center;">
-            <h1 style="margin-bottom: 20px;">Join the Patreon</h1>
-            <p style="line-height: 1.6; font-size: 1.1em;"> Support new projects, tutorials, and content — and get exclusive community roles. Your support fuels the future of open creation and learning. Every project, every tutorial, every line of code — made possible by you. </p>
-            <div style="display: flex; justify-content: center; gap: 20px; margin-top: 10px;">
-              <a href="/projects" style="
-                display: inline-block;
-                padding: 12px 30px;
-                background: linear-gradient(135deg, #ff758c, #ff7eb3);
-                color: white;
-                text-decoration: none;
-                border-radius: 8px;
-                font-weight: 600;
-                font-size: 1.2em;
-                box-shadow: 0 4px 15px rgba(255, 117, 140, 0.4);
-                transition: all 0.3s ease;
-                border: none;
-                cursor: pointer;
-                text-align: center;
-                position: relative;
-                transform: translateY(0);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(255, 117, 140, 0.6)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(255, 117, 140, 0.4)';"> Patreon </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
-    <!--Footer-->
-    <div id="footer-container"></div>
-    <!--Load in the Header and Footer Components-->
+	<!--Webpage Information and Fonts-->
+	<head>
+		<!--Title of Page-->
+		<title>TheDevAtlas</title>
 
+		<!--CSS on Page-->
+        <link rel="stylesheet" href="/css/generic.css">
+		<link rel="stylesheet" href="/css/navBars.css">
+        <link rel="stylesheet" href="/css/homePage.css">
 
-    <script>
-      async function loadComponent(id, path) {
-        const response = await fetch(path);
-        const text = await response.text();
-        document.getElementById(id).innerHTML = text;
-      }
-      loadComponent('header-container', './components/header.txt').then(() => {
-        // Initialize burger menu after header loads
-        const burger = document.getElementById('burger');
-        const nav = document.getElementById('site-nav');
-        burger.addEventListener('click', () => {
-          nav.classList.toggle('open');
-          burger.classList.toggle('open');
-        });
-      });
-      loadComponent('footer-container', './components/footer.txt');
-    </script>
-    <!--3d Models To Use-->
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/OBJLoader.js"></script>
-    <!--3d Scene-->
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/geometries/TeapotGeometry.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/OBJLoader.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/EffectComposer.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/RenderPass.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/ShaderPass.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/CopyShader.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/effects/OutlineEffect.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/MTLLoader.js"></script>
-    <script>
-      // Function to create simple spinning scenes (for teapot)
-      function createScene(containerId) {
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(15, 1, 0.1, 1000);
-        camera.position.z = 15;
-        const renderer = new THREE.WebGLRenderer({
-          alpha: true,
-          antialias: true
-        });
-        const container = document.getElementById(containerId);
-        renderer.setSize(container.clientWidth, container.clientHeight);
-        renderer.setClearColor(0x000000, 0);
-        container.appendChild(renderer.domElement);
-        const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
-        scene.add(ambientLight);
-        const directionalLight = new THREE.DirectionalLight(0xffffff, 3.5);
-        directionalLight.position.set(5, 5, 5).normalize();
-        scene.add(directionalLight);
-        const mtlLoader = new THREE.MTLLoader();
-        mtlLoader.setPath('webAssets/3dhome/');
-        mtlLoader.load('WiiU.mtl', (materials) => {
-          materials.preload();
-          const objLoader = new THREE.OBJLoader();
-          objLoader.setMaterials(materials);
-          objLoader.setPath('webAssets/3dhome/');
-          objLoader.load('WiiU.obj', (obj) => {
-            obj.scale.set(1.75, 1.75, 1.75);
-            obj.rotation.x = Math.PI / 6;
-            scene.add(obj);
-            object = obj;
-          });
-        });
-        let object = null;
-        let mouseX = 0,
-          mouseY = 0;
-        let targetX = 0,
-          targetY = 0;
-        const windowHalf = {
-          x: window.innerWidth / 2,
-          y: window.innerHeight / 2
-        };
+		<!--Fonts on Page-->
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-        function onDocumentMouseMove(event) {
-          mouseX = (event.clientX - windowHalf.x) / windowHalf.x;
-          mouseY = (event.clientY - windowHalf.y) / windowHalf.y;
-        }
-        document.addEventListener('mousemove', onDocumentMouseMove, false);
+		<!--Extra Information-->
+		<meta charset="UTF-8">
+	</head>
 
-        function resizeRenderer() {
-          const width = container.clientWidth;
-          const height = container.clientHeight;
-          renderer.setSize(width, height);
-          camera.aspect = width / height;
-          camera.updateProjectionMatrix();
-        }
-        window.addEventListener('resize', resizeRenderer);
-        resizeRenderer();
+	<!--Webpage-->
+	<body>
+		<!--Background-->
+		<div class="Background"></div>
 
-        function animate(time) {
-          requestAnimationFrame(animate);
-          if (object) {
-            // Smoothly interpolate target positions
-            targetX += (mouseX * 0.9 - targetX) * 0.05;
-            targetY += (mouseY * 0.75 - targetY) * 0.05;
-            // Gyrating motion
-            object.rotation.x = Math.PI / 6 + Math.sin(time * 0.001) * 0.05 + targetY * 0.3;
-            object.rotation.y = Math.PI + Math.cos(time * 0.001) * 0.05 + targetX * 0.5;
-          }
-          renderer.render(scene, camera);
-        }
-        animate();
-      }
-      // Hero Scene: Load Gears.obj
-      // Edge detection outline approach using a custom shader
-      function createHeroScene() {
-        const scene = new THREE.Scene();
-        const camera = new THREE.OrthographicCamera(-1.2, 1.2, 1.2, -1.2, 0.1, 1000);
-        camera.position.z = 5;
-        const container = document.getElementById('threejs-container');
-        const renderer = new THREE.WebGLRenderer({
-          alpha: true,
-          antialias: true
-        });
-        renderer.setSize(container.clientWidth, container.clientHeight);
-        renderer.setClearColor(0x000000, 0); // Transparent
-        container.appendChild(renderer.domElement);
-        const light = new THREE.DirectionalLight(0xffffff, 1);
-        light.position.set(5, 5, 5).normalize();
-        scene.add(light);
-        // Create composer for post-processing
-        const composer = new THREE.EffectComposer(renderer);
-        const renderPass = new THREE.RenderPass(scene, camera);
-        composer.addPass(renderPass);
-        // Edge detection shader with thickness control
-        const edgeShader = {
-          uniforms: {
-            "tDiffuse": {
-              value: null
-            },
-            "resolution": {
-              value: new THREE.Vector2(container.clientWidth, container.clientHeight)
-            },
-            "outlineColor": {
-              value: new THREE.Vector3(1, 1, 1)
-            },
-            "outlineStrength": {
-              value: 3.75
-            },
-            "outlineThickness": {
-              value: 2.0
-            }
-          },
-          vertexShader: `
+		<!--Header-->
+		<div id="Header"></div>
+
+		<!--Main Content-->
+		<div class="Content">
+			<main class="main-content">
+				<!-- Hero Section -->
+				<div class="section">
+					<div class="section-inner">
+						<div class="section-half center-column">
+							<h1 class="hero-title">Learn, Build, and Create</h1>
+							<p class="hero-text">Explore projects and assets, join the community, and write some code... one line at a time.</p>
+							<div class="hero-buttons">
+								<a href="/projects" class="btn btn-projects">Projects</a>
+								<a href="/assets" class="btn btn-assets">Assets</a>
+							</div>
+						</div>
+						<div class="section-half center-content">
+							<div id="threejs-container" class="canvas-container"></div>
+						</div>
+					</div>
+				</div>
+				<!-- Projects Section -->
+				<div class="section">
+					<div class="section-inner">
+						<div class="section-half center-content">
+							<div id="threejs-container-2" class="canvas-container"></div>
+						</div>
+						<div class="section-half center-column">
+							<h1 class="hero-title">See What We’re Building</h1>
+							<p class="hero-text">Explore games, tools, and experiments. We don't just build, we put passion into a new world of possibilities.</p>
+							<div class="section-buttons">
+								<a href="https://youtube.com" class="btn btn-youtube">YouTube</a>
+								<a href="https://github.com" class="btn btn-github">GitHub</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Assets Section -->
+				<div class="section">
+					<div class="section-inner">
+						<div class="section-half center-column">
+							<h1 class="hero-title">Reverse Engineering</h1>
+							<p class="hero-text">Dissect. Analyze. Rebuild. Learn what makes great games tick. The only way to learn is by doing. Reverse engineering unlocks new worlds of knowledge and creativity.</p>
+						</div>
+						<div class="section-half center-content">
+							<div id="threejs-container-3" class="canvas-container"></div>
+						</div>
+					</div>
+				</div>
+				<!-- Discord & YouTube Members Section -->
+				<div class="section">
+					<div class="section-inner">
+						<div class="section-half center-column">
+							<h1>Join the Discord</h1>
+							<p class="hero-text" style="font-size: 1.1em;">Collaborate, learn, and grow with like-minded creators. A community for those who dream bigger, build smarter, and code harder. Get early access to projects and tutorials.</p>
+							<div class="section-buttons">
+								<a href="/projects" class="btn btn-discord">Join the Discord</a>
+							</div>
+						</div>
+						<div class="section-half center-column">
+							<h1>Join our YouTube Members!</h1>
+							<p class="hero-text" style="font-size: 1.1em;">Support new projects, tutorials, and content. Your support fuels the future of open creation and learning. Every project, every tutorial, every line of code — made possible by you.</p>
+							<div class="section-buttons">
+								<a href="/projects" class="btn btn-member">Become a Member</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+
+		<!--Footer-->
+		<div id="Footer"></div>
+
+        <!--Import NavBars-->
+		<script>
+			async function loadComponent(id, path) {
+				const response = await fetch(path);
+				const text = await response.text();
+				document.getElementById(id).innerHTML = text;
+			}
+			loadComponent('Header', '/components/header.html').then(() => {
+				const burger = document.getElementById('burger');
+				const nav = document.getElementById('site-nav');
+				burger.addEventListener('click', () => {
+					nav.classList.toggle('open');
+					burger.classList.toggle('open');
+				});
+			});
+			loadComponent('Footer', '/components/footer.html');
+		</script>
+
+        <!--3d Scene-->
+		<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/OBJLoader.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/geometries/TeapotGeometry.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/OBJLoader.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/EffectComposer.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/RenderPass.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/ShaderPass.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/CopyShader.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/effects/OutlineEffect.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/MTLLoader.js"></script>
+		<script>
+			// Function to create simple spinning scenes (for teapot)
+			function createScene(containerId) {
+				const scene = new THREE.Scene();
+				const camera = new THREE.PerspectiveCamera(15, 1, 0.1, 1000);
+				camera.position.z = 15;
+				const renderer = new THREE.WebGLRenderer({
+					alpha: true,
+					antialias: true
+				});
+				const container = document.getElementById(containerId);
+				renderer.setSize(container.clientWidth, container.clientHeight);
+				renderer.setClearColor(0x000000, 0);
+				container.appendChild(renderer.domElement);
+				const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+				scene.add(ambientLight);
+				const directionalLight = new THREE.DirectionalLight(0xffffff, 3.5);
+				directionalLight.position.set(5, 5, 5).normalize();
+				scene.add(directionalLight);
+				const mtlLoader = new THREE.MTLLoader();
+				mtlLoader.setPath('/src/3dhome/');
+				mtlLoader.load('WiiU.mtl', (materials) => {
+					materials.preload();
+					const objLoader = new THREE.OBJLoader();
+					objLoader.setMaterials(materials);
+					objLoader.setPath('/src/3dhome/');
+					objLoader.load('WiiU.obj', (obj) => {
+						obj.scale.set(1.75, 1.75, 1.75);
+						obj.rotation.x = Math.PI / 6;
+						scene.add(obj);
+						object = obj;
+					});
+				});
+				let object = null;
+				let mouseX = 0,
+					mouseY = 0;
+				let targetX = 0,
+					targetY = 0;
+				const windowHalf = {
+					x: window.innerWidth / 2,
+					y: window.innerHeight / 2
+				};
+
+				function onDocumentMouseMove(event) {
+					mouseX = (event.clientX - windowHalf.x) / windowHalf.x;
+					mouseY = (event.clientY - windowHalf.y) / windowHalf.y;
+				}
+				document.addEventListener('mousemove', onDocumentMouseMove, false);
+
+				function resizeRenderer() {
+					const width = container.clientWidth;
+					const height = container.clientHeight;
+					renderer.setSize(width, height);
+					camera.aspect = width / height;
+					camera.updateProjectionMatrix();
+				}
+				window.addEventListener('resize', resizeRenderer);
+				resizeRenderer();
+
+				function animate(time) {
+					requestAnimationFrame(animate);
+					if (object) {
+						// Smoothly interpolate target positions
+						targetX += (mouseX * 0.9 - targetX) * 0.05;
+						targetY += (mouseY * 0.75 - targetY) * 0.05;
+						// Gyrating motion
+						object.rotation.x = Math.PI / 6 + Math.sin(time * 0.001) * 0.05 + targetY * 0.3;
+						object.rotation.y = Math.PI + Math.cos(time * 0.001) * 0.05 + targetX * 0.5;
+					}
+					renderer.render(scene, camera);
+				}
+				animate();
+			}
+			// Hero Scene: Load Gears.obj
+			// Edge detection outline approach using a custom shader
+			function createHeroScene() {
+				const scene = new THREE.Scene();
+				const camera = new THREE.OrthographicCamera(-1.2, 1.2, 1.2, -1.2, 0.1, 1000);
+				camera.position.z = 5;
+				const container = document.getElementById('threejs-container');
+				const renderer = new THREE.WebGLRenderer({
+					alpha: true,
+					antialias: true
+				});
+				renderer.setSize(container.clientWidth, container.clientHeight);
+				renderer.setClearColor(0x000000, 0); // Transparent
+				container.appendChild(renderer.domElement);
+				const light = new THREE.DirectionalLight(0xffffff, 1);
+				light.position.set(5, 5, 5).normalize();
+				scene.add(light);
+				// Create composer for post-processing
+				const composer = new THREE.EffectComposer(renderer);
+				const renderPass = new THREE.RenderPass(scene, camera);
+				composer.addPass(renderPass);
+				// Edge detection shader with thickness control
+				const edgeShader = {
+					uniforms: {
+						"tDiffuse": {
+							value: null
+						},
+						"resolution": {
+							value: new THREE.Vector2(container.clientWidth, container.clientHeight)
+						},
+						"outlineColor": {
+							value: new THREE.Vector3(1, 1, 1)
+						},
+						"outlineStrength": {
+							value: 3.75
+						},
+						"outlineThickness": {
+							value: 2.0
+						}
+					},
+					vertexShader: `
         varying vec2 vUv;
         void main() {
           vUv = uv;
           gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
         }
       `,
-          fragmentShader: `
+					fragmentShader: `
         uniform sampler2D tDiffuse;
         uniform vec2 resolution;
         uniform vec3 outlineColor;
@@ -389,226 +294,226 @@
           gl_FragColor = mix(center, vec4(outlineColor, 1.0), edge);
         }
       `
-        };
-        const edgePass = new THREE.ShaderPass(edgeShader);
-        edgePass.renderToScreen = true;
-        composer.addPass(edgePass);
-        const loader = new THREE.OBJLoader();
-        let object = null;
-        loader.load('webAssets/3dhome/Gears.obj', (obj) => {
-          const material = new THREE.MeshPhysicalMaterial({
-            color: 0x333333
-          });
-          object = obj;
-          object.traverse((child) => {
-            if (child.isMesh) {
-              child.material = material;
-            }
-          });
-          object.rotation.x = Math.PI / 2.5;
-          object.rotation.z = Math.PI / 10;
-          scene.add(object);
-        });
+				};
+				const edgePass = new THREE.ShaderPass(edgeShader);
+				edgePass.renderToScreen = true;
+				composer.addPass(edgePass);
+				const loader = new THREE.OBJLoader();
+				let object = null;
+				loader.load('/src/3dhome/Gears.obj', (obj) => {
+					const material = new THREE.MeshPhysicalMaterial({
+						color: 0x333333
+					});
+					object = obj;
+					object.traverse((child) => {
+						if (child.isMesh) {
+							child.material = material;
+						}
+					});
+					object.rotation.x = Math.PI / 2.5;
+					object.rotation.z = Math.PI / 10;
+					scene.add(object);
+				});
 
-        function resizeRenderer() {
-          const width = container.clientWidth;
-          const height = container.clientHeight;
-          renderer.setSize(width, width);
-          composer.setSize(width, width);
-          // Update shader resolution
-          edgePass.uniforms.resolution.value.set(width, width);
-          camera.left = -1.2 * (width / width);
-          camera.right = 1.2 * (width / width);
-          camera.top = 1.2;
-          camera.bottom = -1.2;
-          camera.updateProjectionMatrix();
-          // Add hover effect
-          renderer.domElement.addEventListener('mouseover', () => {
-            targetSpeed = 0.0075; // Double the speed
-          });
-          renderer.domElement.addEventListener('mouseout', () => {
-            targetSpeed = 0.0025; // Reset to half speed
-          });
-        }
-        window.addEventListener('resize', resizeRenderer);
-        resizeRenderer();
-        let targetSpeed = 0.0025; // Half the original speed
-        let currentSpeed = 0; // Initial speed for lerp
-        const lerpFactor = 0.075; // How fast the transition happens
-        function animate() {
-          requestAnimationFrame(animate);
-          // Gradually adjust the speed
-          currentSpeed += (targetSpeed - currentSpeed) * lerpFactor;
-          // Rotate the gear
-          if (object) {
-            object.rotateY(currentSpeed); // Use the interpolated speed
-          }
-          composer.render();
-        }
-        animate();
-      }
-      // Create scrolling models display to replace pyramid
-      function createScrollingModels() {
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
-        camera.position.z = 4;
-        const container = document.getElementById('threejs-container-2');
-        const renderer = new THREE.WebGLRenderer({
-          alpha: true,
-          antialias: true
-        });
-        renderer.setSize(container.clientWidth, container.clientHeight);
-        renderer.setClearColor(0x000000, 0);
-        container.appendChild(renderer.domElement);
-        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
-        scene.add(ambientLight);
-        const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
-        directionalLight.position.set(1, 1, 1);
-        scene.add(directionalLight);
-        const models = [{
-          geometry: new THREE.SphereGeometry(0.7, 32, 32),
-          material: new THREE.MeshStandardMaterial({
-            color: 0x222222,
-            roughness: 0.5,
-            metalness: 0.2
-          }),
-          rotation: {
-            x: 0.2,
-            y: 0.5,
-            z: 0.1
-          },
-          scale: 1.3,
-          opacity: 0
-        }, {
-          geometry: new THREE.ConeGeometry(0.7, 1.2, 4),
-          material: new THREE.MeshStandardMaterial({
-            color: 0x222222,
-            roughness: 0.5,
-            metalness: 0.2
-          }),
-          rotation: {
-            x: 0.1,
-            y: 0.3,
-            z: 0.2
-          },
-          scale: 1.3,
-          opacity: 0
-        }, {
-          geometry: new THREE.BoxGeometry(1, 1, 1),
-          material: new THREE.MeshStandardMaterial({
-            color: 0x222222,
-            roughness: 0.5,
-            metalness: 0.2
-          }),
-          rotation: {
-            x: 0.3,
-            y: 0.1,
-            z: 0.4
-          },
-          scale: 1,
-          opacity: 0
-        }, {
-          geometry: new THREE.BoxGeometry(0.9, 1.25, 0.05),
-          material: new THREE.MeshStandardMaterial({
-            color: 0x222222,
-            roughness: 0.5,
-            metalness: 0.2
-          }),
-          rotation: {
-            x: 0.1,
-            y: 0.5,
-            z: 0
-          },
-          scale: 1.3,
-          opacity: 0
-        }];
-        const spacing = 3;
-        const fadeInZone = 4;
-        const fullVisibleZone = 3;
-        const fadeOutZone = -3;
-        const resetZone = -5;
-        const meshes = models.map((model, index) => {
-          const mesh = new THREE.Mesh(model.geometry, model.material.clone());
-          mesh.position.set(fadeInZone + index * spacing, 0, 0);
-          mesh.scale.set(model.scale, model.scale, model.scale);
-          mesh.userData = {
-            rotationSpeed: {
-              x: (Math.random() * 0.01) - 0.005,
-              y: (Math.random() * 0.01) - 0.005,
-              z: (Math.random() * 0.01) - 0.005
-            },
-            targetRotation: model.rotation,
-            scrollSpeed: 0.024,
-            opacity: model.opacity,
-            targetOpacity: model.opacity
-          };
-          mesh.material.transparent = true;
-          mesh.material.opacity = model.opacity;
-          mesh.material.depthWrite = model.opacity > 0.01;
-          scene.add(mesh);
-          return mesh;
-        });
+				function resizeRenderer() {
+					const width = container.clientWidth;
+					const height = container.clientHeight;
+					renderer.setSize(width, width);
+					composer.setSize(width, width);
+					// Update shader resolution
+					edgePass.uniforms.resolution.value.set(width, width);
+					camera.left = -1.2 * (width / width);
+					camera.right = 1.2 * (width / width);
+					camera.top = 1.2;
+					camera.bottom = -1.2;
+					camera.updateProjectionMatrix();
+					// Add hover effect
+					renderer.domElement.addEventListener('mouseover', () => {
+						targetSpeed = 0.0075; // Double the speed
+					});
+					renderer.domElement.addEventListener('mouseout', () => {
+						targetSpeed = 0.0025; // Reset to half speed
+					});
+				}
+				window.addEventListener('resize', resizeRenderer);
+				resizeRenderer();
+				let targetSpeed = 0.0025; // Half the original speed
+				let currentSpeed = 0; // Initial speed for lerp
+				const lerpFactor = 0.075; // How fast the transition happens
+				function animate() {
+					requestAnimationFrame(animate);
+					// Gradually adjust the speed
+					currentSpeed += (targetSpeed - currentSpeed) * lerpFactor;
+					// Rotate the gear
+					if (object) {
+						object.rotateY(currentSpeed); // Use the interpolated speed
+					}
+					composer.render();
+				}
+				animate();
+			}
+			// Create scrolling models display to replace pyramid
+			function createScrollingModels() {
+				const scene = new THREE.Scene();
+				const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+				camera.position.z = 4;
+				const container = document.getElementById('threejs-container-2');
+				const renderer = new THREE.WebGLRenderer({
+					alpha: true,
+					antialias: true
+				});
+				renderer.setSize(container.clientWidth, container.clientHeight);
+				renderer.setClearColor(0x000000, 0);
+				container.appendChild(renderer.domElement);
+				const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+				scene.add(ambientLight);
+				const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+				directionalLight.position.set(1, 1, 1);
+				scene.add(directionalLight);
+				const models = [{
+					geometry: new THREE.SphereGeometry(0.7, 32, 32),
+					material: new THREE.MeshStandardMaterial({
+						color: 0x222222,
+						roughness: 0.5,
+						metalness: 0.2
+					}),
+					rotation: {
+						x: 0.2,
+						y: 0.5,
+						z: 0.1
+					},
+					scale: 1.3,
+					opacity: 0
+				}, {
+					geometry: new THREE.ConeGeometry(0.7, 1.2, 4),
+					material: new THREE.MeshStandardMaterial({
+						color: 0x222222,
+						roughness: 0.5,
+						metalness: 0.2
+					}),
+					rotation: {
+						x: 0.1,
+						y: 0.3,
+						z: 0.2
+					},
+					scale: 1.3,
+					opacity: 0
+				}, {
+					geometry: new THREE.BoxGeometry(1, 1, 1),
+					material: new THREE.MeshStandardMaterial({
+						color: 0x222222,
+						roughness: 0.5,
+						metalness: 0.2
+					}),
+					rotation: {
+						x: 0.3,
+						y: 0.1,
+						z: 0.4
+					},
+					scale: 1,
+					opacity: 0
+				}, {
+					geometry: new THREE.BoxGeometry(0.9, 1.25, 0.05),
+					material: new THREE.MeshStandardMaterial({
+						color: 0x222222,
+						roughness: 0.5,
+						metalness: 0.2
+					}),
+					rotation: {
+						x: 0.1,
+						y: 0.5,
+						z: 0
+					},
+					scale: 1.3,
+					opacity: 0
+				}];
+				const spacing = 3;
+				const fadeInZone = 4;
+				const fullVisibleZone = 3;
+				const fadeOutZone = -3;
+				const resetZone = -5;
+				const meshes = models.map((model, index) => {
+					const mesh = new THREE.Mesh(model.geometry, model.material.clone());
+					mesh.position.set(fadeInZone + index * spacing, 0, 0);
+					mesh.scale.set(model.scale, model.scale, model.scale);
+					mesh.userData = {
+						rotationSpeed: {
+							x: (Math.random() * 0.01) - 0.005,
+							y: (Math.random() * 0.01) - 0.005,
+							z: (Math.random() * 0.01) - 0.005
+						},
+						targetRotation: model.rotation,
+						scrollSpeed: 0.024,
+						opacity: model.opacity,
+						targetOpacity: model.opacity
+					};
+					mesh.material.transparent = true;
+					mesh.material.opacity = model.opacity;
+					mesh.material.depthWrite = model.opacity > 0.01;
+					scene.add(mesh);
+					return mesh;
+				});
 
-        function resizeRenderer() {
-          const width = container.clientWidth;
-          const height = container.clientHeight;
-          renderer.setSize(width, height);
-          camera.aspect = width / height;
-          camera.updateProjectionMatrix();
-        }
-        window.addEventListener('resize', resizeRenderer);
-        resizeRenderer();
+				function resizeRenderer() {
+					const width = container.clientWidth;
+					const height = container.clientHeight;
+					renderer.setSize(width, height);
+					camera.aspect = width / height;
+					camera.updateProjectionMatrix();
+				}
+				window.addEventListener('resize', resizeRenderer);
+				resizeRenderer();
 
-        function animate() {
-          requestAnimationFrame(animate);
-          meshes.forEach((mesh, i) => {
-            mesh.position.x -= mesh.userData.scrollSpeed;
-            // Reposition when off-screen
-            if (mesh.position.x <= resetZone) {
-              const maxX = Math.max(...meshes.map(m => m.position.x));
-              mesh.position.x = maxX + spacing;
-              mesh.userData.targetOpacity = 0;
-            } else if (mesh.position.x <= fadeOutZone) {
-              mesh.userData.targetOpacity = 0;
-            } else if (mesh.position.x <= fullVisibleZone) {
-              mesh.userData.targetOpacity = 1;
-            } else {
-              const fadeProgress = 1 - ((mesh.position.x - fullVisibleZone) / (fadeInZone - fullVisibleZone));
-              mesh.userData.targetOpacity = Math.max(0, Math.min(1, fadeProgress));
-            }
-            // Opacity smoothing
-            mesh.userData.opacity += (mesh.userData.targetOpacity - mesh.userData.opacity) * 0.05;
-            mesh.material.opacity = mesh.userData.opacity;
-            mesh.material.depthWrite = mesh.material.opacity > 0.01;
-            // Rotation
-            mesh.rotation.x += mesh.userData.rotationSpeed.x + Math.sin(Date.now() * 0.001) * 0.005;
-            mesh.rotation.y += mesh.userData.rotationSpeed.y + Math.cos(Date.now() * 0.0015) * 0.005;
-            mesh.rotation.z += mesh.userData.rotationSpeed.z;
-          });
-          renderer.render(scene, camera);
-        }
-        renderer.domElement.addEventListener('mouseover', () => {
-          meshes.forEach(mesh => {
-            mesh.userData.scrollSpeed = 0.04;
-            mesh.userData.rotationSpeed.x *= 1.5;
-            mesh.userData.rotationSpeed.y *= 1.5;
-            mesh.userData.rotationSpeed.z *= 1.5;
-          });
-        });
-        renderer.domElement.addEventListener('mouseout', () => {
-          meshes.forEach(mesh => {
-            mesh.userData.scrollSpeed = 0.024;
-            mesh.userData.rotationSpeed.x /= 1.5;
-            mesh.userData.rotationSpeed.y /= 1.5;
-            mesh.userData.rotationSpeed.z /= 1.5;
-          });
-        });
-        animate();
-      }
-      // Create all three scenes
-      createHeroScene(); // Gears OBJ
-      createScrollingModels(); // New scrolling models instead of pyramid
-      createScene('threejs-container-3', new THREE.TeapotGeometry(0.7)); // Teapot
-    </script>
-  </body>
+				function animate() {
+					requestAnimationFrame(animate);
+					meshes.forEach((mesh, i) => {
+						mesh.position.x -= mesh.userData.scrollSpeed;
+						// Reposition when off-screen
+						if (mesh.position.x <= resetZone) {
+							const maxX = Math.max(...meshes.map(m => m.position.x));
+							mesh.position.x = maxX + spacing;
+							mesh.userData.targetOpacity = 0;
+						} else if (mesh.position.x <= fadeOutZone) {
+							mesh.userData.targetOpacity = 0;
+						} else if (mesh.position.x <= fullVisibleZone) {
+							mesh.userData.targetOpacity = 1;
+						} else {
+							const fadeProgress = 1 - ((mesh.position.x - fullVisibleZone) / (fadeInZone - fullVisibleZone));
+							mesh.userData.targetOpacity = Math.max(0, Math.min(1, fadeProgress));
+						}
+						// Opacity smoothing
+						mesh.userData.opacity += (mesh.userData.targetOpacity - mesh.userData.opacity) * 0.05;
+						mesh.material.opacity = mesh.userData.opacity;
+						mesh.material.depthWrite = mesh.material.opacity > 0.01;
+						// Rotation
+						mesh.rotation.x += mesh.userData.rotationSpeed.x + Math.sin(Date.now() * 0.001) * 0.005;
+						mesh.rotation.y += mesh.userData.rotationSpeed.y + Math.cos(Date.now() * 0.0015) * 0.005;
+						mesh.rotation.z += mesh.userData.rotationSpeed.z;
+					});
+					renderer.render(scene, camera);
+				}
+				renderer.domElement.addEventListener('mouseover', () => {
+					meshes.forEach(mesh => {
+						mesh.userData.scrollSpeed = 0.04;
+						mesh.userData.rotationSpeed.x *= 1.5;
+						mesh.userData.rotationSpeed.y *= 1.5;
+						mesh.userData.rotationSpeed.z *= 1.5;
+					});
+				});
+				renderer.domElement.addEventListener('mouseout', () => {
+					meshes.forEach(mesh => {
+						mesh.userData.scrollSpeed = 0.024;
+						mesh.userData.rotationSpeed.x /= 1.5;
+						mesh.userData.rotationSpeed.y /= 1.5;
+						mesh.userData.rotationSpeed.z /= 1.5;
+					});
+				});
+				animate();
+			}
+			// Create all three scenes
+			createHeroScene(); // Gears OBJ
+			createScrollingModels(); // New scrolling models instead of pyramid
+			createScene('threejs-container-3', new THREE.TeapotGeometry(0.7)); // Teapot
+		</script>
+	</body>
 </html>
