@@ -1262,7 +1262,7 @@ body {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
     background: inherit;
-    filter: blur(6px) brightness(0.7);
+    filter: blur(6px) brightness(0.6);
     z-index: 1;
     pointer-events: none;
     transition: filter 0.3s;
