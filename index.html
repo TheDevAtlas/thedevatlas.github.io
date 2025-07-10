@@ -188,6 +188,11 @@
             dots.forEach((dot, index) => {
                 dot.classList.toggle('active', index === currentSlide);
             });
+            // Update active class for zoom effect
+            const cards = document.querySelectorAll('.carousel-bg');
+            cards.forEach((card, idx) => {
+                card.classList.toggle('active', idx === currentSlide);
+            });
         }
 
         function nextSlide() {

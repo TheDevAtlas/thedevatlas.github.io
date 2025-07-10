@@ -1231,10 +1231,15 @@ body {
 
 .carousel-bg {
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     background-repeat: no-repeat;
     position: relative;
     overflow: hidden;
+    transition: background-size 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-bg.active, .carousel-bg:has(.project-content:focus), .carousel-bg:has(.project-content:hover) {
+    background-size: 110%;
 }
 
 .carousel-bg::before {
@@ -1244,9 +1249,13 @@ body {
     background: inherit;
     filter: blur(3px) brightness(0.7);
     z-index: 1;
+    pointer-events: none;
+    transition: filter 0.3s;
 }
 
 .carousel-bg .project-content {
     position: relative;
     z-index: 2;
 }
+
+/* JS will add .active to the visible card for zoom effect */
