@@ -1,0 +1,35 @@
+[
+  {
+    "title": "Lego Plants vs Zombies Models",
+    "slug": "lego-pvz-models",
+    "folder": "lego-pvz-models",
+    "date_published": "2025-07-01",
+    "date_updated": "2025-07-01",
+    "author": "Jacob McGowan",
+    "image": "/src/home-carousel/getfreeassets.png",
+    "tags": ["Unity", "3D Models", "Lego"],
+    "description": "A collection of Lego-style Plants vs Zombies models for your games."
+  },
+  {
+    "title": "Bad Piggies Models",
+    "slug": "bad-piggies-models",
+    "folder": "bad-piggies-models",
+    "date_published": "2025-07-02",
+    "date_updated": "2025-07-02",
+    "author": "Jacob McGowan",
+    "image": "/src/home-carousel/jointhecommunity.png",
+    "tags": ["Unity", "3D Models", "Bad Piggies"],
+    "description": "3D models inspired by Bad Piggies, ready for use in your projects."
+  },
+  {
+    "title": "Development Textures",
+    "slug": "dev-textures",
+    "folder": "dev-textures",
+    "date_published": "2025-07-03",
+    "date_updated": "2025-07-03",
+    "author": "Jacob McGowan",
+    "image": "/src/home-carousel/learnandimprove.png",
+    "tags": ["Textures", "Game Dev", "Assets"],
+    "description": "A set of useful development textures for prototyping and testing."
+  }
+]

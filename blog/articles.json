@@ -1,0 +1,35 @@
+[
+  {
+    "title": "Lego Doom",
+    "slug": "lego-doom",
+    "folder": "lego-doom",
+    "date_published": "2025-07-01",
+    "date_updated": "2025-07-01",
+    "author": "Jacob McGowan",
+    "image": "/src/home-carousel/getfreeassets.png",
+    "tags": ["Unity", "Game Dev", "Experiment"],
+    "description": "A look at recreating Doom in Lego."
+  },
+  {
+    "title": "Bad Piggies in 3D",
+    "slug": "bad-piggies-3d",
+    "folder": "bad-piggies-3d",
+    "date_published": "2025-07-02",
+    "date_updated": "2025-07-02",
+    "author": "Jacob McGowan",
+    "image": "/src/home-carousel/jointhecommunity.png",
+    "tags": ["Unity", "Game Dev", "Experiment"],
+    "description": "Experimenting with Bad Piggies in a 3D world."
+  },
+  {
+    "title": "AI Magic Cards",
+    "slug": "ai-magic-cards",
+    "folder": "ai-magic-cards",
+    "date_published": "2025-07-03",
+    "date_updated": "2025-07-03",
+    "author": "Jacob McGowan",
+    "image": "/src/home-carousel/learnandimprove.png",
+    "tags": ["Unity", "AI", "Tool"],
+    "description": "How AI can generate and play Magic-style cards."
+  }
+]

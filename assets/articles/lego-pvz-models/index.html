@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lego Plants vs Zombies Models - Assets | TheDevAtlas</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div id="header-include"></div>
+  <main class="main-content">
+    <article class="article-detail">
+      <h1>Lego Plants vs Zombies Models</h1>
+      <img src="/src/home-carousel/getfreeassets.png" alt="Lego Plants vs Zombies Models" class="article-image" />
+      <p>A collection of Lego-style Plants vs Zombies models for your games.</p>
+      <div class="tags"><span class="tag">Unity</span> <span class="tag">3D Models</span> <span class="tag">Lego</span></div>
+      <p><strong>Author:</strong> Jacob McGowan</p>
+      <p><strong>Date Published:</strong> 2025-07-01</p>
+      <p><strong>Date Updated:</strong> 2025-07-01</p>
+      <!-- Download links or previews can be added here -->
+    </article>
+  </main>
+  <div id="footer-include"></div>
+  <script>
+    function loadInclude(id, url) {
+      fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById(id).innerHTML = html;
+        });
+    }
+    loadInclude('header-include', '/header.html');
+    loadInclude('footer-include', '/footer.html');
+  </script>
+</body>
+</html>
