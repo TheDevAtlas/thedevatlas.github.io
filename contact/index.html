@@ -5,18 +5,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | TheDevAtlas</title>
     <link rel="stylesheet" href="/style.css">
+    <style>
+        body {
+            background: #0D0D0D;
+            color: rgba(255, 255, 255, 0.1);
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 70vh;
+            flex: 1 0 auto;
+        }
+        #footer-include {
+            flex-shrink: 0;
+        }
+        /* Remove background-effect classes, replaced by particles.js */
+        .background-effect { display: none !important; }
+        #particles-js {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .main-content, .hero-section {
+            position: relative;
+            z-index: 1;
+        }
+        .hero-section {
+            background: rgba(30, 34, 40, 0.95);
+            border-radius: 18px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+            padding: 3rem 2.5rem;
+            max-width: 540px;
+            margin: 2rem auto;
+            text-align: center;
+            min-height: 320px;
+            height: 320px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-content h1 {
+            font-size: 2.7rem;
+            margin-bottom: 1.2rem;
+            letter-spacing: 1px;
+            color: #7ed6fa;
+            text-shadow: 0 2px 8px #222b;
+        }
+        .hero-content p {
+            font-size: 1.15rem;
+            margin-bottom: 1.1rem;
+            line-height: 1.7;
+        }
+        a[href^="mailto"] {
+            color: #7ed6fa !important;
+            text-decoration: underline;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        a[href^="mailto"]:hover {
+            color: #00a8ff !important;
+        }
+        @media (max-width: 600px) {
+            .hero-section {
+                padding: 1.5rem 0.7rem;
+                max-width: 98vw;
+                min-height: 220px;
+                height: auto;
+            }
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div id="particles-js"></div>
     <div id="header-include"></div>
     <main class="main-content">
         <section class="hero-section">
             <div class="hero-content">
                 <h1>Contact</h1>
-                <p>Get in touch with TheDevAtlas team.</p>
+                <p>TheDevAtlas is an independent game studio and content creation studio. We are passionate about building games, sharing knowledge, and growing a creative community.</p>
+                <p>If you'd like to get in touch, please email us at <a href="mailto:thedevatlas@gmail.com">thedevatlas@gmail.com</a>.</p>
             </div>
         </section>
     </main>
     <div id="footer-include"></div>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script>
     // Dynamically load header and footer
     function loadInclude(id, url) {
@@ -28,6 +113,31 @@
     }
     loadInclude('header-include', '/header.html');
     loadInclude('footer-include', '/footer.html');
+    // Initialize particles.js
+    particlesJS('particles-js', {
+        particles: {
+            number: { value: 60, density: { enable: true, value_area: 900 } },
+            color: { value: '#7ed6fa' },
+            shape: { type: 'circle' },
+            opacity: { value: 0.35, random: true },
+            size: { value: 4, random: true },
+            line_linked: { enable: true, distance: 140, color: '#7ed6fa', opacity: 0.18, width: 1 },
+            move: { enable: true, speed: 2, direction: 'none', random: false, straight: false, out_mode: 'out', bounce: false }
+        },
+        interactivity: {
+            detect_on: 'canvas',
+            events: {
+                onhover: { enable: true, mode: 'repulse' },
+                onclick: { enable: true, mode: 'push' },
+                resize: true
+            },
+            modes: {
+                repulse: { distance: 100, duration: 0.4 },
+                push: { particles_nb: 4 }
+            }
+        },
+        retina_detect: true
+    });
     </script>
 </body>
 </html>
