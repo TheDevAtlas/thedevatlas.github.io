@@ -60,9 +60,7 @@
                                     <h3>Get Free Assets</h3>
                                     <p>Use premade assets to propel your game development. Download high-quality sprites, sounds, and code templates completely free.</p>
                                     <div class="project-tags">
-                                        <span class="project-tag">Free</span>
-                                        <span class="project-tag">Assets</span>
-                                        <span class="project-tag">Download</span>
+                                        <span class="project-tag">Free Asset Download</span>
                                     </div>
                                     <a href="/assets/" class="project-btn assets"><span>Browse Assets</span></a>
                                 </div>
@@ -75,7 +73,6 @@
                                     <p>Connect with fellow game developers, share your projects, get feedback, and collaborate on amazing games in our Discord community.</p>
                                     <div class="project-tags">
                                         <span class="project-tag">Community</span>
-                                        <span class="project-tag">Discord</span>
                                         <span class="project-tag">Collaborate</span>
                                     </div>
                                     <a href="https://discord.com/invite/BUEZUdaeWJ" class="project-btn discord" target="_blank" rel="noopener"><span>Join Discord</span></a>
@@ -88,9 +85,8 @@
                                     <h3>Learn & Improve</h3>
                                     <p>Master game development with our comprehensive tutorials covering programming, art, design, and industry best practices.</p>
                                     <div class="project-tags">
-                                        <span class="project-tag">Tutorials</span>
                                         <span class="project-tag">Learn</span>
-                                        <span class="project-tag">Skills</span>
+                                        <span class="project-tag">Grow</span>
                                     </div>
                                     <a href="/tutorials/" class="project-btn tutorials"><span>View Tutorials</span></a>
                                 </div>
@@ -102,9 +98,9 @@
                                     <h3>Watch & Follow</h3>
                                     <p>Subscribe to our YouTube channel for the latest game development videos, tutorials, and behind-the-scenes content.</p>
                                     <div class="project-tags">
-                                        <span class="project-tag">Videos</span>
-                                        <span class="project-tag">YouTube</span>
-                                        <span class="project-tag">Subscribe</span>
+                                        <span class="project-tag">Dev Logs</span>
+                                        <span class="project-tag">Projects</span>
+                                        <span class="project-tag">Nerdiness</span>
                                     </div>
                                     <a href="https://www.youtube.com/@thedevatlas" class="project-btn youtube" target="_blank" rel="noopener"><span>Watch on YouTube</span></a>
                                 </div>
@@ -143,35 +139,37 @@
         const hamburger = document.getElementById('hamburger');
         const mobileMenu = document.getElementById('mobileMenu');
 
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-        });
-
-        // Close mobile menu when clicking on a link
-        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link, .mobile-nav-btn');
-        mobileNavLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                mobileMenu.classList.remove('active');
+        if (hamburger && mobileMenu) {
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
             });
-        });
 
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
-                hamburger.classList.remove('active');
-                mobileMenu.classList.remove('active');
-            }
-        });
+            // Close mobile menu when clicking on a link
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link, .mobile-nav-btn');
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                });
+            });
 
-        // Close mobile menu when resizing to desktop
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 768) {
-                hamburger.classList.remove('active');
-                mobileMenu.classList.remove('active');
-            }
-        });
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+                    hamburger.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                }
+            });
+
+            // Close mobile menu when resizing to desktop
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768) {
+                    hamburger.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                }
+            });
+        }
 
         // Carousel functionality
         const carouselTrack = document.getElementById('carouselTrack');
@@ -181,11 +179,11 @@
         
         let currentSlide = 0;
         const totalSlides = 4; // 4 individual cards
+        let carouselInterval = setInterval(nextSlide, 4000);
 
         function updateCarousel() {
             const translateX = -currentSlide * 100;
             carouselTrack.style.transform = `translateX(${translateX}%)`;
-            
             // Update dots
             dots.forEach((dot, index) => {
                 dot.classList.toggle('active', index === currentSlide);
@@ -202,20 +200,32 @@
             updateCarousel();
         }
 
+        function resetCarouselInterval() {
+            clearInterval(carouselInterval);
+            carouselInterval = setInterval(nextSlide, 4000);
+        }
+
         // Event listeners
-        nextBtn.addEventListener('click', nextSlide);
-        prevBtn.addEventListener('click', prevSlide);
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            resetCarouselInterval();
+        });
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            resetCarouselInterval();
+        });
 
         // Dot navigation
         dots.forEach((dot, index) => {
             dot.addEventListener('click', () => {
                 currentSlide = index;
                 updateCarousel();
+                resetCarouselInterval();
             });
         });
 
         // Auto-play carousel (continuous loop)
-        setInterval(nextSlide, 4000);
+        // (interval already set above)
 
         // Keyboard navigation (only next for continuous loop)
         document.addEventListener('keydown', (e) => {
