@@ -353,8 +353,6 @@ body {
     letter-spacing: 1px;
     line-height: 1;
     height: 42px;
-    min-width: 120px;
-    flex: 0 0 auto;
 }
 
 .mobile-nav-btn span {
@@ -1083,6 +1081,13 @@ body {
     .social-links {
         justify-content: center;
     }
+
+    .carousel-bg {
+        background-size: cover;
+        background-position: center center;
+        min-height: 220px;
+        height: 100%;
+    }
 }
 
 @media (min-width: 769px) {
@@ -1173,6 +1178,13 @@ body {
     .logo-text {
         font-size: 1.2rem;
     }
+
+    .carousel-bg {
+        background-size: cover;
+        background-position: center center;
+        min-height: 220px;
+        height: 100%;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1227,6 +1239,13 @@ body {
     .featured-card {
         height: 280px;
     }
+
+    .carousel-bg {
+        background-size: cover;
+        background-position: center center;
+        min-height: 180px;
+        height: 100%;
+    }
 }
 
 .carousel-bg {
@@ -1238,16 +1257,12 @@ body {
     transition: background-size 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.carousel-bg.active, .carousel-bg:has(.project-content:focus), .carousel-bg:has(.project-content:hover) {
-    background-size: 110%;
-}
-
 .carousel-bg::before {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
     background: inherit;
-    filter: blur(3px) brightness(0.7);
+    filter: blur(6px) brightness(0.7);
     z-index: 1;
     pointer-events: none;
     transition: filter 0.3s;
@@ -1257,5 +1272,3 @@ body {
     position: relative;
     z-index: 2;
 }
-
-/* JS will add .active to the visible card for zoom effect */
