@@ -129,18 +129,16 @@
     </main>
     <div id="footer-include"></div>
     <script>
-    // Dynamically load header and footer
-    function loadInclude(id, url) {
-        fetch(url)
-            .then(res => res.text())
-            .then(html => {
-                document.getElementById(id).innerHTML = html;
-            });
-    }
-    loadInclude('header-include', '/header.html');
-    loadInclude('footer-include', '/footer.html');
-    </script>
-    <script>
+        // Dynamically load header and footer
+        function loadInclude(id, url) {
+            fetch(url)
+                .then(res => res.text())
+                .then(html => {
+                    document.getElementById(id).innerHTML = html;
+                });
+        }
+        loadInclude('header-include', '/header.html');
+        loadInclude('footer-include', '/footer.html');
         // Mobile menu functionality
         const hamburger = document.getElementById('hamburger');
         const mobileMenu = document.getElementById('mobileMenu');
