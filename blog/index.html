@@ -286,7 +286,7 @@
             list.sort((a, b) => b.title.localeCompare(a.title));
         }
         blogList.innerHTML = list.map(a => `
-            <a class="blog-card" href="/blog/articles/${a.slug}/">
+            <a class="blog-card" href="/blog/${a.slug}/">
                 <img src="${a.image}" alt="${a.title}">
                 <div class="blog-card-content">
                     <div class="blog-card-title">${a.title}</div>

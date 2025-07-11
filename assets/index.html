@@ -6,13 +6,13 @@
     <title>Assets | TheDevAtlas</title>
     <link rel="stylesheet" href="/style.css">
     <style>
-        /* Blog/Assets header now matches contact hero-section */
+        /* Assets header now matches contact hero-section */
         .hero-section {
             background: rgba(30, 34, 40, 0.95);
             border-radius: 18px;
             box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
             padding: 3rem 2.5rem;
-            max-width: 900px;
+            max-width: 900px; /* widened from 540px */
             margin: 2rem auto;
             text-align: center;
             min-height: 320px;
@@ -34,13 +34,44 @@
             line-height: 1.7;
             color: #fff;
         }
-        .articles-list {
+        .assets-controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+        .assets-search {
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            border: 1px solid #333;
+            font-size: 1rem;
+            font-weight: 700;
+            min-width: 220px;
+            background: #181818;
+            color: #fff;
+            transition: box-shadow 0.2s;
+        }
+        .assets-search:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px #0078d7;
+        }
+        .assets-select, .assets-sort {
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            border: 1px solid #333;
+            font-size: 1rem;
+            font-weight: 700;
+            background: #181818;
+            color: #fff;
+        }
+        .assets-list {
             display: flex;
             flex-wrap: wrap;
             gap: 2rem;
             justify-content: center;
         }
-        .article-card {
+        .asset-card {
             background: linear-gradient(135deg, #23272e 0%, #181a20 100%);
             border-radius: 1rem;
             box-shadow: 0 2px 8px rgba(0,0,0,0.12);
@@ -57,21 +88,42 @@
             position: relative;
             text-decoration: none;
         }
-        .article-card:hover {
+        .asset-card:hover {
             transform: translateY(-4px) scale(1.02);
             box-shadow: 0 4px 24px rgba(0,0,0,0.22);
             outline: 3px solid rgba(255,255,255,0.8);
             outline-offset: 5px;
         }
-        .article-image {
+        .asset-card img {
             width: 100%;
             height: 220px;
             object-fit: cover;
         }
-        .tags {
+        .asset-card-content {
+            padding: 1.2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .asset-card-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+        .asset-card-meta {
+            color: #fff;
+            font-size: 0.95rem;
             margin-bottom: 0.7rem;
         }
-        .tag {
+        .asset-card-desc {
+            flex: 1;
+            color: #fff;
+            margin-bottom: 0.7rem;
+        }
+        .asset-card-tags {
+            margin-bottom: 0.7rem;
+        }
+        .asset-card-tag {
             display: inline-block;
             background: #23272e;
             color: #fff;
@@ -80,6 +132,17 @@
             font-size: 0.85rem;
             margin-right: 0.4rem;
             margin-bottom: 0.2rem;
+        }
+        .asset-card-link {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            align-self: flex-end;
+            transition: color 0.15s;
+            z-index: 2;
+        }
+        .asset-card-link:hover {
+            color: #0BB3D9;
         }
         @media (max-width: 900px) {
             .hero-section {
@@ -91,41 +154,57 @@
             .hero-content h1 {
                 font-size: 2rem;
             }
-            .article-card {
+            .asset-card {
                 width: 98vw;
                 max-width: 98vw;
             }
-            .article-image {
+            .asset-card img {
                 height: 180px;
             }
         }
         @media (max-width: 600px) {
-            .articles-list {
+            .assets-list {
                 flex-direction: column;
                 align-items: center;
             }
-            .article-card {
+            .asset-card {
                 width: 98vw;
                 max-width: 98vw;
             }
-            .article-image {
+            .asset-card img {
                 height: 140px;
             }
         }
     </style>
 </head>
 <body>
-    <div id="header-include"></div>
-    <main class="main-content">
+    <div id="particles-js" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 0; pointer-events: none;"></div>
+    <div id="header-include" style="position: relative; z-index: 2;"></div>
+    <main class="main-content" style="position: relative; z-index: 1;">
         <section class="hero-section">
             <div class="hero-content">
-                <h1>Assets</h1>
-                <p>Browse and download free game development assets.</p>
+                <h1>Game Development Assets</h1>
+                <p>Free game development resources including 3D models, textures, sprites, sounds, and Unity packages. All assets are ready to use in your projects!</p>
             </div>
         </section>
-        <section class="articles-list" id="assets-list"></section>
+        <section class="assets-controls">
+            <input type="text" class="assets-search" id="assets-search" placeholder="Search assets...">
+            <select class="assets-select" id="assets-tag-select">
+                <option value="">All Types</option>
+            </select>
+            <select class="assets-sort" id="assets-sort">
+                <option value="newest">Newest</option>
+                <option value="oldest">Oldest</option>
+                <option value="az">A-Z</option>
+                <option value="za">Z-A</option>
+            </select>
+        </section>
+        <section class="assets-list" id="assets-list" style="margin-bottom: 4rem;">
+            <!-- Asset cards will be injected here -->
+        </section>
     </main>
-    <div id="footer-include"></div>
+    <div id="footer-include" style="position: relative; z-index: 2;"></div>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script>
     // Dynamically load header and footer
     function loadInclude(id, url) {
@@ -137,26 +216,92 @@
     }
     loadInclude('header-include', '/header.html');
     loadInclude('footer-include', '/footer.html');
+    // Initialize particles.js
+    particlesJS('particles-js', {
+        particles: {
+            number: { value: 60, density: { enable: true, value_area: 900 } },
+            color: { value: '#7ed6fa' },
+            shape: { type: 'circle' },
+            opacity: { value: 0.35, random: true },
+            size: { value: 4, random: true },
+            line_linked: { enable: true, distance: 140, color: '#7ed6fa', opacity: 0.18, width: 1 },
+            move: { enable: true, speed: 2, direction: 'none', random: false, straight: false, out_mode: 'out', bounce: false }
+        },
+        interactivity: {
+            detect_on: 'canvas',
+            events: {
+                onhover: { enable: true, mode: 'repulse' },
+                onclick: { enable: true, mode: 'push' },
+                resize: true
+            },
+            modes: {
+                repulse: { distance: 100, duration: 0.4 },
+                push: { particles_nb: 4 }
+            }
+        },
+        retina_detect: true
+    });
 
-    // Load assets from JSON and render cards
-    fetch('/assets/articles.json')
-      .then(response => response.json())
-      .then(assets => {
-        const container = document.getElementById('assets-list');
-        assets.forEach(asset => {
-          const article = document.createElement('div');
-          article.className = 'article-card';
-          article.innerHTML = `
-            <a href="/assets/articles/${asset.folder}/index.html">
-              <img src="${asset.image}" alt="${asset.title}" class="article-image" />
-              <h2>${asset.title}</h2>
-            </a>
-            <p>${asset.description}</p>
-            <div class="tags">${asset.tags.map(tag => `<span class='tag'>${tag}</span>`).join(' ')}</div>
-          `;
-          container.appendChild(article);
+    // Assets logic
+    let assets = [];
+    let filteredAssets = [];
+    let tags = new Set();
+    const assetsList = document.getElementById('assets-list');
+    const searchInput = document.getElementById('assets-search');
+    const tagSelect = document.getElementById('assets-tag-select');
+    const sortSelect = document.getElementById('assets-sort');
+
+    fetch('/assets/assets.json')
+        .then(res => res.json())
+        .then(data => {
+            assets = data;
+            data.forEach(a => a.tags.forEach(t => tags.add(t)));
+            renderTagOptions();
+            renderAssets();
         });
-      });
+
+    function renderTagOptions() {
+        tagSelect.innerHTML = '<option value="">All Types</option>' +
+            Array.from(tags).map(tag => `<option value="${tag}">${tag.charAt(0).toUpperCase() + tag.slice(1)}</option>`).join('');
+    }
+
+    function renderAssets() {
+        let list = assets.slice();
+        const search = searchInput.value.trim().toLowerCase();
+        const tag = tagSelect.value;
+        const sort = sortSelect.value;
+        if (search) {
+            list = list.filter(a => a.title.toLowerCase().includes(search) || a.description.toLowerCase().includes(search));
+        }
+        if (tag) {
+            list = list.filter(a => a.tags.includes(tag));
+        }
+        if (sort === 'newest') {
+            list.sort((a, b) => b.date_published.localeCompare(a.date_published));
+        } else if (sort === 'oldest') {
+            list.sort((a, b) => a.date_published.localeCompare(b.date_published));
+        } else if (sort === 'az') {
+            list.sort((a, b) => a.title.localeCompare(b.title));
+        } else if (sort === 'za') {
+            list.sort((a, b) => b.title.localeCompare(a.title));
+        }
+        assetsList.innerHTML = list.map(a => `
+            <a class="asset-card" href="/assets/${a.slug}/">
+                <img src="${a.image}" alt="${a.title}">
+                <div class="asset-card-content">
+                    <div class="asset-card-title">${a.title}</div>
+                    <div class="asset-card-meta">By ${a.author} | ${a.date_published}</div>
+                    <div class="asset-card-tags">${a.tags.map(t => `<span class='asset-card-tag'>${t.charAt(0).toUpperCase() + t.slice(1)}</span>`).join('')}</div>
+                    <div class="asset-card-desc">${a.description}</div>
+                    <span class="asset-card-link">Download →</span>
+                </div>
+            </a>
+        `).join('');
+    }
+
+    searchInput.addEventListener('input', renderAssets);
+    tagSelect.addEventListener('change', renderAssets);
+    sortSelect.addEventListener('change', renderAssets);
     </script>
 </body>
 </html>
