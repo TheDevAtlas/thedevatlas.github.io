@@ -131,6 +131,8 @@
   margin: 0 auto;
   display: flex;
   min-height: 200px;
+  margin-left: 0rem;
+  margin-right: 0rem;
 }
 
 .card-wide .card-image {
@@ -212,6 +214,8 @@
   
   .card-wide {
     flex-direction: column;
+    margin-left: 0rem;
+    margin-right: 0rem;
   }
   
   .card-wide .card-image {
@@ -252,6 +256,11 @@
     font-size: 1.25rem;
   }
   
+  .card-wide {
+    margin-left: 0rem;
+    margin-right: 0rem;
+  }
+  
   .card-wide .card-content {
     padding: 1.25rem;
   }
@@ -278,6 +287,11 @@
   .section-title {
     font-size: 1.75rem;
     padding: 0 1rem;
+  }
+  
+  .card-wide {
+    margin-left: 0rem;
+    margin-right: 0rem;
   }
 }
 
