@@ -3,272 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TheDevAtlas - Game Development Resources</title>
+    <title>TheDevAtlas</title>
     <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/header.css">
+    <link rel="stylesheet" href="/footer.css">
+    <link rel="stylesheet" href="/home.css">
+    <link rel="stylesheet" href="/button.css">
+    <link rel="stylesheet" href="/card.css">
 </head>
+
 <body>
+    <!-- Header -->
     <div id="header-include"></div>
-    <main class="main-content">
-        <!-- Hero Section with Video Background -->
-        <section class="hero-section">
-            <iframe 
-                class="hero-video"
-                src="https://www.youtube.com/embed/XdJJt1hiJI8?autoplay=1&mute=1&loop=1&playlist=XdJJt1hiJI8&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&disablekb=1&fs=0"
-                frameborder="0"
-                allow="autoplay; encrypted-media"
-                allowfullscreen>
-            </iframe>
-            <div class="hero-overlay"></div>
-            
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
             <div class="hero-content">
-                <h1>Join The Atlas</h1>
-                <p>Your ultimate destination for free game development assets, tutorials, and development videos.</p>
+                <!-- Logo -->
+                <img src="/_src/icons/word-mark.png" alt="The Dev Atlas" class="hero-logo">
                 
+                <!-- Join the Atlas Text -->
+                <h2 class="hero-tagline">Join the Atlas</h2>
+                
+                <!-- Navigation Buttons -->
                 <div class="hero-buttons">
-                    <a href="/assets/" class="hero-btn primary"><span>Browse Assets</span></a>
-                    <a href="/tutorials/" class="hero-btn secondary"><span>Watch Tutorials</span></a>
+                    <a href="/assets" class="button">Assets</a>
+                    <a href="/blogs" class="button">Blogs</a>
+                    <a href="/courses" class="button">Courses</a>
                 </div>
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section class="projects-section">
-            <div class="projects-container">
-
-                <!-- Featured Game Card(s) -->
-                <!-- This is where our "realeased" / wishlist-able games should go -->
-                <!-- For example wishlist ragnarodent -> bad piggies 3d -> etc. might be the same as the carousel below -->
-                <!-- <div class="featured-game">
-                    <div class="featured-card">
-                        <div class="project-content">
-                            <h3>Wishlist Raganrodent</h3>
-                            <p>Raganrodent is an action adventure squad multiplayer game where teamwork and strategy meet fast-paced combat in a vibrant world.</p>
-                            <div class="project-tags">
-                                <span class="project-tag">Action</span>
-                                <span class="project-tag">Adventure</span>
-                                <span class="project-tag">Multiplayer</span>
+        <!-- Featured Content Section -->
+        <section class="cards-section">
+            <h2 class="section-title">Featured <span class="accent">Content</span></h2>
+            
+            <!-- Wide Featured Card -->
+            <div class="card card-wide">
+                <img src="/_src/placeholder-card.jpg" alt="Featured Content" class="card-image">
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="read-time">2 min read</span>
+                        <span class="date">Nov 5, 2024</span>
+                    </div>
+                    <h3 class="card-title">Believe and act as if it were impossible to fail</h3>
+                    <p class="card-description">Sin tantum modo ad indicia veteris memoriae cognoscenda, curiousum. Haec et tu ita posuisti, et verba vestra sunt. Idemne potest esse dies...</p>
+                    <div class="card-author">
+                        <img src="/_src/author-avatar.jpg" alt="Robert Wilson" class="card-author-avatar">
+                        <div class="card-author-info">
+                            <p class="card-author-name">Robert Wilson</p>
+                            <div class="card-author-tags">
+                                <span class="card-tag">Work</span>
+                                <span class="card-tag">Notes</span>
                             </div>
-                            <a href="#" class="project-btn steam"><span>Wishlist on Steam</span></a>
                         </div>
                     </div>
-                </div> -->
+                </div>
+            </div>
 
-                <!-- Carousel for other projects -->
-                <div class="carousel-container">
-                    <div class="carousel-wrapper">
-                        <div class="carousel-track" id="carouselTrack">
-                            <!-- Assets Card -->
-                            <div class="project-card carousel-bg" style="background-image: url('src/home-carousel/getfreeassets.png');">
-                                <div class="project-content">
-                                    <h3>Get Free Assets</h3>
-                                    <p>Use premade assets to propel your game development. Download high-quality sprites, sounds, and code templates completely free.</p>
-                                    <div class="project-tags">
-                                        <span class="project-tag">Free Asset Download</span>
-                                    </div>
-                                    <a href="/assets/" class="project-btn assets"><span>Browse Assets</span></a>
-                                </div>
+            <!-- Tiled Cards Container -->
+            <div style="margin-top: 3rem;">
+                <div class="cards-container">
+                    <!-- Card 1 -->
+                    <div class="card card-tile">
+                        <img src="/_src/placeholder-card.jpg" alt="Content" class="card-image">
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span class="read-time">3 min read</span>
+                                <span class="date">Nov 3, 2024</span>
                             </div>
-
-                            <!-- Discord Card -->
-                            <div class="project-card carousel-bg" style="background-image: url('src/home-carousel/jointhecommunity.png');">
-                                <div class="project-content">
-                                    <h3>Join the Community</h3>
-                                    <p>Connect with fellow game developers, share your projects, get feedback, and collaborate on amazing games in our Discord community.</p>
-                                    <div class="project-tags">
-                                        <span class="project-tag">Community</span>
-                                        <span class="project-tag">Collaborate</span>
+                            <h3 class="card-title">Getting Started with Game Development</h3>
+                            <p class="card-description">Learn the fundamentals of game development and start building your first game with Unity...</p>
+                            <div class="card-author">
+                                <img src="/_src/author-avatar.jpg" alt="TheDevAtlas" class="card-author-avatar">
+                                <div class="card-author-info">
+                                    <p class="card-author-name">TheDevAtlas</p>
+                                    <div class="card-author-tags">
+                                        <span class="card-tag">Tutorial</span>
+                                        <span class="card-tag">Unity</span>
                                     </div>
-                                    <a href="https://discord.com/invite/BUEZUdaeWJ" class="project-btn discord" target="_blank" rel="noopener"><span>Join Discord</span></a>
-                                </div>
-                            </div>
-
-                            <!-- Tutorials Card -->
-                            <div class="project-card carousel-bg" style="background-image: url('src/home-carousel/learnandimprove.png');">
-                                <div class="project-content">
-                                    <h3>Learn & Improve</h3>
-                                    <p>Master game development with our comprehensive tutorials covering programming, art, design, and industry best practices.</p>
-                                    <div class="project-tags">
-                                        <span class="project-tag">Learn</span>
-                                        <span class="project-tag">Grow</span>
-                                    </div>
-                                    <a href="/tutorials/" class="project-btn tutorials"><span>View Tutorials</span></a>
-                                </div>
-                            </div>
-
-                            <!-- YouTube Card -->
-                            <div class="project-card carousel-bg" style="background-image: url('src/home-carousel/watchandfollow.png');">
-                                <div class="project-content">
-                                    <h3>Watch & Follow</h3>
-                                    <p>Subscribe to our YouTube channel for the latest game development videos, tutorials, and behind-the-scenes content.</p>
-                                    <div class="project-tags">
-                                        <span class="project-tag">Dev Logs</span>
-                                        <span class="project-tag">Projects</span>
-                                        <span class="project-tag">Nerdiness</span>
-                                    </div>
-                                    <a href="https://www.youtube.com/@thedevatlas" class="project-btn youtube" target="_blank" rel="noopener"><span>Watch on YouTube</span></a>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Navigation Arrows -->
-                    <button class="carousel-nav prev" id="prevBtn">‹</button>
-                    <button class="carousel-nav next" id="nextBtn">›</button>
+                    <!-- Card 2 -->
+                    <div class="card card-tile">
+                        <img src="/_src/placeholder-card.jpg" alt="Content" class="card-image">
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span class="read-time">5 min read</span>
+                                <span class="date">Nov 1, 2024</span>
+                            </div>
+                            <h3 class="card-title">Essential Developer Tools for 2024</h3>
+                            <p class="card-description">Discover the must-have tools and resources that every developer should know about this year...</p>
+                            <div class="card-author">
+                                <img src="/_src/author-avatar.jpg" alt="TheDevAtlas" class="card-author-avatar">
+                                <div class="card-author-info">
+                                    <p class="card-author-name">TheDevAtlas</p>
+                                    <div class="card-author-tags">
+                                        <span class="card-tag">Tools</span>
+                                        <span class="card-tag">Guide</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                    <!-- Dots Indicator -->
-                    <div class="carousel-dots" id="carouselDots">
-                        <div class="carousel-dot active" data-slide="0"></div>
-                        <div class="carousel-dot" data-slide="1"></div>
-                        <div class="carousel-dot" data-slide="2"></div>
-                        <div class="carousel-dot" data-slide="3"></div>
+                    <!-- Card 3 -->
+                    <div class="card card-tile">
+                        <img src="/_src/placeholder-card.jpg" alt="Content" class="card-image">
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span class="read-time">4 min read</span>
+                                <span class="date">Oct 28, 2024</span>
+                            </div>
+                            <h3 class="card-title">Building Responsive Web Applications</h3>
+                            <p class="card-description">Master the art of creating beautiful, responsive web applications that work on any device...</p>
+                            <div class="card-author">
+                                <img src="/_src/author-avatar.jpg" alt="TheDevAtlas" class="card-author-avatar">
+                                <div class="card-author-info">
+                                    <p class="card-author-name">TheDevAtlas</p>
+                                    <div class="card-author-tags">
+                                        <span class="card-tag">Web Dev</span>
+                                        <span class="card-tag">CSS</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+
+    <!-- Footer -->
     <div id="footer-include"></div>
-    <script>
-        // Dynamically load header and footer
-        function loadInclude(id, url) {
-            fetch(url)
-                .then(res => res.text())
-                .then(html => {
-                    document.getElementById(id).innerHTML = html;
-                });
-        }
-        loadInclude('header-include', '/header.html');
-        loadInclude('footer-include', '/footer.html');
-        // Mobile menu functionality
-        const hamburger = document.getElementById('hamburger');
-        const mobileMenu = document.getElementById('mobileMenu');
 
-        if (hamburger && mobileMenu) {
-            hamburger.addEventListener('click', () => {
-                hamburger.classList.toggle('active');
-                mobileMenu.classList.toggle('active');
-            });
-
-            // Close mobile menu when clicking on a link
-            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link, .mobile-nav-btn');
-            mobileNavLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    hamburger.classList.remove('active');
-                    mobileMenu.classList.remove('active');
-                });
-            });
-
-            // Close mobile menu when clicking outside
-            document.addEventListener('click', (e) => {
-                if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
-                    hamburger.classList.remove('active');
-                    mobileMenu.classList.remove('active');
-                }
-            });
-
-            // Close mobile menu when resizing to desktop
-            window.addEventListener('resize', () => {
-                if (window.innerWidth > 768) {
-                    hamburger.classList.remove('active');
-                    mobileMenu.classList.remove('active');
-                }
-            });
-        }
-
-        // Carousel functionality
-        const carouselTrack = document.getElementById('carouselTrack');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        const dots = document.querySelectorAll('.carousel-dot');
-        
-        let currentSlide = 0;
-        const totalSlides = 4; // 4 individual cards
-        let carouselInterval = setInterval(nextSlide, 4000);
-
-        function updateCarousel() {
-            const translateX = -currentSlide * 100;
-            carouselTrack.style.transform = `translateX(${translateX}%)`;
-            // Update dots
-            dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentSlide);
-            });
-            // Update active class for zoom effect
-            const cards = document.querySelectorAll('.carousel-bg');
-            cards.forEach((card, idx) => {
-                card.classList.toggle('active', idx === currentSlide);
-            });
-        }
-
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % totalSlides; // Loop back to first slide
-            updateCarousel();
-        }
-
-        function prevSlide() {
-            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides; // Loop to last slide
-            updateCarousel();
-        }
-
-        function resetCarouselInterval() {
-            clearInterval(carouselInterval);
-            carouselInterval = setInterval(nextSlide, 4000);
-        }
-
-        // Event listeners
-        nextBtn.addEventListener('click', () => {
-            nextSlide();
-            resetCarouselInterval();
-        });
-        prevBtn.addEventListener('click', () => {
-            prevSlide();
-            resetCarouselInterval();
-        });
-
-        // Dot navigation
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                currentSlide = index;
-                updateCarousel();
-                resetCarouselInterval();
-            });
-        });
-
-        // Auto-play carousel (continuous loop)
-        // (interval already set above)
-
-        // Keyboard navigation (only next for continuous loop)
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') {
-                prevSlide(); // Still allow manual prev
-            } else if (e.key === 'ArrowRight') {
-                nextSlide();
-            }
-        });
-
-        // Touch/swipe support for mobile
-        let startX = 0;
-        let endX = 0;
-
-        carouselTrack.addEventListener('touchstart', (e) => {
-            startX = e.touches[0].clientX;
-        });
-
-        carouselTrack.addEventListener('touchend', (e) => {
-            endX = e.changedTouches[0].clientX;
-            handleSwipe();
-        });
-
-        function handleSwipe() {
-            const swipeThreshold = 50;
-            const diff = startX - endX;
-            
-            if (Math.abs(diff) > swipeThreshold) {
-                if (diff > 0) {
-                    nextSlide();
-                } else {
-                    prevSlide();
-                }
-            }
-        }
-    </script>
+    <!-- Scripts -->
+    <script src="/script.js"></script>
 </body>
+
 </html>
