@@ -1,283 +1,64 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TheDevAtlas</title>
-    <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/header.css">
-    <link rel="stylesheet" href="/footer.css">
-    <link rel="stylesheet" href="/home.css">
-    <link rel="stylesheet" href="/button.css">
-    <link rel="stylesheet" href="/card.css">
+  <meta charset="utf-8" />
+  <title>The Dev Atlas – Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="A simple, fast, and indexable static framework for blogs, projects, and resources." />
+  <link rel="canonical" href="https://example.com/" />
+  <link rel="stylesheet" href="/styles.css" />
+  <meta property="og:title" content="The Dev Atlas – Home" />
+  <meta property="og:description" content="A simple, fast, and indexable static framework for blogs, projects, and resources." />
+  <meta property="og:type" content="website" />
 </head>
-
 <body>
-    <!-- Header -->
-    <div id="header-include"></div>
+  <!-- Components mount points -->
+  <div data-include="/components/header.html"></div>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-content">
-                <!-- Logo -->
-                <img src="/source/icons/word-mark.png" alt="The Dev Atlas" class="hero-logo">
-                
-                <!-- Join the Atlas Text -->
-                <h2 class="hero-tagline">Join the Atlas</h2>
-                
-                <!-- Navigation Buttons -->
-                <div class="hero-buttons">
-                    <a href="/assets" class="button">Assets</a>
-                    <a href="/blogs" class="button">Blogs</a>
-                    <a href="/courses" class="button">Courses</a>
-                </div>
-            </div>
-        </section>
+  <main id="main" class="container">
+    <section class="hero">
+      <h1>Build once. Reuse everywhere.</h1>
+      <p>Raw HTML/CSS/JS starter for sites with multiple sections—headers & footers shared, posts fully indexable.</p>
+      <div class="cta-row">
+        <a class="button" href="/blog/">View Blog</a>
+        <!-- Link to other sections when you duplicate /blog/ -->
+      </div>
+    </section>
 
-        <!-- Featured Content Section -->
-        <section class="cards-section">
-            <!-- <h2 class="section-title">Featured <span class="accent">Content</span></h2> -->
-            
-            <!-- Wide Featured Card -->
-            <div class="cards-container">
-                <div class="card card-wide">
-                    <img src="/source/placeholder-card.jpg" alt="Featured Content" class="card-image">
-                    <div class="card-content">
-                        <div class="card-meta">
-                            <span class="read-time">2 min read</span>
-                            <span class="date">Nov 5, 2024</span>
-                        </div>
-                        <h3 class="card-title">"Game" - A GMTK 2025 Post Mortem</h3>
-                        <p class="card-description">I took part in the Game Makers Tool Kit Game Jam for 2025! This was one of...</p>
-                        <div class="card-author">
-                            <img src="/source/author-avatar.jpg" alt="Robert Wilson" class="card-author-avatar">
-                            <div class="card-author-info">
-                                <p class="card-author-name">Jacob McGowan</p>
-                                <div class="card-author-tags">
-                                    <span class="card-tag">Work</span>
-                                    <span class="card-tag">Notes</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section class="home-grid">
+      <article class="card">
+        <h2>Latest Posts</h2>
+        <p>Keep a real HTML page per post. Indexable & shareable.</p>
+        <a class="link" href="/blog/">Go to blog →</a>
+      </article>
+      <article class="card">
+        <h2>Reusable Structure</h2>
+        <p>Copy <code>/blog/</code> to create <code>/recipes/</code>, <code>/projects/</code>, etc.</p>
+      </article>
+      <article class="card">
+        <h2>Simple Search</h2>
+        <p>Search runs on a small JSON metadata file. Works for any section.</p>
+      </article>
+    </section>
+  </main>
 
-            <div style="margin-top: 3rem;">
-                <h2 class="section-title">Join the <span class="accent">Community</span></h2>
-            </div>
+  <div data-include="/components/footer.html"></div>
 
-            <div style="margin-top: 3rem;">
-                <div class="cards-container">
-                    <!-- Card 1 -->
-                    <div class="card card-tile">
-                        <img src="/source/placeholder-card.jpg" alt="Content" class="card-image">
-                        <div class="card-content">
-                            <div class="card-meta">
-                                <span class="read-time">3 min read</span>
-                                <span class="date">Nov 3, 2024</span>
-                            </div>
-                            <h3 class="card-title">Getting Started with Game Development</h3>
-                            <p class="card-description">Learn the fundamentals of game development and start building your first game with Unity...</p>
-                            <div class="card-author">
-                                <img src="/source/author-avatar.jpg" alt="TheDevAtlas" class="card-author-avatar">
-                                <div class="card-author-info">
-                                    <p class="card-author-name">Jacob McGowan</p>
-                                    <div class="card-author-tags">
-                                        <span class="card-tag">Tutorial</span>
-                                        <span class="card-tag">Unity</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Card 1 -->
-                    <div class="card card-tile">
-                        <img src="/source/placeholder-card.jpg" alt="Content" class="card-image">
-                        <div class="card-content">
-                            <div class="card-meta">
-                                <span class="read-time">3 min read</span>
-                                <span class="date">Nov 3, 2024</span>
-                            </div>
-                            <h3 class="card-title">Getting Started with Game Development</h3>
-                            <p class="card-description">Learn the fundamentals of game development and start building your first game with Unity...</p>
-                            <div class="card-author">
-                                <img src="/source/author-avatar.jpg" alt="TheDevAtlas" class="card-author-avatar">
-                                <div class="card-author-info">
-                                    <p class="card-author-name">Jacob McGowan</p>
-                                    <div class="card-author-tags">
-                                        <span class="card-tag">Tutorial</span>
-                                        <span class="card-tag">Unity</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> 
-            </div>  
-            
-            <div style="margin-top: 3rem;">
-                <h2 class="section-title">Free <span class="accent">Assets</span> and <span class="accent">Courses</span></h2>
-            </div>
+  <script src="/script.js" defer></script>
 
-            <div style="margin-top: 3rem;">
-                <div class="cards-container">
-                    <!-- Card 1 -->
-                    <div class="card card-tile">
-                        <img src="/source/placeholder-card.jpg" alt="Content" class="card-image">
-                        <div class="card-content">
-                            <div class="card-meta">
-                                <span class="read-time">3 min read</span>
-                                <span class="date">Nov 3, 2024</span>
-                            </div>
-                            <h3 class="card-title">Getting Started with Game Development</h3>
-                            <p class="card-description">Learn the fundamentals of game development and start building your first game with Unity...</p>
-                            <div class="card-author">
-                                <img src="/source/author-avatar.jpg" alt="TheDevAtlas" class="card-author-avatar">
-                                <div class="card-author-info">
-                                    <p class="card-author-name">Jacob McGowan</p>
-                                    <div class="card-author-tags">
-                                        <span class="card-tag">Tutorial</span>
-                                        <span class="card-tag">Unity</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Card 1 -->
-                    <div class="card card-tile">
-                        <img src="/source/placeholder-card.jpg" alt="Content" class="card-image">
-                        <div class="card-content">
-                            <div class="card-meta">
-                                <span class="read-time">3 min read</span>
-                                <span class="date">Nov 3, 2024</span>
-                            </div>
-                            <h3 class="card-title">Getting Started with Game Development</h3>
-                            <p class="card-description">Learn the fundamentals of game development and start building your first game with Unity...</p>
-                            <div class="card-author">
-                                <img src="/source/author-avatar.jpg" alt="TheDevAtlas" class="card-author-avatar">
-                                <div class="card-author-info">
-                                    <p class="card-author-name">Jacob McGowan</p>
-                                    <div class="card-author-tags">
-                                        <span class="card-tag">Tutorial</span>
-                                        <span class="card-tag">Unity</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> 
-            </div>  
-
-            <div style="margin-top: 3rem;">
-                <h2 class="section-title">Featured <span class="accent">Content</span></h2>
-            </div>
-
-            <!-- Tiled Cards Container -->
-            <div style="margin-top: 3rem;">
-                <div class="cards-container">
-                    <!-- Card 1 -->
-                    <div class="card card-tile">
-                        <img src="/source/placeholder-card.jpg" alt="Content" class="card-image">
-                        <div class="card-content">
-                            <div class="card-meta">
-                                <span class="read-time">3 min read</span>
-                                <span class="date">Nov 3, 2024</span>
-                            </div>
-                            <h3 class="card-title">Getting Started with Game Development</h3>
-                            <p class="card-description">Learn the fundamentals of game development and start building your first game with Unity...</p>
-                            <div class="card-author">
-                                <img src="/source/author-avatar.jpg" alt="TheDevAtlas" class="card-author-avatar">
-                                <div class="card-author-info">
-                                    <p class="card-author-name">Jacob McGowan</p>
-                                    <div class="card-author-tags">
-                                        <span class="card-tag">Tutorial</span>
-                                        <span class="card-tag">Unity</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 2 -->
-                    <div class="card card-tile">
-                        <img src="/source/placeholder-card.jpg" alt="Content" class="card-image">
-                        <div class="card-content">
-                            <div class="card-meta">
-                                <span class="read-time">5 min read</span>
-                                <span class="date">Nov 1, 2024</span>
-                            </div>
-                            <h3 class="card-title">Essential Developer Tools for 2024</h3>
-                            <p class="card-description">Discover the must-have tools and resources that every developer should know about this year...</p>
-                            <div class="card-author">
-                                <img src="/source/author-avatar.jpg" alt="TheDevAtlas" class="card-author-avatar">
-                                <div class="card-author-info">
-                                    <p class="card-author-name">Jacob McGowan</p>
-                                    <div class="card-author-tags">
-                                        <span class="card-tag">Tools</span>
-                                        <span class="card-tag">Guide</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 3 -->
-                    <div class="card card-tile">
-                        <img src="/source/placeholder-card.jpg" alt="Content" class="card-image">
-                        <div class="card-content">
-                            <div class="card-meta">
-                                <span class="read-time">4 min read</span>
-                                <span class="date">Oct 28, 2024</span>
-                            </div>
-                            <h3 class="card-title">Building Responsive Web Applications</h3>
-                            <p class="card-description">Master the art of creating beautiful, responsive web applications that work on any device...</p>
-                            <div class="card-author">
-                                <img src="/source/author-avatar.jpg" alt="TheDevAtlas" class="card-author-avatar">
-                                <div class="card-author-info">
-                                    <p class="card-author-name">Jacob McGowan</p>
-                                    <div class="card-author-tags">
-                                        <span class="card-tag">Web Dev</span>
-                                        <span class="card-tag">CSS</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card card-tile">
-                        <img src="/source/placeholder-card.jpg" alt="Content" class="card-image">
-                        <div class="card-content">
-                            <div class="card-meta">
-                                <span class="read-time">4 min read</span>
-                                <span class="date">Oct 28, 2024</span>
-                            </div>
-                            <h3 class="card-title">Building Responsive Web Applications</h3>
-                            <p class="card-description">Master the art of creating beautiful, responsive web applications that work on any device...</p>
-                            <div class="card-author">
-                                <img src="/source/author-avatar.jpg" alt="TheDevAtlas" class="card-author-avatar">
-                                <div class="card-author-info">
-                                    <p class="card-author-name">Jacob McGowan</p>
-                                    <div class="card-author-tags">
-                                        <span class="card-tag">Web Dev</span>
-                                        <span class="card-tag">CSS</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <div id="footer-include"></div>
-
-    <!-- Scripts -->
-    <script src="/script.js"></script>
+  <!-- JSON-LD (Homepage) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "The Dev Atlas",
+    "url": "https://example.com/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://example.com/blog/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
 </body>
-
 </html>

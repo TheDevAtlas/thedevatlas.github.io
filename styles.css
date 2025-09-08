@@ -1,0 +1,43 @@
+:root{
+  --bg:#0b0c10; --surface:#121318; --muted:#9aa0a6; --fg:#e8eaed; --brand:#66ccff; --border:#1f232b;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,Segoe UI,Roboto,Inter,Arial,sans-serif}
+a{color:var(--brand);text-decoration:none}
+a:hover{text-decoration:underline}
+.container{max-width:1100px;margin-inline:auto;padding:1.25rem}
+
+.site-header{position:sticky;top:0;background:rgba(18,19,24,.9);backdrop-filter:blur(6px);border-bottom:1px solid var(--border);z-index:10}
+.header-inner{display:flex;align-items:center;gap:1rem}
+.brand{display:flex;align-items:center;gap:.5rem;font-weight:800}
+.brand-mark{display:inline-grid;place-items:center;width:1.6rem;height:1.6rem;border-radius:.4rem;background:linear-gradient(135deg,var(--brand),#a7f3d0);color:#001016}
+
+.nav-toggle{margin-left:auto;background:transparent;border:1px solid var(--border);color:var(--fg);padding:.45rem .7rem;border-radius:.6rem;display:none}
+.site-nav{margin-left:auto;display:flex;gap:1rem;align-items:center}
+.site-nav a{padding:.4rem .6rem;border-radius:.4rem}
+.site-nav a.active{background:var(--surface);border:1px solid var(--border)}
+
+@media (max-width:800px){
+  .nav-toggle{display:block}
+  .site-nav{position:absolute;right:1.25rem;top:3.75rem;flex-direction:column;background:var(--surface);padding:.75rem;border:1px solid var(--border);border-radius:.75rem;display:none}
+  .site-nav.open{display:flex}
+}
+
+.hero{padding:3rem 0 2rem}
+.hero h1{font-size:clamp(2rem,4vw,3rem);margin:.25rem 0}
+.cta-row{display:flex;gap:.75rem;margin-top:1rem}
+.button{display:inline-block;background:var(--brand);color:#001016;font-weight:700;padding:.6rem .9rem;border-radius:.6rem}
+.button:hover{opacity:.95}
+
+.home-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin:2rem 0}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:.9rem;padding:1rem}
+.link{display:inline-block;margin-top:.5rem}
+
+.site-footer{margin-top:3rem;background:var(--surface);border-top:1px solid var(--border)}
+.footer-inner{display:grid;grid-template-columns:1.2fr 1fr;gap:2rem}
+.footer-logo{font-size:1.2rem;font-weight:900}
+.footer-left .mission{margin:.25rem 0 .75rem;color:var(--muted)}
+.footer-left .copyright,.footer-note{color:var(--muted)}
+.footer-right{display:grid;gap:1rem;align-content:start}
+.footer-nav{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center}
+@media (max-width:800px){.footer-inner{grid-template-columns:1fr}}

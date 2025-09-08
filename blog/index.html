@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Blog – The Dev Atlas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Articles and updates from The Dev Atlas." />
+  <link rel="canonical" href="https://example.com/blog/" />
+  <link rel="stylesheet" href="/styles.css" />
+  <meta property="og:title" content="Blog – The Dev Atlas" />
+  <meta property="og:description" content="Articles and updates from The Dev Atlas." />
+</head>
+<body>
+  <div data-include="/components/header.html"></div>
+
+  <main id="main" class="container">
+    <header class="section-header">
+      <h1>Blog</h1>
+      <p class="muted">All posts from this section. Copy/rename this folder to create other sections.</p>
+    </header>
+
+    <div class="search-bar">
+      <input id="q" type="search" placeholder="Search posts by title, tags, or excerpt…" aria-label="Search posts" />
+    </div>
+
+    <div id="results" class="post-grid" aria-live="polite"></div>
+  </main>
+
+  <div data-include="/components/footer.html"></div>
+
+  <script src="/script.js" defer></script>
+  <script src="/blog/search.js" defer></script>
+
+  <!-- JSON-LD (Blog listing) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"CollectionPage",
+    "name":"Blog",
+    "url":"https://example.com/blog/"
+  }
+  </script>
+
+  <style>
+    .section-header .muted{color:var(--muted)}
+    .search-bar{margin:1rem 0}
+    #q{width:100%; padding:.7rem .9rem; border:1px solid var(--border); border-radius:.6rem; background:var(--surface); color:var(--fg)}
+    .post-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin:1.25rem 0}
+    .post-card{background:var(--surface);border:1px solid var(--border);border-radius:.9rem;padding:1rem;display:flex;flex-direction:column;gap:.35rem}
+    .post-card .tags{color:var(--muted);font-size:.9rem}
+    .post-card .meta{color:var(--muted);font-size:.85rem}
+  </style>
+</body>
+</html>
