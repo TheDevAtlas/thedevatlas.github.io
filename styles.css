@@ -366,21 +366,33 @@ nav {
     display: none;
 }
 
-.hero h1 {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-    background: linear-gradient(135deg, var(--white), var(--light-blue));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+.hero-wordmark {
+    position: relative;
+    display: inline-block;
+    width: clamp(220px, 40vw, 520px);
+    margin: 0 auto 2.5rem;
     animation: slideUp 1s ease-out;
 }
-
-.hero-subtitle {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-    color: var(--light-blue);
-    animation: slideUp 1s ease-out 0.3s both;
+.hero-wordmark img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: opacity 0.35s ease;
+}
+.hero-wordmark .hero-wordmark-glow {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+}
+.hero-wordmark:hover .hero-wordmark-default,
+.hero-wordmark:focus-visible .hero-wordmark-default {
+    opacity: 0;
+}
+.hero-wordmark:hover .hero-wordmark-glow,
+.hero-wordmark:focus-visible .hero-wordmark-glow {
+    opacity: 1;
 }
 
 .hero-description {
@@ -974,6 +986,10 @@ footer {
         gap: 1.5rem;
     }
 
+    .hero-wordmark {
+        margin: 0 0 2.5rem;
+    }
+
     .cta-buttons {
         justify-content: flex-start;
     }
@@ -1039,17 +1055,15 @@ footer {
         display: flex;
     }
     
-    .hero h1 {
-        font-size: 2.5rem;
+    .hero-wordmark {
+        width: min(80vw, 360px);
+        margin-bottom: 2rem;
     }
-    
-    .hero-subtitle {
-        font-size: 1.2rem;
-    }
-    
+
     .hero-description {
         font-size: 1rem;
     }
+
     
     .cta-buttons {
         flex-direction: column;
@@ -1154,17 +1168,15 @@ footer {
         padding: 0 1rem;
     }
 
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1.1rem;
+    .hero-wordmark {
+        width: min(90vw, 300px);
+        margin-bottom: 1.75rem;
     }
 
     .hero-description {
         font-size: 0.95rem;
     }
+
 
     .steam-wishlist {
         padding: 1rem;
