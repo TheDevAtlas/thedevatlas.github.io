@@ -1,0 +1,49 @@
+---
+const { currentPath = "/" } = Astro.props;
+const isHome = currentPath === "/";
+
+const homeHref = isHome ? "#hero" : "/";
+const workshopHref = "/workshop";
+const collectionsHref = "/collections";
+const contactHref = "/contact";
+const wishlistHref = isHome ? "#steam" : "/#steam";
+---
+
+<nav>
+  <div class="nav-container">
+    <a class="logo" href={homeHref}>
+      <span class="logo-icon">
+        <img src="/images/MainLogo.png" alt="The Dev Atlas logo" class="logo-default" />
+        <img src="/images/MainGlowLogo.png" alt="" aria-hidden="true" class="logo-glow" />
+      </span>
+      <img src="/images/Words.png" alt="The Dev Atlas" class="logo-wordmark" />
+    </a>
+    <ul class="nav-links">
+      <li><a href={homeHref}>Home</a></li>
+      <li><a href={workshopHref}>Workshop</a></li>
+      <li><a href={collectionsHref}>Collections</a></li>
+      <li><a href={contactHref}>Contact</a></li>
+    </ul>
+    <a href={wishlistHref} class="wishlist-btn">
+      <span class="wishlist-btn-top">Wishlist Cloop</span>
+    </a>
+    <div class="mobile-menu-toggle" id="mobileMenuToggle">
+      <div class="hamburger-line"></div>
+      <div class="hamburger-line"></div>
+      <div class="hamburger-line"></div>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <ul class="mobile-nav-links">
+      <li><a href={homeHref}>Home</a></li>
+      <li><a href={workshopHref}>Workshop</a></li>
+      <li><a href={collectionsHref}>Collections</a></li>
+      <li><a href={contactHref}>Contact</a></li>
+      <li>
+        <a href={wishlistHref} class="mobile-wishlist-btn">
+          <span class="mobile-wishlist-btn-top">Wishlist Cloop</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

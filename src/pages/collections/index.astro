@@ -1,0 +1,203 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { collections } from "../../data/collections.js";
+---
+
+<Layout title="Collections | TheDevAtlas" description="Explore curated collections of workshops, devlogs, and tooling from TheDevAtlas.">
+  <main class="collections-page">
+    <section class="intro">
+      <p class="eyebrow">Curated Streams</p>
+      <h1>Collections built for the craft.</h1>
+      <p class="lead">
+        Each collection tracks a focus area — from our in-flight game Cloop to reusable tooling notes. Dip into the spaces that match what you are building today.
+      </p>
+    </section>
+
+    <section class="collection-grid">
+      {collections.map((collection) => (
+        <article class="collection-card">
+          <header>
+            <h2>{collection.title}</h2>
+            <p class="subtitle">{collection.subtitle}</p>
+          </header>
+          <p>{collection.description}</p>
+          <ul class="highlights">
+            {collection.highlights.map((item) => (
+              <li>
+                <span class="highlight-title">{item.title}</span>
+                <span class="highlight-detail">{item.detail}</span>
+              </li>
+            ))}
+          </ul>
+          <div class="actions">
+            {collection.cta && (
+              <a class="primary" href={collection.cta.href}>{collection.cta.label}</a>
+            )}
+            <a class="secondary" href={`/collections/${collection.slug}`}>{collection.secondary.label}</a>
+          </div>
+        </article>
+      ))}
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .collections-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: clamp(4rem, 8vw, 6rem) clamp(1.5rem, 4vw, 3.5rem) clamp(6rem, 10vw, 7rem);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2.5rem, 6vw, 4rem);
+  }
+
+  .intro {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    background: rgba(15, 23, 42, 0.8);
+    border-radius: 24px;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    padding: clamp(2.5rem, 6vw, 3.5rem);
+    box-shadow: 0 18px 48px rgba(15, 23, 42, 0.45);
+  }
+
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.32em;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: rgba(148, 163, 184, 0.8);
+  }
+
+  h1 {
+    margin: 0;
+    font-size: clamp(2.4rem, 4vw, 3.3rem);
+  }
+
+  .lead {
+    max-width: 70ch;
+    color: rgba(226, 232, 240, 0.85);
+    font-size: 1.05rem;
+  }
+
+  .collection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: clamp(1.75rem, 5vw, 2.5rem);
+  }
+
+  .collection-card {
+    background: rgba(15, 23, 42, 0.78);
+    border-radius: 24px;
+    border: 1px solid rgba(56, 189, 248, 0.18);
+    padding: clamp(2rem, 5vw, 2.5rem);
+    box-shadow: 0 18px 46px rgba(15, 23, 42, 0.45);
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .collection-card header h2 {
+    margin: 0;
+    font-size: 1.6rem;
+  }
+
+  .collection-card .subtitle {
+    margin: 0.35rem 0 0;
+    color: rgba(148, 163, 184, 0.85);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.75rem;
+  }
+
+  .collection-card p {
+    margin: 0;
+    color: rgba(226, 232, 240, 0.85);
+    line-height: 1.6;
+  }
+
+  .highlights {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .highlights li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .highlight-title {
+    font-weight: 600;
+    color: rgba(186, 230, 253, 0.95);
+  }
+
+  .highlight-detail {
+    color: rgba(148, 163, 184, 0.85);
+    font-size: 0.95rem;
+  }
+
+  .actions {
+    margin-top: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .primary,
+  .secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.85rem 1.75rem;
+    border-radius: 999px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 160ms ease, box-shadow 160ms ease, border 160ms ease;
+  }
+
+  .primary {
+    background: linear-gradient(120deg, #38bdf8, #6366f1);
+    color: #0b1120;
+    box-shadow: 0 16px 32px rgba(56, 189, 248, 0.3);
+    border: none;
+  }
+
+  .primary:hover,
+  .primary:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 38px rgba(56, 189, 248, 0.35);
+  }
+
+  .secondary {
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    background: rgba(56, 189, 248, 0.12);
+    color: rgba(186, 230, 253, 0.95);
+  }
+
+  .secondary:hover,
+  .secondary:focus-visible {
+    border-color: rgba(168, 85, 247, 0.45);
+    color: rgba(224, 231, 255, 0.95);
+  }
+
+  @media (max-width: 640px) {
+    .intro {
+      border-radius: 20px;
+    }
+
+    .collection-card {
+      border-radius: 20px;
+    }
+
+    .actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+</style>

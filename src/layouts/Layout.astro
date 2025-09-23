@@ -1,0 +1,28 @@
+---
+import "../styles/site.css";
+import SiteHeader from "../components/SiteHeader.astro";
+
+const {
+  title = "TheDevAtlas - Game Developer Hub",
+  description = "Deep dive into game development with tutorials, tools, and project breakdowns from TheDevAtlas."
+} = Astro.props;
+
+const currentPath = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/png" href="/images/MainLogo.png" />
+  </head>
+  <body>
+    <SiteHeader currentPath={currentPath} />
+    <slot />
+    <script src="/scripts/site.js" defer></script>
+  </body>
+</html>
