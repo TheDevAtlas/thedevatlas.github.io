@@ -1,93 +1,91 @@
-// Function to load HTML content into specified elements
-async function loadHTMLIncludes() {
-    try {
-        // Load header
-        const headerResponse = await fetch('/header.html');
-        if (headerResponse.ok) {
-            const headerHTML = await headerResponse.text();
-            document.getElementById('header-include').innerHTML = headerHTML;
-            
-            // Initialize mobile menu after header is loaded
-            initializeMobileMenu();
-        } else {
-            console.error('Failed to load header.html');
-        }
+﻿// Mobile menu functionality
+const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+const mobileNav = document.getElementById('mobileNav');
 
-        // Load footer
-        const footerResponse = await fetch('/footer.html');
-        if (footerResponse.ok) {
-            const footerHTML = await footerResponse.text();
-            document.getElementById('footer-include').innerHTML = footerHTML;
-        } else {
-            console.error('Failed to load footer.html');
-        }
-    } catch (error) {
-        console.error('Error loading HTML includes:', error);
+mobileMenuToggle.addEventListener('click', () => {
+    mobileMenuToggle.classList.toggle('active');
+    mobileNav.classList.toggle('active');
+    
+    // Prevent body scroll when mobile menu is open
+    if (mobileNav.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = '';
     }
-}
+});
 
-// Initialize mobile menu functionality
-function initializeMobileMenu() {
-    const hamburger = document.getElementById('hamburger');
-    const nav = document.querySelector('.nav');
-    const body = document.body;
+// Close mobile menu when clicking on nav links
+document.querySelectorAll('.mobile-nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenuToggle.classList.remove('active');
+        mobileNav.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+});
 
-    if (!hamburger || !nav) {
-        console.error('Mobile menu elements not found');
-        return;
+// Close mobile menu when clicking outside
+mobileNav.addEventListener('click', (e) => {
+    if (e.target === mobileNav) {
+        mobileMenuToggle.classList.remove('active');
+        mobileNav.classList.remove('active');
+        document.body.style.overflow = '';
     }
+});
 
-    // Toggle mobile menu
-    hamburger.addEventListener('click', (e) => {
+// Scroll progress indicator
+window.addEventListener('scroll', () => {
+    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrollProgress = (scrollTop / scrollHeight) * 100;
+    document.getElementById('scrollProgress').style.width = scrollProgress + '%';
+});
+
+// Fade in animation on scroll
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.fade-in').forEach(el => {
+    observer.observe(el);
+});
+
+// Smooth scroll for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        hamburger.classList.toggle('active');
-        nav.classList.toggle('active');
-        body.classList.toggle('menu-open');
-    });
-
-    // Close menu when clicking nav links
-    const navLinks = document.querySelectorAll('.nav-link');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            nav.classList.remove('active');
-            body.classList.remove('menu-open');
-        });
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-        const isClickInsideNav = nav.contains(e.target);
-        const isClickOnHamburger = hamburger.contains(e.target);
-        
-        if (!isClickInsideNav && !isClickOnHamburger && nav.classList.contains('active')) {
-            hamburger.classList.remove('active');
-            nav.classList.remove('active');
-            body.classList.remove('menu-open');
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
         }
     });
+});
 
-    // Close menu on escape key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && nav.classList.contains('active')) {
-            hamburger.classList.remove('active');
-            nav.classList.remove('active');
-            body.classList.remove('menu-open');
-        }
-    });
+// Newsletter form
+document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = this.querySelector('input[type="email"]').value;
+    alert('Thanks for subscribing! We\'ll send you the latest updates.');
+    this.querySelector('input[type="email"]').value = '';
+});
 
-    // Handle window resize
-    window.addEventListener('resize', () => {
-        // Close mobile menu if window is resized to desktop size
-        if (window.innerWidth > 920) {
-            hamburger.classList.remove('active');
-            nav.classList.remove('active');
-            body.classList.remove('menu-open');
-        }
-    });
-}
-
-// Initialize everything when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    loadHTMLIncludes();
+// Dynamic navbar background on scroll
+window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 100) {
+        nav.style.background = 'rgba(10, 10, 10, 0.98)';
+    } else {
+        nav.style.background = 'rgba(10, 10, 10, 0.95)';
+    }
 });
