@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Machine Learning Collection | TheDevAtlas</title>
+    <meta name="description" content="AI and machine learning experiments applied to game development, from procedural generation to player analytics.">
+    <link rel="icon" type="image/png" href="../public/images/MainLogo.png">
+    <link rel="stylesheet" href="../styles/site.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a class="logo" href="../index.html">
+                <span class="logo-icon">
+                    <img src="../public/images/MainLogo.png" alt="The Dev Atlas logo" class="logo-default">
+                    <img src="../public/images/MainGlowLogo.png" alt="" aria-hidden="true" class="logo-glow">
+                </span>
+                <img src="../public/images/Words.png" alt="The Dev Atlas" class="logo-wordmark">
+            </a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../workshop.html">Workshop</a></li>
+                <li><a href="index.html">Collections</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+            <a href="../index.html#steam" class="wishlist-btn">
+                <span class="wishlist-btn-top">Wishlist Cloop</span>
+            </a>
+            <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+            </div>
+        </div>
+        <div class="mobile-nav" id="mobileNav">
+            <ul class="mobile-nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../workshop.html">Workshop</a></li>
+                <li><a href="index.html">Collections</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+                <li>
+                    <a href="../index.html#steam" class="mobile-wishlist-btn">
+                        <span class="mobile-wishlist-btn-top">Wishlist Cloop</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-indicator">
+        <div class="scroll-progress" id="scrollProgress"></div>
+    </div>
+
+    <main class="collection-page">
+        <section class="collection-hero">
+            <p class="eyebrow">AI & Machine Learning Collection</p>
+            <h1>ML Experiments Lab</h1>
+            <p class="lead">
+                Explorations of AI and machine learning applications in game development. From procedural generation to player behavior analysis, discover how modern AI can enhance game creation and player experiences.
+            </p>
+            <div class="hero-actions">
+                <a class="primary" href="../contact.html">Join Research</a>
+                <a class="secondary" href="index.html">Browse Collections</a>
+            </div>
+        </section>
+
+        <section class="content-sections">
+            <div class="section-card">
+                <h2>Procedural Generation</h2>
+                <p>Using ML models for creating dynamic game content, from levels to textures and audio.</p>
+                <div class="content-grid">
+                    <article class="content-item">
+                        <h3>Neural Level Generation</h3>
+                        <p>Training neural networks to generate platformer levels that maintain proper difficulty curves.</p>
+                        <span class="meta">Generation • January 2025</span>
+                    </article>
+                    <article class="content-item">
+                        <h3>Texture Synthesis Networks</h3>
+                        <p>Using GANs to generate seamless game textures and material variations automatically.</p>
+                        <span class="meta">Art • December 2024</span>
+                    </article>
+                    <article class="content-item">
+                        <h3>Procedural Audio Design</h3>
+                        <p>ML-driven sound effect generation and adaptive music systems that respond to gameplay.</p>
+                        <span class="meta">Audio • November 2024</span>
+                    </article>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <h2>Player Analytics & Behavior</h2>
+                <p>Analyzing player behavior patterns to improve game balance and user experience design.</p>
+                <div class="content-grid">
+                    <article class="content-item">
+                        <h3>Behavioral Pattern Analysis</h3>
+                        <p>Clustering algorithms to identify different player types and their preferred play styles.</p>
+                        <span class="meta">Analytics • October 2024</span>
+                    </article>
+                    <article class="content-item">
+                        <h3>Difficulty Balancing Models</h3>
+                        <p>ML models that predict player frustration and suggest dynamic difficulty adjustments.</p>
+                        <span class="meta">Balance • September 2024</span>
+                    </article>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <h2>Creative AI Tools</h2>
+                <p>AI-assisted content creation tools for art, narrative, and game design workflows.</p>
+                <div class="content-grid">
+                    <article class="content-item">
+                        <h3>AI-Assisted Concept Art</h3>
+                        <p>Integration of AI image generation tools into concept art and visual development pipelines.</p>
+                        <span class="meta">Art • August 2024</span>
+                    </li>
+                    <article class="content-item">
+                        <h3>Narrative Generation Experiments</h3>
+                        <p>Using language models to assist with dialogue writing and branching narrative creation.</p>
+                        <span class="meta">Writing • July 2024</span>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../scripts/site.js" defer></script>
+
+    <style>
+        .collection-page {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: clamp(4rem, 8vw, 6rem) clamp(1.5rem, 4vw, 3.5rem) clamp(6rem, 10vw, 7rem);
+            display: flex;
+            flex-direction: column;
+            gap: clamp(2.5rem, 6vw, 4rem);
+        }
+
+        .collection-hero {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            background: rgba(15, 23, 42, 0.8);
+            border-radius: 24px;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            padding: clamp(2.5rem, 6vw, 3.5rem);
+            box-shadow: 0 18px 48px rgba(15, 23, 42, 0.45);
+        }
+
+        .collection-hero h1 {
+            margin: 0;
+            font-size: clamp(2.4rem, 4vw, 3.3rem);
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .content-sections {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .section-card {
+            background: rgba(15, 23, 42, 0.78);
+            border-radius: 20px;
+            border: 1px solid rgba(56, 189, 248, 0.15);
+            padding: clamp(2rem, 5vw, 2.5rem);
+            box-shadow: 0 16px 42px rgba(15, 23, 42, 0.4);
+        }
+
+        .section-card h2 {
+            margin: 0 0 1rem;
+            font-size: 1.5rem;
+        }
+
+        .section-card > p {
+            color: rgba(226, 232, 240, 0.85);
+            margin: 0 0 2rem;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .content-item {
+            background: rgba(10, 16, 30, 0.6);
+            border-radius: 16px;
+            border: 1px solid rgba(56, 189, 248, 0.1);
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .content-item h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: rgba(186, 230, 253, 0.95);
+        }
+
+        .content-item p {
+            margin: 0;
+            color: rgba(226, 232, 240, 0.8);
+            flex-grow: 1;
+        }
+
+        .meta {
+            font-size: 0.85rem;
+            color: rgba(148, 163, 184, 0.75);
+            font-weight: 600;
+        }
+
+        .eyebrow {
+            text-transform: uppercase;
+            letter-spacing: 0.32em;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: rgba(148, 163, 184, 0.8);
+            margin: 0;
+        }
+
+        .lead {
+            color: rgba(226, 232, 240, 0.85);
+            font-size: 1.05rem;
+            margin: 0;
+        }
+
+        .primary,
+        .secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.85rem 1.75rem;
+            border-radius: 999px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 160ms ease, box-shadow 160ms ease, border 160ms ease;
+        }
+
+        .primary {
+            background: linear-gradient(120deg, #38bdf8, #6366f1);
+            color: #0b1120;
+            box-shadow: 0 16px 32px rgba(56, 189, 248, 0.3);
+        }
+
+        .primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 18px 38px rgba(56, 189, 248, 0.35);
+        }
+
+        .secondary {
+            border: 1px solid rgba(56, 189, 248, 0.35);
+            background: rgba(56, 189, 248, 0.12);
+            color: rgba(186, 230, 253, 0.95);
+        }
+
+        .secondary:hover {
+            border-color: rgba(168, 85, 247, 0.45);
+            color: rgba(224, 231, 255, 0.95);
+        }
+
+        @media (max-width: 640px) {
+            .hero-actions {
+                flex-direction: column;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TheDevAtlas - Game Developer Hub</title>
+    <meta name="description" content="Deep dive into game development with comprehensive tutorials, tools, and project breakdowns from TheDevAtlas.">
+    <link rel="icon" type="image/png" href="public/images/MainLogo.png">
+    <link rel="stylesheet" href="styles/site.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a class="logo" href="#hero">
+                <span class="logo-icon">
+                    <img src="public/images/MainLogo.png" alt="The Dev Atlas logo" class="logo-default">
+                    <img src="public/images/MainGlowLogo.png" alt="" aria-hidden="true" class="logo-glow">
+                </span>
+                <img src="public/images/Words.png" alt="The Dev Atlas" class="logo-wordmark">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="workshop.html">Workshop</a></li>
+                <li><a href="collections/index.html">Collections</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="#steam" class="wishlist-btn">
+                <span class="wishlist-btn-top">Wishlist Cloop</span>
+            </a>
+            <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+            </div>
+        </div>
+        <div class="mobile-nav" id="mobileNav">
+            <ul class="mobile-nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="workshop.html">Workshop</a></li>
+                <li><a href="collections/index.html">Collections</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <a href="#steam" class="mobile-wishlist-btn">
+                        <span class="mobile-wishlist-btn-top">Wishlist Cloop</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-indicator">
+        <div class="scroll-progress" id="scrollProgress"></div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-inner">
+            <div class="hero-content">
+                <h1 class="hero-wordmark">
+                    <img src="public/images/WordMark.png" alt="The Dev Atlas wordmark" class="hero-wordmark-default">
+                    <img src="public/images/WordMarkGlow.png" alt="" aria-hidden="true" class="hero-wordmark-glow">
+                </h1>
+                <p class="hero-description">
+                    Deep dive into game development with comprehensive tutorials, cutting-edge developer tools, and detailed project breakdowns from industry experience. Your journey to mastering game development starts here.
+                </p>
+                <div class="cta-buttons">
+                    <a href="workshop.html" class="btn btn-primary">
+                        <span class="btn-top">Explore Workshop</span>
+                    </a>
+                    <a href="collections/cache.html" class="btn btn-secondary">
+                        <span class="btn-top">View Cache</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual" aria-hidden="true"></div>
+        </div>
+    </section>
+
+    <!-- Cloop Callout -->
+    <section class="section cloop-callout" id="cloop">
+        <div class="cloop-card">
+            <div class="cloop-text">
+                <p class="eyebrow">Cloop</p>
+                <h2>Follow the journey to launch.</h2>
+                <p>
+                    Track the Steam release of Cloop with devlogs, art drops, and telemetry notes. Every milestone is published so you can see how the game evolves in public.
+                </p>
+                <div class="cloop-actions">
+                    <a class="button button--primary" href="#steam">Wishlist on Steam</a>
+                    <a class="button button--ghost" href="collections/cloop.html">See Cloop collection</a>
+                </div>
+            </div>
+            <div class="cloop-visual" aria-hidden="true"></div>
+        </div>
+    </section>
+
+    <!-- Steam Wishlist Section -->
+    <section class="section steam-section" id="steam">
+        <div class="container">
+            <div class="steam-wishlist fade-in">
+                <div class="steam-content">
+                    <h3>Support Our Latest Game</h3>
+                    <p>
+                        We're working on an exciting new game project! Add it to your Steam wishlist to stay updated on our progress and get notified when it launches.
+                    </p>
+                    <a href="#steam" class="btn-steam">
+                        <span class="btn-steam-top">Wishlist on Steam</span>
+                    </a>
+                </div>
+                <div class="steam-visual">
+                    <div class="game-mockup">
+                        <div class="mockup-screen">
+                            <div class="mockup-ui">
+                                <div class="ui-element"></div>
+                                <div class="ui-element"></div>
+                                <div class="ui-element"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workshop Preview -->
+    <section class="section" id="workshop">
+        <div class="container">
+            <h2 class="section-title">The Workshop</h2>
+            <p class="section-description">
+                Deep dives into real game development projects with detailed breakdowns and industry insights
+            </p>
+            <div class="section-cta">
+                <a class="button button--ghost" href="workshop.html">Search all articles</a>
+            </div>
+            <div class="projects-preview">
+                <div class="project-card fade-in">
+                    <div class="project-image">🎰</div>
+                    <div class="project-content">
+                        <h3>RPG Combat Deep Dive</h3>
+                        <p>
+                            Complete breakdown of designing and implementing a sophisticated RPG combat system with reactive AI, dynamic abilities, and player feedback loops.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Combat Systems</span>
+                            <span class="tag">AI</span>
+                            <span class="tag">Balancing</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card fade-in">
+                    <div class="project-image">🏃</div>
+                    <div class="project-content">
+                        <h3>Movement & Parkour Physics</h3>
+                        <p>
+                            Learn how to build fluid character controllers, wall-running, and parkour systems grounded in modern physics-driven design.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Physics</span>
+                            <span class="tag">Movement</span>
+                            <span class="tag">Animation</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card fade-in">
+                    <div class="project-image">🌍</div>
+                    <div class="project-content">
+                        <h3>Immersive World Building</h3>
+                        <p>
+                            Explore techniques for crafting atmospheric environments, quest systems, and narrative layers that pull players into your worlds.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">World Design</span>
+                            <span class="tag">Narrative</span>
+                            <span class="tag">Level Design</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card fade-in">
+                    <div class="project-image">📥</div>
+                    <div class="project-content">
+                        <h3>Save Systems & Persistence</h3>
+                        <p>
+                            Architect robust save/load pipelines with versioning, cloud sync, and secure player progression tracking.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Systems</span>
+                            <span class="tag">Data</span>
+                            <span class="tag">Architecture</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card fade-in">
+                    <div class="project-image">🎨</div>
+                    <div class="project-content">
+                        <h3>VFX Craft for Gameplay</h3>
+                        <p>
+                            Build responsive, performant VFX that communicate mechanics, reinforce feedback, and feel epic in motion.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">VFX</span>
+                            <span class="tag">Shaders</span>
+                            <span class="tag">Performance</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card fade-in">
+                    <div class="project-image">🤖</div>
+                    <div class="project-content">
+                        <h3>AI Behavior Trees</h3>
+                        <p>
+                            Implementing sophisticated enemy AI using behavior trees, state machines, and pathfinding algorithms for complex NPC behaviors.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">AI</span>
+                            <span class="tag">Behavior Trees</span>
+                            <span class="tag">Pathfinding</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collections Preview -->
+    <section class="section collections-preview" id="collections">
+        <div class="container">
+            <div class="collections-header">
+                <h2 class="section-title">Collections</h2>
+                <p class="section-description">
+                    Curated pages bundle articles, experiments, and playbooks for a single focus. Start with a collection and dig deep.
+                </p>
+                <a class="button button--ghost" href="collections/index.html">Browse all collections</a>
+            </div>
+            <div class="collections-grid">
+                <article class="collection-tile fade-in">
+                    <h3>Cloop</h3>
+                    <p>Devlogs, art drops, and production notes from the game shipping on Steam.</p>
+                    <div class="tile-actions">
+                        <a class="tile-link" href="collections/cloop.html">See Cloop collection →</a>
+                        <a class="tile-secondary" href="#steam">Wishlist on Steam</a>
+                    </div>
+                </article>
+                <article class="collection-tile fade-in">
+                    <h3>Cache</h3>
+                    <p>Operational tooling, prompts, and systems thinking for teams shipping faster.</p>
+                    <div class="tile-actions">
+                        <a class="tile-link" href="collections/cache.html">Open the Cache →</a>
+                    </div>
+                </article>
+                <article class="collection-tile fade-in">
+                    <h3>Dev Tools</h3>
+                    <p>Dashboards, scripts, and debugging utilities that keep production humming.</p>
+                    <div class="tile-actions">
+                        <a class="tile-link" href="collections/dev-tools.html">See dev tools →</a>
+                    </div>
+                </article>
+                <article class="collection-tile fade-in">
+                    <h3>Machine Learning</h3>
+                    <p>Experiments and guardrails for blending ML workflows into game development.</p>
+                    <div class="tile-actions">
+                        <a class="tile-link" href="collections/machine-learning.html">Explore ML notes →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="section" id="newsletter">
+        <div class="container">
+            <div class="newsletter fade-in">
+                <h3>Stay Updated</h3>
+                <p>
+                    Get the latest courses, tools, and insights delivered directly to your inbox. Join thousands of developers leveling up their skills.
+                </p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn btn-primary">
+                        <span class="btn-top">Subscribe</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Learn & Create</h4>
+                    <a href="collections/cache.html">The Cache</a>
+                    <a href="workshop.html">The Workshop</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <a href="#community">Community</a>
+                    <a href="#discord">Discord</a>
+                    <a href="#youtube">YouTube</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow</h4>
+                    <div class="social-links">
+                        <a href="#youtube">YT</a>
+                        <a href="#twitter">TW</a>
+                        <a href="#discord">DC</a>
+                        <a href="#github">GH</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; MMXXV TheDevAtlas. Crafting game development excellence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/site.js" defer></script>
+</body>
+</html>

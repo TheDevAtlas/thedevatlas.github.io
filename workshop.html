@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Workshop Library | TheDevAtlas</title>
+    <meta name="description" content="Search every workshop, article, and resource curated by TheDevAtlas.">
+    <link rel="icon" type="image/png" href="public/images/MainLogo.png">
+    <link rel="stylesheet" href="styles/site.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a class="logo" href="index.html">
+                <span class="logo-icon">
+                    <img src="public/images/MainLogo.png" alt="The Dev Atlas logo" class="logo-default">
+                    <img src="public/images/MainGlowLogo.png" alt="" aria-hidden="true" class="logo-glow">
+                </span>
+                <img src="public/images/Words.png" alt="The Dev Atlas" class="logo-wordmark">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="workshop.html">Workshop</a></li>
+                <li><a href="collections/index.html">Collections</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="index.html#steam" class="wishlist-btn">
+                <span class="wishlist-btn-top">Wishlist Cloop</span>
+            </a>
+            <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+            </div>
+        </div>
+        <div class="mobile-nav" id="mobileNav">
+            <ul class="mobile-nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="workshop.html">Workshop</a></li>
+                <li><a href="collections/index.html">Collections</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <a href="index.html#steam" class="mobile-wishlist-btn">
+                        <span class="mobile-wishlist-btn-top">Wishlist Cloop</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-indicator">
+        <div class="scroll-progress" id="scrollProgress"></div>
+    </div>
+
+    <main class="search-page">
+        <section class="search-hero">
+            <p class="eyebrow">Workshop • Articles • Tools</p>
+            <h1>Search all TheDevAtlas guides and sessions.</h1>
+            <p class="intro">
+                Filter across workshops, devlogs, and tooling writeups. Use the directory to surface the resources that unlock your next milestone.
+            </p>
+            <div class="search-box" role="search">
+                <label for="entrySearch" class="sr-only">Search content</label>
+                <input id="entrySearch" type="search" placeholder="Search by title, tag, collection, or focus" autocomplete="off">
+            </div>
+        </section>
+
+        <section class="results" aria-live="polite">
+            <article class="entry-card" data-search="rpg combat deep dive workshop: architect responsive combat loops, designer tooling, and encounter pacing for action rpgs. workshops combat systems cloop">
+                <header>
+                    <div>
+                        <p class="category">Workshops</p>
+                        <h2>RPG Combat Deep Dive</h2>
+                    </div>
+                </header>
+                <p>Workshop: architect responsive combat loops, designer tooling, and encounter pacing for action RPGs.</p>
+                <ul class="tag-list">
+                    <li>combat</li>
+                    <li>systems</li>
+                    <li>cloop</li>
+                </ul>
+                <a class="cta" href="contact.html">Reserve a seat</a>
+            </article>
+
+            <article class="entry-card" data-search="movement & parkour physics workshop: prototype traversal mechanics, wall-runs, mantles, and kinesthetic animation blends. workshops movement physics">
+                <header>
+                    <div>
+                        <p class="category">Workshops</p>
+                        <h2>Movement & Parkour Physics</h2>
+                    </div>
+                </header>
+                <p>Workshop: prototype traversal mechanics, wall-runs, mantles, and kinesthetic animation blends.</p>
+                <ul class="tag-list">
+                    <li>movement</li>
+                    <li>physics</li>
+                </ul>
+                <a class="cta" href="contact.html">Reserve a seat</a>
+            </article>
+
+            <article class="entry-card" data-search="cloop dev notebook article series: production notes, prototyping experiments, and release checkpoints for cloop. cloop cloop production devlog">
+                <header>
+                    <div>
+                        <p class="category">Cloop</p>
+                        <h2>Cloop Dev Notebook</h2>
+                    </div>
+                </header>
+                <p>Article series: production notes, prototyping experiments, and release checkpoints for Cloop.</p>
+                <ul class="tag-list">
+                    <li>cloop</li>
+                    <li>production</li>
+                    <li>devlog</li>
+                </ul>
+                <a class="cta" href="collections/cloop.html">View collection</a>
+            </article>
+
+            <article class="entry-card" data-search="toolbox cache collection: systems thinking, workflow automation, and game-adjacent tooling experiments. cache tools pipeline productivity">
+                <header>
+                    <div>
+                        <p class="category">Cache</p>
+                        <h2>Toolbox Cache</h2>
+                    </div>
+                </header>
+                <p>Collection: systems thinking, workflow automation, and game-adjacent tooling experiments.</p>
+                <ul class="tag-list">
+                    <li>tools</li>
+                    <li>pipeline</li>
+                    <li>productivity</li>
+                </ul>
+                <a class="cta" href="collections/cache.html">Open cache</a>
+            </article>
+
+            <article class="entry-card" data-search="ai behavior trees field guide article: debugging nodes, authoring utilities, and building reusable ai behavior libraries. dev tools ai tools behavior">
+                <header>
+                    <div>
+                        <p class="category">Dev Tools</p>
+                        <h2>AI Behavior Trees Field Guide</h2>
+                    </div>
+                </header>
+                <p>Article: debugging nodes, authoring utilities, and building reusable AI behavior libraries.</p>
+                <ul class="tag-list">
+                    <li>ai</li>
+                    <li>tools</li>
+                    <li>behavior</li>
+                </ul>
+                <a class="cta" href="collections/dev-tools.html">Read breakdown</a>
+            </article>
+
+            <article class="entry-card" data-search="machine learning experiments notes: using ml models for procedural content, generative art, and playtesting insights. machine learning machine learning experiments">
+                <header>
+                    <div>
+                        <p class="category">Machine Learning</p>
+                        <h2>Machine Learning Experiments</h2>
+                    </div>
+                </header>
+                <p>Notes: using ML models for procedural content, generative art, and playtesting insights.</p>
+                <ul class="tag-list">
+                    <li>machine learning</li>
+                    <li>experiments</li>
+                </ul>
+                <a class="cta" href="collections/machine-learning.html">Explore experiments</a>
+            </article>
+
+            <p class="empty-state" hidden>No results match your search right now. Try a different keyword.</p>
+        </section>
+    </main>
+
+    <script src="scripts/site.js" defer></script>
+    <script type="module">
+        const input = document.querySelector('#entrySearch');
+        const cards = Array.from(document.querySelectorAll('.entry-card'));
+        const emptyState = document.querySelector('.empty-state');
+
+        const filter = (value) => {
+            const query = value.trim().toLowerCase();
+            let visibleCount = 0;
+
+            cards.forEach((card) => {
+                const matches = query.length === 0 || card.dataset.search.includes(query);
+                card.hidden = !matches;
+                if (!card.hidden) {
+                    visibleCount += 1;
+                }
+            });
+
+            const showEmpty = query.length > 0 && visibleCount === 0;
+            emptyState.hidden = !showEmpty;
+        };
+
+        input?.addEventListener('input', (event) => {
+            filter(event.target.value);
+        });
+    </script>
+
+    <style>
+        .search-page {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: clamp(4rem, 8vw, 6rem) clamp(1.5rem, 4vw, 3.5rem) clamp(6rem, 10vw, 7rem);
+            display: flex;
+            flex-direction: column;
+            gap: clamp(2.5rem, 6vw, 4rem);
+        }
+
+        .search-hero {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            background: rgba(15, 23, 42, 0.74);
+            padding: clamp(2.5rem, 6vw, 3.5rem);
+            border-radius: 24px;
+            border: 1px solid rgba(99, 102, 241, 0.18);
+            box-shadow: 0 18px 46px rgba(15, 23, 42, 0.45);
+        }
+
+        .search-hero h1 {
+            margin: 0;
+            font-size: clamp(2.4rem, 4vw, 3.2rem);
+            line-height: 1.08;
+        }
+
+        .intro {
+            max-width: 60ch;
+            color: rgba(226, 232, 240, 0.85);
+            font-size: 1.05rem;
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            border-radius: 999px;
+            border: 1px solid rgba(99, 102, 241, 0.25);
+            background: rgba(10, 16, 30, 0.82);
+            color: #f8fafc;
+            font-size: 1rem;
+            transition: border 160ms ease, box-shadow 160ms ease;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: rgba(56, 189, 248, 0.6);
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25);
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
+        .results {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: clamp(1.5rem, 4vw, 2rem);
+        }
+
+        .entry-card {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            background: rgba(15, 23, 42, 0.76);
+            border: 1px solid rgba(56, 189, 248, 0.15);
+            border-radius: 20px;
+            padding: clamp(1.75rem, 4vw, 2.3rem);
+            box-shadow: 0 16px 42px rgba(15, 23, 42, 0.4);
+        }
+
+        .entry-card header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .entry-card h2 {
+            margin: 0;
+            font-size: 1.35rem;
+        }
+
+        .category {
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.24em;
+            font-size: 0.7rem;
+            color: rgba(148, 163, 184, 0.75);
+            font-weight: 600;
+        }
+
+        .entry-card p {
+            margin: 0;
+            color: rgba(226, 232, 240, 0.82);
+            line-height: 1.6;
+        }
+
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .tag-list li {
+            padding: 0.35rem 0.75rem;
+            border-radius: 999px;
+            background: rgba(56, 189, 248, 0.12);
+            color: rgba(148, 201, 255, 0.85);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .cta {
+            margin-top: auto;
+            align-self: flex-start;
+            color: #38bdf8;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            gap: 0.35rem;
+            align-items: center;
+        }
+
+        .cta:hover,
+        .cta:focus-visible {
+            color: #a855f7;
+        }
+
+        .empty-state {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: clamp(1.5rem, 4vw, 2rem);
+            border: 1px dashed rgba(99, 102, 241, 0.35);
+            border-radius: 18px;
+            color: rgba(148, 163, 184, 0.8);
+            background: rgba(10, 16, 30, 0.7);
+        }
+
+        @media (max-width: 640px) {
+            .entry-card {
+                padding: clamp(1.5rem, 5vw, 2rem);
+            }
+
+            .entry-card header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .cta {
+                align-self: stretch;
+                justify-content: center;
+                padding: 0.75rem 1rem;
+                border-radius: 999px;
+                background: rgba(56, 189, 248, 0.12);
+            }
+        }
+    </style>
+</body>
+</html>
