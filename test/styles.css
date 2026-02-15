@@ -38,7 +38,7 @@ body {
 .hero {
     min-height: 90vh;
     background: linear-gradient(rgba(44,44,44,0.7), rgba(60,50,30,0.75)), 
-                url('Paramount.png');
+                url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1920&q=80');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -139,6 +139,24 @@ body {
 .spec-item:hover { 
     transform: translateX(5px); 
     background: rgba(255, 255, 255, 0.25);
+}
+
+/* Staff Photo Section */
+.staff-photo-section {
+    background: var(--dark-bg);
+    padding: 3rem 0;
+    text-align: center;
+}
+.staff-photo-section h2 {
+    color: var(--accent);
+    margin-bottom: 2rem;
+}
+.staff-photo {
+    max-width: 100%;
+    max-height: 500px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    border-bottom: 4px solid var(--accent);
 }
 
 footer { 
