@@ -436,6 +436,7 @@ button {
   position: relative;
   height: 100vh;
   overflow: hidden;
+  /* Footer sits below the fold; no clipping beyond this section */
 }
 
 /* ─────────────────────────────────────────────────────────────
@@ -872,6 +873,103 @@ button {
 }
 
 /* ─────────────────────────────────────────────────────────────
+   SITE FOOTER
+───────────────────────────────────────────────────────────── */
+.site-footer {
+  background: #111111;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 48px 0 32px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.875rem;
+}
+
+.footer-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 28px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+/* ── Left: Logos ── */
+.footer-logos {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-logo-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer-logo-img {
+  height: 48px;
+  width: auto;
+}
+
+.footer-wordmark-img {
+  height: 38px;
+  width: auto;
+}
+
+.footer-copy {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.35);
+  line-height: 1.5;
+  margin-top: 4px;
+}
+
+/* ── Link columns ── */
+.footer-col-heading {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 14px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.55);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
+
+.footer-link-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  flex-shrink: 0;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+.footer-links a:hover .footer-link-icon {
+  opacity: 1;
+}
+
+/* ─────────────────────────────────────────────────────────────
    RESPONSIVE
 ───────────────────────────────────────────────────────────── */
 @media (max-width: 900px) {
@@ -882,6 +980,15 @@ button {
   .bta-card {
     flex: 0 0 calc((100vw - 80px) / 3);
     max-width: none;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .footer-logos {
+    grid-column: 1 / -1;
   }
 }
 
@@ -965,6 +1072,21 @@ button {
   .bta-card {
     flex: 0 0 calc((100vw - 50px) / 2);
     max-width: none;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 0 16px;
+  }
+
+  .footer-logo-row {
+    justify-content: center;
+  }
+
+  .footer-logos {
+    align-items: center;
+    text-align: center;
   }
 }
 
