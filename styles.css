@@ -335,6 +335,11 @@ button {
     transparent padding-box,
     linear-gradient(135deg, #1176d5, #21b6cc) border-box;
   color: #ffffff;
+  overflow: hidden;
+}
+
+.btn-outline::after {
+  display: none;
 }
 
 .btn-outline::before {
