@@ -4,10 +4,232 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TheDevAtlas</title>
-    <link rel="icon" type="image/png" href="src/Favicon.png" />
+    <link rel="icon" type="image/png" href="assets/branding/Favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+
+    <!-- Hidden SVG colour filters for white icon PNGs -->
+    <svg aria-hidden="true" style="height:0;width:0;position:absolute;overflow:hidden" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="icon-red" color-interpolation-filters="sRGB">
+          <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0"/>
+        </filter>
+        <filter id="icon-blue" color-interpolation-filters="sRGB">
+          <feColorMatrix type="matrix" values="0 0 0 0 0.102  0 0 0 0 0.624  0 0 0 0 1  0 0 0 1 0"/>
+        </filter>
+        <filter id="icon-purple" color-interpolation-filters="sRGB">
+          <feColorMatrix type="matrix" values="0 0 0 0 0.431  0 0 0 0 0.329  0 0 0 0 0.580  0 0 0 1 0"/>
+        </filter>
+      </defs>
+    </svg>
+
+    <!-- ═══════════════════════════════════════
+         HEADER
+    ═══════════════════════════════════════ -->
+    <header class="site-header" id="site-header">
+      <div class="header-inner">
+
+        <div class="header-left">
+          <div class="logo-wrapper">
+            <button class="logo-btn" aria-label="TheDevAtlas home">
+              <img src="assets/branding/Logo_Blue.png" alt="TheDevAtlas" class="header-logo" />
+              <svg class="chevron-down" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
+                <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="logo-dropdown" role="menu" aria-label="Site navigation">
+              <a href="https://thedevatlas.com/" class="logo-dropdown-item" role="menuitem">
+                <img src="assets/branding/Favicon.png" class="logo-dropdown-icon" alt="" aria-hidden="true" />
+                Home
+              </a>
+              <a href="https://www.youtube.com/@thedevatlas/videos" class="logo-dropdown-item" role="menuitem" target="_blank" rel="noopener noreferrer">
+                <img src="assets/icons/youtube.png" class="logo-dropdown-icon ldi--youtube" alt="" aria-hidden="true" />
+                YouTube
+              </a>
+              <a href="https://github.com/TheDevAtlas" class="logo-dropdown-item" role="menuitem" target="_blank" rel="noopener noreferrer">
+                <img src="assets/icons/github.png" class="logo-dropdown-icon ldi--github" alt="" aria-hidden="true" />
+                GitHub
+              </a>
+              <a href="https://discord.com/invite/BUEZUdaeWJ" class="logo-dropdown-item" role="menuitem" target="_blank" rel="noopener noreferrer">
+                <img src="assets/icons/discord.png" class="logo-dropdown-icon ldi--discord" alt="" aria-hidden="true" />
+                Discord
+              </a>
+              <a href="https://steamcommunity.com/id/thedevatlas" class="logo-dropdown-item" role="menuitem" target="_blank" rel="noopener noreferrer">
+                <img src="assets/icons/steam.png" class="logo-dropdown-icon ldi--steam" alt="" aria-hidden="true" />
+                Steam
+              </a>
+            </div>
+          </div>
+          <a href="https://thedevatlas.com/" aria-label="TheDevAtlas home"><img src="assets/branding/WordMark.png" alt="TheDevAtlas" class="header-wordmark" /></a>
+        </div>
+
+        <nav class="header-nav" aria-label="Main navigation">
+          <a href="https://thedevatlas.com/" class="nav-link">Home</a>
+          <a href="https://thedevatlas.com/projects" class="nav-link">Projects</a>
+          <a href="https://thedevatlas.com/blog" class="nav-link">Blog</a>
+        </nav>
+
+        <div class="header-right">
+          <a href="https://www.youtube.com/@thedevatlas/videos" class="btn btn-icon-social" aria-label="YouTube">
+            <img src="assets/icons/youtube.png" alt="" class="btn-social-icon" aria-hidden="true" />
+          </a>
+          <a href="https://github.com/TheDevAtlas" class="btn btn-icon-social" aria-label="GitHub">
+            <img src="assets/icons/github.png" alt="" class="btn-social-icon" aria-hidden="true" />
+          </a>
+          <a href="https://discord.com/invite/BUEZUdaeWJ" class="btn btn-icon-social" aria-label="Discord">
+            <img src="assets/icons/discord.png" alt="" class="btn-social-icon" aria-hidden="true" />
+          </a>
+          <a href="https://steamcommunity.com/id/thedevatlas" class="btn btn-icon-social" aria-label="Steam">
+            <img src="assets/icons/steam.png" alt="" class="btn-social-icon" aria-hidden="true" />
+          </a>
+        </div>
+
+      </div>
+    </header>
+
+    <div class="fold">
+
+    <!-- ═══════════════════════════════════════
+         HERO CAROUSEL
+    ═══════════════════════════════════════ -->
+    <section class="hc" id="hero-carousel" aria-label="Hero carousel">
+
+      <!-- Slide 1 -->
+      <div class="hc-slide hc-slide--active" data-index="0">
+        <div class="hc-bg">
+          <img class="hc-bg-img" src="assets/projects/TacoBell/Hero.png" alt="" aria-hidden="true" draggable="false" />
+        </div>
+        <div class="hc-overlay"></div>
+        <div class="hc-content">
+          <div class="hc-brand">
+            <img src="assets/projects/TacoBell/Logo.png" alt="TheDevAtlas" class="hc-brand-logo" />
+            <span class="hc-brand-sep" aria-hidden="true">|</span>
+            <span class="hc-brand-name">Taco Bell Pricing Map</span>
+          </div>
+          <p class="hc-desc">After I investigated the Taco Bell location pricing across the US, I created an interactive map to visualize the data. You can explore it below!</p>
+          <a href="https://thedevatlas.com/Taco-Bell-Crawler/" class="btn btn-primary">Explore Map</a>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="hc-slide" data-index="1">
+        <div class="hc-bg">
+          <img class="hc-bg-img" src="assets/projects/Battleship/Hero.png" alt="" aria-hidden="true" draggable="false" />
+        </div>
+        <div class="hc-overlay"></div>
+        <div class="hc-content">
+          <div class="hc-brand">
+            <img src="assets/projects/Battleship/Logo.png" alt="TheDevAtlas" class="hc-brand-logo" />
+            <span class="hc-brand-sep" aria-hidden="true">|</span>
+            <span class="hc-brand-name">Battleship Automation</span>
+          </div>
+          <p class="hc-desc">I researched and automated a Battleship Bot to try and make it onto the charts. Watch how far I got!</p>
+          <a href="https://www.youtube.com/watch?v=pVdY2veQoK4" class="btn btn-primary">Watch Video</a>
+        </div>
+      </div>
+
+      <!-- Slide 3
+      <div class="hc-slide" data-index="2">
+        <div class="hc-bg">
+          <img class="hc-bg-img" src="https://picsum.photos/seed/gdev3/1920/1080" alt="" aria-hidden="true" draggable="false" />
+        </div>
+        <div class="hc-overlay"></div>
+        <div class="hc-content">
+          <div class="hc-brand">
+              <img src="assets/branding/Favicon.png" alt="TheDevAtlas" class="hc-brand-logo" />
+            <span class="hc-brand-sep" aria-hidden="true">|</span>
+            <span class="hc-brand-name">Asset Pipeline</span>
+          </div>
+          <p class="hc-desc">Automate your import, compression, and deployment workflows to ship faster without sacrificing quality.</p>
+          <a href="#" class="btn btn-primary">Learn More</a>
+        </div>
+      </div> -->
+
+      <!-- Bottom controls -->
+      <div class="hc-controls">
+        <div class="hc-indicators" id="hc-indicators">
+          <button class="hc-dot hc-dot--active" data-slide="0" aria-label="Go to slide 1">
+            <div class="hc-dot-fill"></div>
+          </button>
+          <button class="hc-dot" data-slide="1" aria-label="Go to slide 2">
+            <div class="hc-dot-fill"></div>
+          </button>
+          <!-- <button class="hc-dot" data-slide="2" aria-label="Go to slide 3">
+            <div class="hc-dot-fill"></div>
+          </button> -->
+        </div>
+        <button class="hc-pause-btn" id="hc-pause-btn" aria-label="Pause carousel">
+          <svg class="hc-icon hc-icon--pause" width="14" height="14" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true">
+            <rect x="2" y="1" width="3.5" height="12" rx="1"/>
+            <rect x="8.5" y="1" width="3.5" height="12" rx="1"/>
+          </svg>
+          <svg class="hc-icon hc-icon--play" width="14" height="14" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true">
+            <path d="M3 1.5l10 5.5-10 5.5z"/>
+          </svg>
+        </button>
+      </div>
+
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         BY THEDEVATLAS
+    ═══════════════════════════════════════ -->
+    <section class="bta" aria-label="By TheDevAtlas">
+      <div class="bta-inner">
+
+        <div class="bta-header">
+          <div class="bta-title-row">
+            <img src="assets/branding/Logo_Blue.png" alt="" class="bta-logo" aria-hidden="true" />
+            <h2 class="bta-heading">
+              <a href="https://www.youtube.com/@thedevatlas/videos" target="_blank" rel="noopener noreferrer" class="bta-see-more" aria-label="By TheDevAtlas — see all videos">
+                <span class="bta-see-more__default">More By TheDevAtlas</span>
+                <span class="bta-see-more__hover" aria-hidden="true">See More ›</span>
+              </a>
+            </h2>
+          </div>
+        </div>
+
+        <!-- Replace placeholder data below with live video details when ready -->
+        <div class="bta-reel">
+          <button class="bta-arrow" id="bta-prev" aria-label="Scroll left" disabled>
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" aria-hidden="true">
+              <path d="M11 4L6 9l5 5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="bta-viewport">
+          <div class="bta-track" id="bta-track">
+
+            <a class="bta-card bta-card--more" href="https://www.youtube.com/@thedevatlas/videos" target="_blank" rel="noopener noreferrer" aria-label="See all TheDevAtlas videos">
+              <div class="bta-thumb bta-thumb--more">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+                  <line x1="16" y1="7" x2="16" y2="25"/>
+                  <line x1="7" y1="16" x2="25" y2="16"/>
+                </svg>
+              </div>
+              <p class="bta-vtitle bta-vtitle--more">
+                <span class="bta-see-more__default">More Videos</span>
+                <span class="bta-see-more__hover" aria-hidden="true">See More ›</span>
+              </p>
+            </a>
+
+          </div>
+        </div>
+          <button class="bta-arrow" id="bta-next" aria-label="Scroll right">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" aria-hidden="true">
+              <path d="M7 4l5 5-5 5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    </div><!-- /.fold -->
+
     <script src="main.js"></script>
   </body>
 </html>

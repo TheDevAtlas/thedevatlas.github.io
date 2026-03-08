@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 — Page Not Found | TheDevAtlas</title>
+    <link rel="icon" type="image/png" href="assets/branding/Favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .page-404 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: calc(100vh - 64px);
+        text-align: center;
+        padding: 2rem 1.5rem;
+        background-color: #000000;
+      }
+
+      .page-404__code {
+        font-size: clamp(6rem, 20vw, 12rem);
+        font-weight: 800;
+        line-height: 1;
+        background: linear-gradient(135deg, #1176d5, #21b6cc);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin: 0 0 0.25rem;
+        user-select: none;
+      }
+
+      .page-404__title {
+        font-size: clamp(1.25rem, 3vw, 1.75rem);
+        font-weight: 700;
+        color: #ffffff;
+        margin: 0 0 0.75rem;
+      }
+
+      .page-404__desc {
+        font-size: 0.9375rem;
+        color: rgba(255, 255, 255, 0.6);
+        max-width: 420px;
+        line-height: 1.6;
+        margin: 0 0 2rem;
+      }
+
+      .page-404__actions {
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Hidden SVG colour filters for white icon PNGs -->
+    <svg aria-hidden="true" style="height:0;width:0;position:absolute;overflow:hidden" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="icon-red" color-interpolation-filters="sRGB">
+          <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0"/>
+        </filter>
+        <filter id="icon-blue" color-interpolation-filters="sRGB">
+          <feColorMatrix type="matrix" values="0 0 0 0 0.102  0 0 0 0 0.624  0 0 0 0 1  0 0 0 1 0"/>
+        </filter>
+        <filter id="icon-purple" color-interpolation-filters="sRGB">
+          <feColorMatrix type="matrix" values="0 0 0 0 0.431  0 0 0 0 0.329  0 0 0 0 0.580  0 0 0 1 0"/>
+        </filter>
+      </defs>
+    </svg>
+
+    <!-- ═══════════════════════════════════════
+         HEADER
+    ═══════════════════════════════════════ -->
+    <header class="site-header" id="site-header">
+      <div class="header-inner">
+
+        <div class="header-left">
+          <div class="logo-wrapper">
+            <button class="logo-btn" aria-label="TheDevAtlas home">
+              <img src="assets/branding/Logo_Blue.png" alt="TheDevAtlas" class="header-logo" />
+              <svg class="chevron-down" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
+                <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="logo-dropdown" role="menu" aria-label="Site navigation">
+              <a href="https://thedevatlas.com/" class="logo-dropdown-item" role="menuitem">
+                <img src="assets/branding/Favicon.png" class="logo-dropdown-icon" alt="" aria-hidden="true" />
+                Home
+              </a>
+              <a href="https://www.youtube.com/@thedevatlas/videos" class="logo-dropdown-item" role="menuitem" target="_blank" rel="noopener noreferrer">
+                <img src="assets/icons/youtube.png" class="logo-dropdown-icon ldi--youtube" alt="" aria-hidden="true" />
+                YouTube
+              </a>
+              <a href="https://github.com/TheDevAtlas" class="logo-dropdown-item" role="menuitem" target="_blank" rel="noopener noreferrer">
+                <img src="assets/icons/github.png" class="logo-dropdown-icon ldi--github" alt="" aria-hidden="true" />
+                GitHub
+              </a>
+              <a href="https://discord.com/invite/BUEZUdaeWJ" class="logo-dropdown-item" role="menuitem" target="_blank" rel="noopener noreferrer">
+                <img src="assets/icons/discord.png" class="logo-dropdown-icon ldi--discord" alt="" aria-hidden="true" />
+                Discord
+              </a>
+              <a href="https://steamcommunity.com/id/thedevatlas" class="logo-dropdown-item" role="menuitem" target="_blank" rel="noopener noreferrer">
+                <img src="assets/icons/steam.png" class="logo-dropdown-icon ldi--steam" alt="" aria-hidden="true" />
+                Steam
+              </a>
+            </div>
+          </div>
+          <a href="https://thedevatlas.com/" aria-label="TheDevAtlas home"><img src="assets/branding/WordMark.png" alt="TheDevAtlas" class="header-wordmark" /></a>
+        </div>
+
+        <nav class="header-nav" aria-label="Main navigation">
+          <a href="https://thedevatlas.com/" class="nav-link">Home</a>
+          <a href="https://thedevatlas.com/projects" class="nav-link">Projects</a>
+          <a href="https://thedevatlas.com/blog" class="nav-link">Blog</a>
+        </nav>
+
+        <div class="header-right">
+          <a href="https://www.youtube.com/@thedevatlas/videos" class="btn btn-icon-social" aria-label="YouTube">
+            <img src="assets/icons/youtube.png" alt="" class="btn-social-icon" aria-hidden="true" />
+          </a>
+          <a href="https://github.com/TheDevAtlas" class="btn btn-icon-social" aria-label="GitHub">
+            <img src="assets/icons/github.png" alt="" class="btn-social-icon" aria-hidden="true" />
+          </a>
+          <a href="https://discord.com/invite/BUEZUdaeWJ" class="btn btn-icon-social" aria-label="Discord">
+            <img src="assets/icons/discord.png" alt="" class="btn-social-icon" aria-hidden="true" />
+          </a>
+          <a href="https://steamcommunity.com/id/thedevatlas" class="btn btn-icon-social" aria-label="Steam">
+            <img src="assets/icons/steam.png" alt="" class="btn-social-icon" aria-hidden="true" />
+          </a>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- ═══════════════════════════════════════
+         404 CONTENT
+    ═══════════════════════════════════════ -->
+    <main class="page-404" aria-label="Page not found">
+      <p class="page-404__code" aria-hidden="true">404</p>
+      <h1 class="page-404__title">Page Not Found</h1>
+      <p class="page-404__desc">Looks like this page got lost in the atlas. The link may be broken, or the page may have moved.</p>
+      <div class="page-404__actions">
+        <a href="https://thedevatlas.com/" class="btn btn-primary">Go Home</a>
+        <a href="https://thedevatlas.com/projects" class="btn btn-outline">Browse Projects</a>
+      </div>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>
