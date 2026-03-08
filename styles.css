@@ -329,6 +329,37 @@ button {
   display: block;
 }
 
+.btn-outline {
+  border: 2px solid transparent;
+  background:
+    transparent padding-box,
+    linear-gradient(135deg, #1176d5, #21b6cc) border-box;
+  color: #ffffff;
+}
+
+.btn-outline::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #1176d5, #21b6cc);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.btn-outline:hover {
+  filter: none;
+  transform: translateY(-1px);
+}
+
+.btn-outline:hover::before {
+  opacity: 1;
+}
+
+.btn-outline span {
+  position: relative;
+  z-index: 1;
+}
+
 /* ─────────────────────────────────────────────────────────────
    FOLD — above-the-fold container
 ───────────────────────────────────────────────────────────── */
