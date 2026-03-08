@@ -1,5 +1,34 @@
 'use strict';
 
+// ─── Dropdown click toggle (for mobile + accessibility) ──────────────────────
+(function () {
+  const wrapper = document.querySelector('.logo-wrapper');
+  const btn     = document.querySelector('.logo-btn');
+  if (!wrapper || !btn) return;
+
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    wrapper.classList.toggle('is-open');
+  });
+
+  // Close on click outside
+  document.addEventListener('click', (e) => {
+    if (!wrapper.contains(e.target)) {
+      wrapper.classList.remove('is-open');
+    }
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') wrapper.classList.remove('is-open');
+  });
+
+  // On desktop, clear is-open when mouse leaves (prevents stale state after hover)
+  wrapper.addEventListener('mouseleave', () => {
+    wrapper.classList.remove('is-open');
+  });
+})();
+
 // ─── Sync BTA height → CSS var so hero content/controls avoid the BTA strip ──
 (function () {
   const fold = document.querySelector('.fold');

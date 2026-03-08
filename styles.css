@@ -94,7 +94,13 @@ button {
   transition: opacity 0.2s ease;
 }
 
-.logo-wrapper:hover .logo-btn {
+@media (hover: hover) {
+  .logo-wrapper:hover .logo-btn {
+    opacity: 0.8;
+  }
+}
+
+.logo-wrapper.is-open .logo-btn {
   opacity: 0.8;
 }
 
@@ -109,7 +115,13 @@ button {
   transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.logo-wrapper:hover .chevron-down {
+@media (hover: hover) {
+  .logo-wrapper:hover .chevron-down {
+    transform: rotate(180deg);
+  }
+}
+
+.logo-wrapper.is-open .chevron-down {
   transform: rotate(180deg);
 }
 
@@ -117,7 +129,7 @@ button {
   position: absolute;
   top: 100%;
   left: 0;
-  min-width: 190px;
+  min-width: 360px;
   background: #141414;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 10px;
@@ -139,7 +151,15 @@ button {
   height: 8px;
 }
 
-.logo-wrapper:hover .logo-dropdown {
+@media (hover: hover) {
+  .logo-wrapper:hover .logo-dropdown {
+    opacity: 1;
+    transform: translateY(4px);
+    pointer-events: auto;
+  }
+}
+
+.logo-wrapper.is-open .logo-dropdown {
   opacity: 1;
   transform: translateY(4px);
   pointer-events: auto;
@@ -169,6 +189,47 @@ button {
   border-radius: 6px;
   flex-shrink: 0;
   object-fit: contain;
+}
+
+/* Dropdown two-column grid */
+.logo-dropdown-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.logo-dropdown-col {
+  padding: 4px 0;
+}
+
+.logo-dropdown-col:first-child {
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  padding-right: 2px;
+}
+
+.logo-dropdown-col:last-child {
+  padding-left: 2px;
+}
+
+.logo-dropdown-heading {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.35);
+  padding: 6px 12px 4px;
+  margin: 0;
+}
+
+.logo-dropdown-svg {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  color: rgba(255, 255, 255, 0.5);
+  transition: color 0.15s ease;
+}
+
+.logo-dropdown-item:hover .logo-dropdown-svg {
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .ldi--steam   { filter: url(#icon-blue); }
@@ -411,7 +472,7 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: right center;
   transform: scale(1.2);
   transform-origin: center center;
   will-change: transform;
@@ -829,12 +890,34 @@ button {
     padding: 0 16px;
   }
 
-  /* ── Hero carousel – mobile ── */
-
-  /* Show the image from its right side so the subject stays visible */
-  .hc-bg-img {
-    object-position: right center;
+  /* ── Header mobile: hide nav & socials, full-width dropdown ── */
+  .header-nav {
+    display: none;
   }
+
+  .header-right {
+    display: none;
+  }
+
+  .header-left {
+    flex: 1;
+    justify-content: space-between;
+  }
+
+  .logo-dropdown {
+    position: fixed;
+    top: 64px;
+    left: 16px;
+    right: 16px;
+    min-width: unset;
+    transform: translateY(0);
+  }
+
+  .logo-dropdown::before {
+    display: none;
+  }
+
+  /* ── Hero carousel – mobile ── */
 
   /* Replace the left-heavy horizontal scrim with a vertical one so
      the centered text block stays readable over the full-width image */
