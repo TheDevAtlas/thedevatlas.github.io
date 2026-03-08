@@ -330,10 +330,8 @@ button {
 }
 
 .btn-outline {
-  border: 2px solid transparent;
-  background:
-    transparent padding-box,
-    linear-gradient(135deg, #1176d5, #21b6cc) border-box;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.35);
   color: #ffffff;
   overflow: hidden;
 }
@@ -352,12 +350,17 @@ button {
 }
 
 .btn-outline:hover {
+  border-color: transparent;
   filter: none;
   transform: translateY(-1px);
 }
 
 .btn-outline:hover::before {
   opacity: 1;
+}
+
+.btn-outline:active {
+  filter: none;
 }
 
 .btn-outline span {
