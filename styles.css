@@ -887,8 +887,8 @@ button {
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 28px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  justify-content: space-between;
   gap: 40px;
 }
 
@@ -923,6 +923,10 @@ button {
 }
 
 /* ── Link columns ── */
+.footer-col + .footer-col {
+  margin-left: -584px;
+}
+
 .footer-col-heading {
   font-size: 0.8rem;
   font-weight: 700;
@@ -983,12 +987,11 @@ button {
   }
 
   .footer-inner {
-    grid-template-columns: 1fr 1fr;
     gap: 32px;
   }
 
-  .footer-logos {
-    grid-column: 1 / -1;
+  .footer-col + .footer-col {
+    margin-left: 60px;
   }
 }
 
@@ -1075,9 +1078,17 @@ button {
   }
 
   .footer-inner {
-    grid-template-columns: 1fr;
+    flex-wrap: wrap;
     gap: 28px;
     padding: 0 16px;
+  }
+
+  .footer-logos {
+    width: 100%;
+  }
+
+  .footer-col + .footer-col {
+    margin-left: 40px;
   }
 
   .footer-logo-row {
