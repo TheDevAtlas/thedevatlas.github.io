@@ -89,7 +89,7 @@ button {
   align-items: center;
   gap: 7px;
   color: #ffffff;
-  padding: 6px 8px 6px 4px;
+  padding: 4px 8px 4px 4px;
   border-radius: 6px;
   transition: opacity 0.2s ease;
 }
@@ -111,7 +111,7 @@ button {
 
 .header-logo {
   grid-area: 1 / 1;
-  height: 48px;
+  height: 56px;
   width: auto;
   transition: opacity 0.24s ease;
 }
