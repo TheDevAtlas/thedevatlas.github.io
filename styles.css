@@ -104,9 +104,44 @@ button {
   opacity: 0.8;
 }
 
+.logo-mark {
+  display: grid;
+  align-items: center;
+}
+
 .header-logo {
-  height: 40px;
+  grid-area: 1 / 1;
+  height: 48px;
   width: auto;
+  transition: opacity 0.24s ease;
+}
+
+.header-logo--white {
+  opacity: 1;
+}
+
+.header-logo--blue {
+  opacity: 0;
+}
+
+@media (hover: hover) {
+  .logo-wrapper:hover .header-logo--white {
+    opacity: 0;
+  }
+
+  .logo-wrapper:hover .header-logo--blue {
+    opacity: 1;
+  }
+}
+
+.logo-wrapper.is-open .header-logo--white,
+.logo-btn:focus-visible .header-logo--white {
+  opacity: 0;
+}
+
+.logo-wrapper.is-open .header-logo--blue,
+.logo-btn:focus-visible .header-logo--blue {
+  opacity: 1;
 }
 
 .chevron-down {
@@ -668,7 +703,7 @@ button {
 }
 
 .bta-logo {
-  height: 24px;
+  height: 28.8px;
   width: auto;
 }
 
@@ -906,7 +941,7 @@ button {
 }
 
 .footer-logo-img {
-  height: 48px;
+  height: 57.6px;
   width: auto;
 }
 
