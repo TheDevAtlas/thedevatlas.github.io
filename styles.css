@@ -120,6 +120,12 @@ button {
   opacity: 1;
 }
 
+.header-logo--white,
+.bta-logo,
+.footer-logo-img {
+  filter: url(#logo-primary);
+}
+
 .header-logo--blue {
   opacity: 0;
 }
